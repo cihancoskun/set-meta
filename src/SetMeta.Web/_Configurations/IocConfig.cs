@@ -7,6 +7,8 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using SetMeta.Web.Domain.Repositories;
+using SetMeta.Web.Domain.Services;
 
 namespace SetMeta.Web.Configurations
 {
@@ -48,11 +50,12 @@ namespace SetMeta.Web.Configurations
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                //Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifestyleTransient(),
+                Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifestyleTransient(),
+                Component.For<IFormsAuthenticationService>().ImplementedBy<FormsAuthenticationService>().LifestylePerWebRequest(),
+                Component.For<IUserService>().ImplementedBy<UserService>().LifestylePerWebRequest(),
+                Component.For<IReportService>().ImplementedBy<ReportService>().LifestylePerWebRequest(),
 
-                //Component.For<IFormsAuthenticationService>().ImplementedBy<FormsAuthenticationService>().LifestylePerWebRequest(),
-
-                //Component.For<IUserService>().ImplementedBy<UserService>().LifestylePerWebRequest(),
+                Component.For<IDayService>().ImplementedBy<DayService>().LifestylePerWebRequest()
                 );
         }
     }
