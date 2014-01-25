@@ -121,7 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Models\" />
+    <Folder Include="_Domain\Entities\" />
+    <Folder Include="_Domain\Repositories\" />
+    <Folder Include="_Domain\Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
