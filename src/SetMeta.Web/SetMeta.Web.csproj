@@ -111,6 +111,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,12 +119,11 @@
     <Compile Include="_Configurations\FilterConfig.cs" />
     <Compile Include="_Configurations\IocConfig.cs" />
     <Compile Include="_Configurations\RouteConfig.cs" />
+    <Compile Include="_Domain\Entities\BaseMeta.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
-    <Folder Include="_Domain\Entities\" />
     <Folder Include="_Domain\Repositories\" />
     <Folder Include="_Domain\Services\" />
   </ItemGroup>
