@@ -159,6 +159,8 @@
     <Compile Include="_Configurations\FilterConfig.cs" />
     <Compile Include="_Configurations\IocConfig.cs" />
     <Compile Include="_Configurations\RouteConfig.cs" />
+    <Compile Include="_Domain\Entities\BaseMeta.cs" />
+    <Compile Include="_Domain\Entities\Country.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
