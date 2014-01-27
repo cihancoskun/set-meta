@@ -133,6 +133,7 @@
     <Compile Include="Domain\Entities\Day.cs" />
     <Compile Include="Domain\Entities\Month.cs" />
     <Compile Include="Domain\Entities\PagedList.cs" />
+    <Compile Include="Domain\Entities\PaymentType.cs" />
     <Compile Include="Domain\Entities\SetLocaleRole.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Entities\VehicleType.cs" />

@@ -135,6 +135,23 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Payment Type
+
+            AddPaymentType(context, "Credit Card", "credit_card");
+            AddPaymentType(context, "Cash", "cash");
+
+            #endregion
+
+        }
+
+        private void AddPaymentType(SetMetaDbContext context, string name, string key)
+        {
+            var paymentType = new PaymentType
+            {
+                Code = key,
+                Name = name
+            };
+            context.PaymentTypes.Add(paymentType);
         }
 
         private void AddCarBrand(SetMetaDbContext context, string name, string key, string url)
