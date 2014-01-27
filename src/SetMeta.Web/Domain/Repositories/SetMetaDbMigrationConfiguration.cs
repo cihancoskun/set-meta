@@ -90,7 +90,6 @@ namespace SetMeta.Web.Domain.Repositories
             AddJobTitles(context, "Administrator", "administrator");
             #endregion
 
-
             #region Sectors
 
             AddSectors(context, "Fuel Oil", "fuel_oil");
@@ -125,7 +124,6 @@ namespace SetMeta.Web.Domain.Repositories
             AddSectors(context, "Structure", "structure");
             #endregion
 
-
             #region Departments
 
             AddDepartments(context, "General", "general");
@@ -151,6 +149,20 @@ namespace SetMeta.Web.Domain.Repositories
             AddDepartments(context, "Human Resources", "human_resources");
 
             #endregion
+
+            #region Continents
+
+            AddContinents(context, "Asia", "asia");
+            AddContinents(context, "Africa", "africa");
+            AddContinents(context, "Antarctica", "antarctica");
+            AddContinents(context, "North America", "north_america");
+            AddContinents(context, "Europe", "europe");
+            AddContinents(context, "Oceania", "oceania");
+            AddContinents(context, "South America", "south_america");
+
+            #endregion
+
+
 
 
 
@@ -196,6 +208,16 @@ namespace SetMeta.Web.Domain.Repositories
                 Name = name,
             };
             context.Departments.Add(department);
+        }
+
+        private void AddContinents(SetMetaDbContext context, string name, string key)
+        {
+            var continent = new Continent
+            {
+                Code = key,
+                Name = name
+            };
+            context.Continents.Add(continent);
         }
 
 

@@ -22,6 +22,6 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<JobTitle> JobTites { get; set; }
         public DbSet<Sector> Sectors { get; set; }
         public DbSet<Department> Departments { get; set; }
-
+        public DbSet<Continent> Continents { get; set; }
     }
 }
