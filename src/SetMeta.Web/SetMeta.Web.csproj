@@ -130,6 +130,7 @@
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\BaseMeta.cs" />
     <Compile Include="Domain\Entities\Day.cs" />
+    <Compile Include="Domain\Entities\Department.cs" />
     <Compile Include="Domain\Entities\JobTitle.cs" />
     <Compile Include="Domain\Entities\Month.cs" />
     <Compile Include="Domain\Entities\PagedList.cs" />

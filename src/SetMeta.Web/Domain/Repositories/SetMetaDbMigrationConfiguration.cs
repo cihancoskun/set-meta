@@ -126,6 +126,33 @@ namespace SetMeta.Web.Domain.Repositories
             #endregion
 
 
+            #region Departments
+
+            AddDepartments(context, "General", "general");
+            AddDepartments(context, "Management", "management");
+            AddDepartments(context, "Technical Service", "technical_service");
+            AddDepartments(context, "Accounting", "accounting");
+            AddDepartments(context, "Software", "software");
+            AddDepartments(context, "Hardware", "hardware");
+            AddDepartments(context, "Logo Support", "logo_support");
+            AddDepartments(context, "Consultant", "consultant");
+            AddDepartments(context, "Sale", "sale");
+            AddDepartments(context, "Purchase", "purchase");
+            AddDepartments(context, "Information Technology", "information_technology");
+            AddDepartments(context, "Personnel Directorate", "personnel_directorate");
+            AddDepartments(context, "Account Executive", "account_executive");
+            AddDepartments(context, "Organization Management", "organization_management");
+            AddDepartments(context, "Shipment", "shipment");
+            AddDepartments(context, "Customer Services", "customer_services");
+            AddDepartments(context, "Insurance", "insurance");
+            AddDepartments(context, "Chancellery", "chancellery");
+            AddDepartments(context, "Marketing", "marketing");
+            AddDepartments(context, "Transportation", "transportation");
+            AddDepartments(context, "Human Resources", "human_resources");
+
+            #endregion
+
+
 
         }
 
@@ -160,6 +187,17 @@ namespace SetMeta.Web.Domain.Repositories
             };
             context.Sectors.Add(sector);
         }
+
+        private void AddDepartments(SetMetaDbContext context, string name, string key)
+        {
+            var department = new Department
+            {
+                Code = key,
+                Name = name,
+            };
+            context.Departments.Add(department);
+        }
+
 
         private static void AddAdmin(SetMetaDbContext context, string name, string email)
         {
