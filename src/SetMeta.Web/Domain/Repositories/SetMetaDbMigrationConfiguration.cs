@@ -33,7 +33,36 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Months
+
+            AddMonths(context, "January", "january", "1");
+            AddMonths(context, "February", "february", "2");
+            AddMonths(context, "March", "march", "3");
+            AddMonths(context, "April", "april", "4");
+            AddMonths(context, "May", "may", "5");
+            AddMonths(context, "June", "june", "6");
+            AddMonths(context, "July", "july", "7");
+            AddMonths(context, "August", "august", "8");
+            AddMonths(context, "September", "september", "9");
+            AddMonths(context, "October", "october", "10");
+            AddMonths(context, "November", "november", "11");
+            AddMonths(context, "December", "december", "12");
+
+            #endregion
+
         }
+
+        private void AddMonths(SetMetaDbContext context, string name, string key, string value)
+        {
+            var month = new Month
+            {
+                Code = key,
+                Name = name,
+                Value = value
+            };
+            context.Months.Add(month);
+        }
+
         private static void AddAdmin(SetMetaDbContext context, string name, string email)
         {
             var user = new User
