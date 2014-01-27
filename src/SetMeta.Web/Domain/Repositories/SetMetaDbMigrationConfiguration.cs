@@ -50,6 +50,34 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Horoscopes
+
+            AddHoroscopes(context, "Aquarius", "aquarius", "Aquarius");
+            AddHoroscopes(context, "Aries", "aries", "Aries");
+            AddHoroscopes(context, "Cancer", "cancer", "Cancer");
+            AddHoroscopes(context, "Capricorn", "capricorn", "Capricorn");
+            AddHoroscopes(context, "Gemini", "gemini", "Gemini");
+            AddHoroscopes(context, "Leo", "leo", "Leo");
+            AddHoroscopes(context, "Libra", "libra", "Libra");
+            AddHoroscopes(context, "Pisces", "pisces", "Pisces");
+            AddHoroscopes(context, "Sagittarius", "sagittarius", "Sagittarius");
+            AddHoroscopes(context, "Scorpio", "scorpio", "Scorpio");
+            AddHoroscopes(context, "Taurus", "taurus", "Taurus");
+            AddHoroscopes(context, "Virgo", "virgo", "Virgo");
+             
+            #endregion
+
+        }
+
+        private void AddHoroscopes(SetMetaDbContext context, string name, string key, string value)
+        {
+            var horoscope = new Horoscope
+            {
+                Code = key,
+                Name = name,
+                Value = value
+            };
+            context.Horoscopes.Add(horoscope);
         }
 
         private void AddMonths(SetMetaDbContext context, string name, string key, string value)
