@@ -112,7 +112,7 @@ namespace SetMeta.Web.Domain.Repositories
             AddSectors(context, "Chemistry", "chemistry");
             AddSectors(context, "Jeweler", "jeweler");
             AddSectors(context, "Machine", "machine");
-            AddSectors(context, "metal", "metal");
+            AddSectors(context, "Metal", "metal");
             AddSectors(context, "Transportation", "transportation");
             AddSectors(context, "Chambers", "chamber");
             AddSectors(context, "Automotive", "automotive");
