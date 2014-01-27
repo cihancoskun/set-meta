@@ -53,12 +53,14 @@ namespace SetMeta.Web.Domain.Repositories
             #region Vehicle Types
 
             AddVehicleType(context, "Automobile", "automobile", "1");
-            AddVehicleType(context, "SUVs & Pick-Up Trucks", "SUVs & Pick-Up Trucks", "2");
+            AddVehicleType(context, "SUVs & Pick-Up Trucks", "suvs_pick_up_trucks", "2");
             AddVehicleType(context, "Motorcyles", "motorcycles", "3");
-            AddVehicleType(context, "Minivans, Vans & Panelvans", "minivans, vans & panelvans", "4");
+            AddVehicleType(context, "Minivans, Vans & Panelvans", "minivans_vans_panelvans", "4");
             AddVehicleType(context, "ATV", "atv", "5");
             AddVehicleType(context, "UTV", "utv", "6");
-            AddVehicleType(context, "Electric Vehicles", "electric vehicles", "7");
+            AddVehicleType(context, "Electric Vehicles", "electric_vehicles", "7");
+            AddVehicleType(context, "RVs & Campers", "rvs_campers", "8");
+            
 
             #endregion
 
