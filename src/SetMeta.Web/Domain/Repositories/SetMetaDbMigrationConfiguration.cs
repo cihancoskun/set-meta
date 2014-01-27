@@ -51,7 +51,7 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
-            #region Job Titles
+            #region JobTitles
 
             AddJobTitles(context, "General Manager", "general_manager");
             AddJobTitles(context, "Software Developer", "software_developer");
@@ -90,6 +90,43 @@ namespace SetMeta.Web.Domain.Repositories
             AddJobTitles(context, "Administrator", "administrator");
             #endregion
 
+
+            #region Sectors
+
+            AddSectors(context, "Fuel Oil", "fuel_oil");
+            AddSectors(context, "Packing", "Packing");
+            AddSectors(context, "Banking", "banking");
+            AddSectors(context, "Informatics", "informatics");
+            AddSectors(context, "Cement", "cement");
+            AddSectors(context, "Iron And Steel", "iron_and_steel");
+            AddSectors(context, "Pharmacy", "pharmacy");
+            AddSectors(context, "Electronics", "electronics");
+            AddSectors(context, "Electricity", "electricity");
+            AddSectors(context, "Food", "food");
+            AddSectors(context, "General", "general");
+            AddSectors(context, "Customs", "customs");
+            AddSectors(context, "Service", "service");
+            AddSectors(context, "Medicine", "medicine");
+            AddSectors(context, "Construction", "construction");
+            AddSectors(context, "Importation", "importation");
+            AddSectors(context, "Chemistry", "chemistry");
+            AddSectors(context, "Jeweler", "jeweler");
+            AddSectors(context, "Machine", "machine");
+            AddSectors(context, "metal", "metal");
+            AddSectors(context, "Transportation", "transportation");
+            AddSectors(context, "Chambers", "chamber");
+            AddSectors(context, "Automotive", "automotive");
+            AddSectors(context, "Plastic", "plastic");
+            AddSectors(context, "Health", "health");
+            AddSectors(context, "Insurance", "insurance");
+            AddSectors(context, "Indepentet Accountent", "indepentet_accountent");
+            AddSectors(context, "Tourism", "tourism");
+            AddSectors(context, "Shipping", "shipping");
+            AddSectors(context, "Structure", "structure");
+            #endregion
+
+
+
         }
 
         private void AddMonths(SetMetaDbContext context, string name, string key, string value)
@@ -111,6 +148,17 @@ namespace SetMeta.Web.Domain.Repositories
                 Name = name,
             };
             context.JobTites.Add(jobTitle);
+        }
+
+
+        private void AddSectors(SetMetaDbContext context, string name, string key)
+        {
+            var sector = new Sector
+            {
+                Code = key,
+                Name = name,
+            };
+            context.Sectors.Add(sector);
         }
 
         private static void AddAdmin(SetMetaDbContext context, string name, string email)
