@@ -20,5 +20,6 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<Month> Months { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<VehicleType> VehicleTypes { get; set; }
+        public DbSet<CarBrand> CarBrands { get; set; }
     }
 }
