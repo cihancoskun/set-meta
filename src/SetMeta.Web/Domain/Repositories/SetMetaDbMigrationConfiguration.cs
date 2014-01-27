@@ -315,6 +315,61 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Timezones
+
+            AddTimezone(context, "UTC−12:00", "utc_minus_twelve");
+            AddTimezone(context, "UTC−11:00", "utc_minus_eleven");
+            AddTimezone(context, "UTC−10:00", "utc_minus_ten");
+            AddTimezone(context, "UTC−09:30", "utc_minus_half_past_nine");
+            AddTimezone(context, "UTC−09:00", "utc_minus_nine");
+            AddTimezone(context, "UTC−08:00", "utc_minus_eight");
+            AddTimezone(context, "UTC−07:00", "utc_minus_seven");
+            AddTimezone(context, "UTC−06:00", "utc_minus_six");
+            AddTimezone(context, "UTC−05:00", "utc_minus_five");
+            AddTimezone(context, "UTC−04:30", "utc_minus_half_past_four");
+            AddTimezone(context, "UTC−04:00", "utc_minus_four");
+            AddTimezone(context, "UTC−03:30", "utc_minus_half_past_three");
+            AddTimezone(context, "UTC−03:00", "utc_minus_three");
+            AddTimezone(context, "UTC−02:00", "utc_minus_two");
+            AddTimezone(context, "UTC−01:00", "utc_minus_one");
+            AddTimezone(context, "UTC±00:00", "utc_zero");
+            AddTimezone(context, "UTC+01:00", "utc_plus_one");
+            AddTimezone(context, "UTC+02:00", "utc_plus_two");
+            AddTimezone(context, "UTC+03:00", "utc_plus_three");
+            AddTimezone(context, "UTC+03:30", "utc_plus_half_past_three");
+            AddTimezone(context, "UTC+04:00", "utc_plus_four");
+            AddTimezone(context, "UTC+04:30", "utc_plus_half_past_four");
+            AddTimezone(context, "UTC+05:00", "utc_plus_five");
+            AddTimezone(context, "UTC+05:30", "utc_plus_half_past_five");
+            AddTimezone(context, "UTC+05:45", "utc_plus_a_quarter_to_five");
+            AddTimezone(context, "UTC+06:00", "utc_plus_six");
+            AddTimezone(context, "UTC+06:30", "utc_plus_half_past_six");
+            AddTimezone(context, "UTC+07:00", "utc_plus_seven");
+            AddTimezone(context, "UTC+08:00", "utc_plus_eight");
+            AddTimezone(context, "UTC+08:45", "utc_plus_a_quarter_to_nine");
+            AddTimezone(context, "UTC+09:00", "utc_plus_nine");
+            AddTimezone(context, "UTC+09:30", "utc_plus_half_past_nine");
+            AddTimezone(context, "UTC+10:00", "utc_plus_ten");
+            AddTimezone(context, "UTC+10:30", "utc_plus_half_past_ten");
+            AddTimezone(context, "UTC+11:00", "utc_plus_eleven");
+            AddTimezone(context, "UTC+11:30", "utc_plus_half_past_eleven");
+            AddTimezone(context, "UTC+12:00", "utc_plus_twelve");
+            AddTimezone(context, "UTC+12:45", "utc_plus_a_quarter_to_thirteen");
+            AddTimezone(context, "UTC+13:00", "utc_plus_thirteen");
+            AddTimezone(context, "UTC+14:00", "utc_plus_fourteen");
+
+            #endregion
+
+        }
+
+        private void AddTimezone(SetMetaDbContext context, string name, string key)
+        {
+            var timezone = new Timezone
+            {
+                Code = key,
+                Name = name
+            };
+            context.Timezones.Add(timezone);
         }
 
         private void AddCurrency(SetMetaDbContext context, string name, string key)
