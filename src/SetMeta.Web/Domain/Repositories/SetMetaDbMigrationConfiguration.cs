@@ -142,6 +142,189 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Currency
+
+            AddCurrency(context, "Afghan Afghani", "AFN");
+            AddCurrency(context, "Albanian Lek", "ALL");
+            AddCurrency(context, "Armenian Dram", "AMD");
+            AddCurrency(context, "Dutch Guilder", "ANG");
+            AddCurrency(context, "Angolan Kwanza", "AOA");
+            AddCurrency(context, "Argentine Peso", "ARS");
+            AddCurrency(context, "Australian Dollar", "AUD");
+            AddCurrency(context, "Aruban or Dutch Guilder", "AWG");
+            AddCurrency(context, "Azerbaijani New Manat", "AZN");
+            AddCurrency(context, "Bosnian Convertible Marka", "BAM");
+            AddCurrency(context, "Barbadian or Bajan Dollar", "BBD");
+            AddCurrency(context, "Bangladeshi Taka", "BDT");
+            AddCurrency(context, "Bulgarian Lev", "BGN");
+            AddCurrency(context, "Bahraini Dinar", "BHD");
+            AddCurrency(context, "Burundian Franc", "BIF");
+            AddCurrency(context, "Bermudian Dollar", "BMD");
+            AddCurrency(context, "Bruneian Dollar", "BND");
+            AddCurrency(context, "Bolivian Boliviano", "BOB");
+            AddCurrency(context, "Brazilian Real", "BRL");
+            AddCurrency(context, "Bahamian Dollar", "BSD");
+            AddCurrency(context, "Bhutanese Ngultrum", "BTN");
+            AddCurrency(context, "Botswana Pula", "BWP");
+            AddCurrency(context, "Belarusian Ruble", "BYR");
+            AddCurrency(context, "Belizean Dollar", "BZD");
+            AddCurrency(context, "Canadian Dollar", "CAD");
+            AddCurrency(context, "Congolese Franc", "CDF");
+            AddCurrency(context, "Swiss Franc", "CHF");
+            AddCurrency(context, "Chilean Peso", "CLP");
+            AddCurrency(context, "Chinese Yuan Renminbi", "CNY");
+            AddCurrency(context, "Colombian Peso", "COP");
+            AddCurrency(context, "Costa Rican Colon", "CRC");
+            AddCurrency(context, "Cuban Convertible Peso", "CUC");
+            AddCurrency(context, "Cuban Peso", "CUP");
+            AddCurrency(context, "Cape Verdean Escudo", "CVE");
+            AddCurrency(context, "Czech Koruna", "CZK");
+            AddCurrency(context, "Djiboutian Franc", "DJF");
+            AddCurrency(context, "Danish Krone", "DKK");
+            AddCurrency(context, "Dominican Peso", "DOP");
+            AddCurrency(context, "Algerian Dinar", "DZD");
+            AddCurrency(context, "Egyptian Pound", "EGP");
+            AddCurrency(context, "Eritrean Nakfa", "ERN");
+            AddCurrency(context, "Ethiopian Birr", "ETB");
+            AddCurrency(context, "Euro", "EUR ");
+            AddCurrency(context, "Fijian Dollar", "FJD");
+            AddCurrency(context, "Falkland Island Pound", "FKP");
+            AddCurrency(context, "British Pound", "GBP");
+            AddCurrency(context, "Georgian Lari", "GEL");
+            AddCurrency(context, "Guernsey Pound", "GGP");
+            AddCurrency(context, "Ghanaian Cedi", "GHS");
+            AddCurrency(context, "Gibraltar Pound", "GIP");
+            AddCurrency(context, "Gambian Dalasi", "GMD");
+            AddCurrency(context, "Guinean Franc", "GNF");
+            AddCurrency(context, "Guatemalan Quetzal", "GTQ");
+            AddCurrency(context, "Guyanese Dollar", "GYD");
+            AddCurrency(context, "Hong Kong Dollar", "HKD");
+            AddCurrency(context, "Honduran Lempira", "HNL");
+            AddCurrency(context, "Croatian Kuna", "HRK");
+            AddCurrency(context, "Haitian Gourde", "HTG");
+            AddCurrency(context, "Hungarian Forint", "HUF");
+            AddCurrency(context, "Indonesian Rupiah", "IDR");
+            AddCurrency(context, "Israeli Shekel", "ILS");
+            AddCurrency(context, "Isle of Man Pound", "IMP");
+            AddCurrency(context, "Indian Rupee", "INR");
+            AddCurrency(context, "Iraqi Dinar", "IQD");
+            AddCurrency(context, "Iranian Rial", "IRR");
+            AddCurrency(context, "Icelandic Krona", "ISK");
+            AddCurrency(context, "Jersey Pound", "JEP");
+            AddCurrency(context, "Jamaican Dollar", "JMD");
+            AddCurrency(context, "Jordanian Dinar", "JOD");
+            AddCurrency(context, "Japanese Yen", "JPY");
+            AddCurrency(context, "Kenyan Shilling", "KES");
+            AddCurrency(context, "Kyrgyzstani Som", "KGS");
+            AddCurrency(context, "Cambodian Riel", "KHR");
+            AddCurrency(context, "Comoran Franc", "KMF");
+            AddCurrency(context, "North Korean Won", "KPW");
+            AddCurrency(context, "South Korean Won", "KRW");
+            AddCurrency(context, "Kuwaiti Dinar", "KWD");
+            AddCurrency(context, "Caymanian Dollar", "KYD");
+            AddCurrency(context, "Kazakhstani Tenge", "KZT");
+            AddCurrency(context, "Lao or Laotian Kip", "LAK");
+            AddCurrency(context, "Lebanese Pound", "LBP");
+            AddCurrency(context, "Sri Lankan Rupee", "LKR");
+            AddCurrency(context, "Liberian Dollar", "LRD");
+            AddCurrency(context, "Basotho Loti", "LSL");
+            AddCurrency(context, "Lithuanian Litas", "LTL");
+            AddCurrency(context, "Latvian Lat", "LVL");
+            AddCurrency(context, "Libyan Dinar", "LYD");
+            AddCurrency(context, "Moroccan Dirham", "MAD");
+            AddCurrency(context, "Moldovan Leu", "MDL");
+            AddCurrency(context, "Malagasy Ariary", "MGA");
+            AddCurrency(context, "Macedonian Denar", "MKD");
+            AddCurrency(context, "Burmese Kyat", "MMK");
+            AddCurrency(context, "Mongolian Tughrik", "MNT");
+            AddCurrency(context, "Macau Pataca", "MOP");
+            AddCurrency(context, "Mauritanian Ouguiya", "MRO");
+            AddCurrency(context, "Mauritian Rupee", "MUR");
+            AddCurrency(context, "Maldivian Rufiyaa", "MVR");
+            AddCurrency(context, "Malawian Kwacha", "MWK");
+            AddCurrency(context, "Mexican Peso", "MXN");
+            AddCurrency(context, "Malaysian Ringgit", "MYR");
+            AddCurrency(context, "Mozambican Metical", "MZN");
+            AddCurrency(context, "Namibian Dollar", "NAD");
+            AddCurrency(context, "Nigerian Naira", "NGN");
+            AddCurrency(context, "Nicaraguan Cordoba", "NIO");
+            AddCurrency(context, "Norwegian Krone", "NOK");
+            AddCurrency(context, "Nepalese Rupee", "NPR");
+            AddCurrency(context, "New Zealand Dollar", "NZD");
+            AddCurrency(context, "Omani Rial", "OMR");
+            AddCurrency(context, "Panamanian Balboa", "PAB");
+            AddCurrency(context, "Peruvian Nuevo Sol", "PEN");
+            AddCurrency(context, "Papua New Guinean Kina", "PGK");
+            AddCurrency(context, "Philippine Peso", "PHP");
+            AddCurrency(context, "Pakistani Rupee", "PKR");
+            AddCurrency(context, "Polish Zloty", "PLN");
+            AddCurrency(context, "Paraguayan Guarani", "PYG");
+            AddCurrency(context, "Qatari Riyal", "QAR");
+            AddCurrency(context, "Romanian New Leu", "RON");
+            AddCurrency(context, "Serbian Dinar", "RSD");
+            AddCurrency(context, "Russian Ruble", "RUB");
+            AddCurrency(context, "Rwandan Franc", "RWF");
+            AddCurrency(context, "Saudi Arabian Riyal", "SAR");
+            AddCurrency(context, "Solomon Islander Dollar", "SBD");
+            AddCurrency(context, "Seychellois Rupee", "SCR");
+            AddCurrency(context, "Sudanese Pound", "SDG");
+            AddCurrency(context, "Swedish Krona", "SEK");
+            AddCurrency(context, "Singapore Dollar", "SGD");
+            AddCurrency(context, "Saint Helenian Pound", "SHP");
+            AddCurrency(context, "Sierra Leonean Leone", "SLL");
+            AddCurrency(context, "Somali Shilling", "SOS");
+            AddCurrency(context, "Seborgan Luigino", "SPL");
+            AddCurrency(context, "Surinamese Dollar", "SRD");
+            AddCurrency(context, "Sao Tomean Dobra", "STD");
+            AddCurrency(context, "Salvadoran Colon", "SVC");
+            AddCurrency(context, "Syrian Pound", "SYP");
+            AddCurrency(context, "Swazi Lilangeni", "SZL");
+            AddCurrency(context, "Thai Baht", "THB");
+            AddCurrency(context, "Tajikistani Somoni", "TJS");
+            AddCurrency(context, "Turkmenistani Manat", "TMT");
+            AddCurrency(context, "Tunisian Dinar", "TND");
+            AddCurrency(context, "Tongan Pa'anga", "TOP");
+            AddCurrency(context, "Turkish Lira", "TRY");
+            AddCurrency(context, "Trinidadian Dollar", "TTD");
+            AddCurrency(context, "Tuvaluan Dollar", "TVD");
+            AddCurrency(context, "Taiwan New Dollar", "TWD");
+            AddCurrency(context, "Tanzanian Shilling", "TZS");
+            AddCurrency(context, "Ukrainian Hryvna", "UAH");
+            AddCurrency(context, "Ugandan Shilling", "UGX");
+            AddCurrency(context, "US Dollar", "USD");
+            AddCurrency(context, "Uruguayan Peso", "UYU");
+            AddCurrency(context, "Uzbekistani Som", "UZS");
+            AddCurrency(context, "Venezuelan Bolivar", "VEF");
+            AddCurrency(context, "Vietnamese Dong", "VND");
+            AddCurrency(context, "Ni-Vanuatu Vatu", "VUV");
+            AddCurrency(context, "Samoan Tala", "WST");
+            AddCurrency(context, "Central African CFA Franc BEAC", "XAF");
+            AddCurrency(context, "Silver Ounce", "XAG");
+            AddCurrency(context, "Gold Ounce", "XAU");
+            AddCurrency(context, "Bitcoin", "XBT");
+            AddCurrency(context, "East Caribbean Dollar", "XCD");
+            AddCurrency(context, "IMF Special Drawing Rights", "XDR");
+            AddCurrency(context, "CFA Franc", "XOF");
+            AddCurrency(context, "Palladium Ounce", "XPD");
+            AddCurrency(context, "CFP Franc", "XPF");
+            AddCurrency(context, "Platinum Ounce", "XPT");
+            AddCurrency(context, "Yemeni Rial", "YER");
+            AddCurrency(context, "South African Rand", "ZAR");
+            AddCurrency(context, "Zambian Kwacha", "ZMW");
+            AddCurrency(context, "Zimbabwean Dollar", "ZWD ");
+
+            #endregion
+
+        }
+
+        private void AddCurrency(SetMetaDbContext context, string name, string key)
+        {
+            var currency = new Currency
+            {
+                Code = key,
+                Name = name
+            };
+            context.Currencies.Add(currency);
         }
 
         private void AddPaymentType(SetMetaDbContext context, string name, string key)

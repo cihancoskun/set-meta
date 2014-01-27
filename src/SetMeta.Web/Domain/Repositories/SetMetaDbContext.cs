@@ -22,6 +22,7 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<VehicleType> VehicleTypes { get; set; }
         public DbSet<CarBrand> CarBrands { get; set; }
         public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
 
     }
 }
