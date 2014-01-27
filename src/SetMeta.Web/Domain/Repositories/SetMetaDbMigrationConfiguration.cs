@@ -50,6 +50,29 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Vehicle Types
+
+            AddVehicleType(context, "Automobile", "automobile", "1");
+            AddVehicleType(context, "SUVs & Pick-Up Trucks", "SUVs & Pick-Up Trucks", "2");
+            AddVehicleType(context, "Motorcyles", "motorcycles", "3");
+            AddVehicleType(context, "Minivans, Vans & Panelvans", "minivans, vans & panelvans", "4");
+            AddVehicleType(context, "ATV", "atv", "5");
+            AddVehicleType(context, "UTV", "utv", "6");
+            AddVehicleType(context, "Electric Vehicles", "electric vehicles", "7");
+
+            #endregion
+
+        }
+
+        private static void AddVehicleType(SetMetaDbContext context, string name, string key, string value)
+        {
+            var vehicleType = new VehicleType
+            {
+                Code = key,
+                Name = name,
+                Value = value
+            };
+            context.VehicleTypes.Add(vehicleType);
         }
 
         private void AddMonths(SetMetaDbContext context, string name, string key, string value)

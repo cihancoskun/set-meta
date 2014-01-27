@@ -134,6 +134,7 @@
     <Compile Include="Domain\Entities\PagedList.cs" />
     <Compile Include="Domain\Entities\SetLocaleRole.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Domain\Entities\VehicleType.cs" />
     <Compile Include="Domain\Repositories\IRepositories.cs" />
     <Compile Include="Domain\Repositories\Repositories.cs" />
     <Compile Include="Domain\Repositories\SetMetaDbContext.cs" />
