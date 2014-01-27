@@ -360,6 +360,25 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Quarters
+
+            AddQuarter(context, "First Quarter", "first_quarter");
+            AddQuarter(context, "Second Quarter", "second_quarter");
+            AddQuarter(context, "Third Quarter", "third_quarter");
+            AddQuarter(context, "Fourth Quarter", "fourth_quarter");
+
+            #endregion
+
+        }
+
+        private void AddQuarter(SetMetaDbContext context, string name, string key)
+        {
+            var quarter = new Quarter
+            {
+                Code = key,
+                Name = name
+            };
+            context.Quarters.Add(quarter);
         }
 
         private void AddTimezone(SetMetaDbContext context, string name, string key)

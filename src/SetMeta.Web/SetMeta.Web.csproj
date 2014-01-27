@@ -135,6 +135,7 @@
     <Compile Include="Domain\Entities\Month.cs" />
     <Compile Include="Domain\Entities\PagedList.cs" />
     <Compile Include="Domain\Entities\PaymentType.cs" />
+    <Compile Include="Domain\Entities\Quarter.cs" />
     <Compile Include="Domain\Entities\SetLocaleRole.cs" />
     <Compile Include="Domain\Entities\Timezone.cs" />
     <Compile Include="Domain\Entities\User.cs" />
