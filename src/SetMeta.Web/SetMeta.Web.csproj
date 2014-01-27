@@ -101,6 +101,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Public\img\horoscope\aquarius.jpg" />
+    <Content Include="Public\img\horoscope\aries.jpg" />
+    <Content Include="Public\img\horoscope\cancer.jpg" />
+    <Content Include="Public\img\horoscope\capricorn.jpg" />
+    <Content Include="Public\img\horoscope\gemini.jpg" />
+    <Content Include="Public\img\horoscope\leo.jpg" />
+    <Content Include="Public\img\horoscope\libra.jpg" />
+    <Content Include="Public\img\horoscope\pisces.jpg" />
+    <Content Include="Public\img\horoscope\sagittarius.jpg" />
+    <Content Include="Public\img\horoscope\scorpio.jpg" />
+    <Content Include="Public\img\horoscope\taurus.jpg" />
+    <Content Include="Public\img\horoscope\virgo.jpg" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Day\All.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
