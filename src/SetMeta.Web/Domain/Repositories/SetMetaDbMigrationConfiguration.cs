@@ -378,6 +378,26 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Banks Of World (Eklenicek)
+
+
+            #endregion
+
+        }
+        private void AddBank(SetMetaDbContext context, string name, string key, string tel, string fax, string url, string teleks, string eft, string swift)
+        {
+            var bank = new Bank
+            {
+                Code = key,
+                Name = name,
+                Tel = tel,
+                Fax = fax,
+                Url = url,
+                Teleks = teleks,
+                Eft = eft,
+                Swift = swift
+            };
+            context.Banks.Add(bank);
         }
 
         private void AddCreditCard(SetMetaDbContext context, string name, string key)

@@ -127,6 +127,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain\Entities\Bank.cs" />
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\BaseMeta.cs" />
     <Compile Include="Domain\Entities\CarBrand.cs" />
