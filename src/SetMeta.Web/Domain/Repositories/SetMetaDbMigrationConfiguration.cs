@@ -369,6 +369,25 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region Credit Card
+
+            AddCreditCard(context, "American Express", "american_express");
+            AddCreditCard(context, "Diners Club", "diners_club");
+            AddCreditCard(context, "MasterCard", "master_card");
+            AddCreditCard(context, "Visa", "visa");
+
+            #endregion
+
+        }
+
+        private void AddCreditCard(SetMetaDbContext context, string name, string key)
+        {
+            var creditCard = new CreditCard
+            {
+                Code = key,
+                Name = name
+            };
+            context.CreditCards.Add(creditCard);
         }
 
         private void AddQuarter(SetMetaDbContext context, string name, string key)

@@ -25,6 +25,7 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Timezone> Timezones { get; set; }
         public DbSet<Quarter> Quarters { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
 
     }
 }

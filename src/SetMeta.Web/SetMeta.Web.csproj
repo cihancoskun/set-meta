@@ -130,6 +130,7 @@
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\BaseMeta.cs" />
     <Compile Include="Domain\Entities\CarBrand.cs" />
+    <Compile Include="Domain\Entities\CreditCard.cs" />
     <Compile Include="Domain\Entities\Currency.cs" />
     <Compile Include="Domain\Entities\Day.cs" />
     <Compile Include="Domain\Entities\Month.cs" />
