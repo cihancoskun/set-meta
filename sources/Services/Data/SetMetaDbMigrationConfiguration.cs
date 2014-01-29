@@ -31,6 +31,8 @@ namespace SetMeta.Web.Services.Data
             AddAdmin(context, "Max Voloshin", "mx.voloshin@gmail.com");
 
             #endregion
+
+            
         }
 
         private static void AddAdmin(SetMetaDbContext context, string name, string email)
