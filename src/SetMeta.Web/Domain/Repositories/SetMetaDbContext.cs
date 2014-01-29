@@ -19,5 +19,9 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<Day> Days { get; set; }
         public DbSet<Month> Months { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<JobTitle> JobTites { get; set; }
+        public DbSet<Sector> Sectors { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Continent> Continents { get; set; }
     }
 }

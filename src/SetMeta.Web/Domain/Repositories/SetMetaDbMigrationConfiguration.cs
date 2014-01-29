@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Web.Mvc;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Domain.Entities;
 
@@ -50,6 +51,121 @@ namespace SetMeta.Web.Domain.Repositories
 
             #endregion
 
+            #region JobTitles
+
+            AddJobTitles(context, "General Manager", "general_manager");
+            AddJobTitles(context, "Software Developer", "software_developer");
+            AddJobTitles(context, "Logo Support", "logo_support");
+            AddJobTitles(context, "Department Chief", "department_chief");
+            AddJobTitles(context, "Secretary", "secretary");
+            AddJobTitles(context, "Administrative Manager", "administrative_manager");
+            AddJobTitles(context, "Service Manager", "service_manager");
+            AddJobTitles(context, "IT Manager", "it_manager");
+            AddJobTitles(context, "Technical Service", "technical_service");
+            AddJobTitles(context, "It Specialist", "it_specialist");
+            AddJobTitles(context, "Customer Representative", "customer_representative");
+            AddJobTitles(context, "Accounting Personnel", "accounting_personnel");
+            AddJobTitles(context, "Customer Services", "customer_services");
+            AddJobTitles(context, "Project Manager", "project_manager");
+            AddJobTitles(context, "Sales Representative", "sales_representative");
+            AddJobTitles(context, "Chief Executive Officer", "chief_executive_officer");
+            AddJobTitles(context, "Call Center Operator", "call_center_operator");
+            AddJobTitles(context, "Business Development Project Manager", "business_development_project_manager");
+            AddJobTitles(context, "Vice General Manager", "vice_general_manager");
+            AddJobTitles(context, "Purchasing Manager", "purchasing_manager");
+            AddJobTitles(context, "Manager", "manager");
+            AddJobTitles(context, "Assistant Manager", "assistant_manager");
+            AddJobTitles(context, "Quality Management Specialist", "quality_management_specialist");
+            AddJobTitles(context, "System Manager", "system_manager");
+            AddJobTitles(context, "Accounting Manager", "accounting_manager");
+            AddJobTitles(context, "Quality Assurance Manager", "quality_assurance_manager");
+            AddJobTitles(context, "IT Personnel", "it_personnel");
+            AddJobTitles(context, "Quality System manager", "quality_system_manager");
+            AddJobTitles(context, "General Secretary", "general_secretary");
+            AddJobTitles(context, "Vice President Corporate Affairs", "vice_president_corporate_affairs");
+            AddJobTitles(context, "President Corporate Affairs", "president_corporate_affairs");
+            AddJobTitles(context, "Rector", "rector");
+            AddJobTitles(context, "Coordinator", "coordinator");
+            AddJobTitles(context, "Operation Manager", "operation_manager");
+            AddJobTitles(context, "Administrator", "administrator");
+            #endregion
+
+            #region Sectors
+
+            AddSectors(context, "Fuel Oil", "fuel_oil");
+            AddSectors(context, "Packing", "Packing");
+            AddSectors(context, "Banking", "banking");
+            AddSectors(context, "Informatics", "informatics");
+            AddSectors(context, "Cement", "cement");
+            AddSectors(context, "Iron And Steel", "iron_and_steel");
+            AddSectors(context, "Pharmacy", "pharmacy");
+            AddSectors(context, "Electronics", "electronics");
+            AddSectors(context, "Electricity", "electricity");
+            AddSectors(context, "Food", "food");
+            AddSectors(context, "General", "general");
+            AddSectors(context, "Customs", "customs");
+            AddSectors(context, "Service", "service");
+            AddSectors(context, "Medicine", "medicine");
+            AddSectors(context, "Construction", "construction");
+            AddSectors(context, "Importation", "importation");
+            AddSectors(context, "Chemistry", "chemistry");
+            AddSectors(context, "Jeweler", "jeweler");
+            AddSectors(context, "Machine", "machine");
+            AddSectors(context, "Metal", "metal");
+            AddSectors(context, "Transportation", "transportation");
+            AddSectors(context, "Chambers", "chamber");
+            AddSectors(context, "Automotive", "automotive");
+            AddSectors(context, "Plastic", "plastic");
+            AddSectors(context, "Health", "health");
+            AddSectors(context, "Insurance", "insurance");
+            AddSectors(context, "Indepentet Accountent", "indepentet_accountent");
+            AddSectors(context, "Tourism", "tourism");
+            AddSectors(context, "Shipping", "shipping");
+            AddSectors(context, "Structure", "structure");
+            #endregion
+
+            #region Departments
+
+            AddDepartments(context, "General", "general");
+            AddDepartments(context, "Management", "management");
+            AddDepartments(context, "Technical Service", "technical_service");
+            AddDepartments(context, "Accounting", "accounting");
+            AddDepartments(context, "Software", "software");
+            AddDepartments(context, "Hardware", "hardware");
+            AddDepartments(context, "Logo Support", "logo_support");
+            AddDepartments(context, "Consultant", "consultant");
+            AddDepartments(context, "Sale", "sale");
+            AddDepartments(context, "Purchase", "purchase");
+            AddDepartments(context, "Information Technology", "information_technology");
+            AddDepartments(context, "Personnel Directorate", "personnel_directorate");
+            AddDepartments(context, "Account Executive", "account_executive");
+            AddDepartments(context, "Organization Management", "organization_management");
+            AddDepartments(context, "Shipment", "shipment");
+            AddDepartments(context, "Customer Services", "customer_services");
+            AddDepartments(context, "Insurance", "insurance");
+            AddDepartments(context, "Chancellery", "chancellery");
+            AddDepartments(context, "Marketing", "marketing");
+            AddDepartments(context, "Transportation", "transportation");
+            AddDepartments(context, "Human Resources", "human_resources");
+
+            #endregion
+
+            #region Continents
+
+            AddContinents(context, "Asia", "asia");
+            AddContinents(context, "Africa", "africa");
+            AddContinents(context, "Antarctica", "antarctica");
+            AddContinents(context, "North America", "north_america");
+            AddContinents(context, "Europe", "europe");
+            AddContinents(context, "Oceania", "oceania");
+            AddContinents(context, "South America", "south_america");
+
+            #endregion
+
+
+
+
+
         }
 
         private void AddMonths(SetMetaDbContext context, string name, string key, string value)
@@ -62,6 +178,48 @@ namespace SetMeta.Web.Domain.Repositories
             };
             context.Months.Add(month);
         }
+
+        private void AddJobTitles(SetMetaDbContext context, string name, string key)
+        {
+            var jobTitle = new JobTitle
+            {
+                Code = key,
+                Name = name,
+            };
+            context.JobTites.Add(jobTitle);
+        }
+
+
+        private void AddSectors(SetMetaDbContext context, string name, string key)
+        {
+            var sector = new Sector
+            {
+                Code = key,
+                Name = name,
+            };
+            context.Sectors.Add(sector);
+        }
+
+        private void AddDepartments(SetMetaDbContext context, string name, string key)
+        {
+            var department = new Department
+            {
+                Code = key,
+                Name = name,
+            };
+            context.Departments.Add(department);
+        }
+
+        private void AddContinents(SetMetaDbContext context, string name, string key)
+        {
+            var continent = new Continent
+            {
+                Code = key,
+                Name = name
+            };
+            context.Continents.Add(continent);
+        }
+
 
         private static void AddAdmin(SetMetaDbContext context, string name, string email)
         {
