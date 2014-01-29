@@ -12,7 +12,7 @@ namespace SetMeta.Web.Services
 {
     public interface IAppService
     {
-        Task<long?> CreateApp(AppViewModel model);
+        Task<bool> CreateApp(AppViewModel model);
 
         Task<PagedList<App>> GetApps(int pageNumber);
         Task<PagedList<App>> GetByUserId(long userId, int pageNumber);
@@ -32,16 +32,17 @@ namespace SetMeta.Web.Services
 
     public class AppService : BaseService, IAppService
     {
-        public async Task<long?> CreateApp(AppViewModel model)
+        public async Task<bool> CreateApp(AppViewModel model)
         {
-            if (!model.IsValid()) return null;
+            if (!model.IsValid()) return await Task.FromResult(false);
 
             var user = _context.Set<User>().FirstOrDefault(x => x.Id == model.CreatedBy && x.IsActive);
-            if (user == null) return null;
+            if (user == null) await Task.FromResult(false);
 
-            var key = Guid.NewGuid().ToString().Replace("-", string.Empty);
+            var key = Guid.NewGuid().ToNoDashString();
             var app = new App
             {
+                PublicId = model.Id,
                 UserEmail = model.Email,
                 UserPublicId = user.PublicId,
                 Name = model.Name,
@@ -63,13 +64,10 @@ namespace SetMeta.Web.Services
             };
 
             _context.Set<App>().Add(app);
-
-            if (_context.SaveChanges() < 0) return null;
-
-            return await Task.FromResult(app.Id);
+            
+            return await Task.FromResult(_context.SaveChanges() > 0);
         }
 
-        
         public Task<PagedList<App>> GetApps(int pageNumber)
         {
             if (pageNumber < 1)
@@ -84,7 +82,6 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
-
         public Task<PagedList<App>> GetByUserId(long userId, int pageNumber)
         {
             if (pageNumber < 1)
@@ -99,7 +96,6 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
-
         public Task<PagedList<App>> GetByUserId(string userPublicId, int pageNumber)
         {
             if (pageNumber < 1)
@@ -114,8 +110,6 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
-
-
         public Task<App> Get(long appId)
         {
             if (appId < 1) return null;
@@ -123,7 +117,6 @@ namespace SetMeta.Web.Services
             var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.Id == appId);
             return Task.FromResult(app);
         }
-
         public Task<App> Get(string appPublicId)
         {
             if (string.IsNullOrEmpty(appPublicId)) return null;
@@ -131,7 +124,6 @@ namespace SetMeta.Web.Services
             var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.PublicId == appPublicId);
             return Task.FromResult(app);
         }
-
 
         public Task<bool> CreateToken(TokenViewModel model)
         {
@@ -153,7 +145,6 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
-
         public Task<bool> DeleteToken(string token, long deletedBy)
         {
             if (string.IsNullOrEmpty(token)) return Task.FromResult(false);
@@ -168,12 +159,10 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
-
         public Task<bool> IsTokenValid(string token)
         {
             return Task.FromResult(_context.Set<Token>().Any(x => x.Key == token && x.IsActive && x.IsAppActive));
         }
-
 
         public Task<bool> ChangeStatus(long appId, bool isActive)
         {
@@ -192,7 +181,6 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
-
         public Task<bool> ChangeStatus(string appPublicId, bool isActive)
         {
             if (string.IsNullOrEmpty(appPublicId)) return Task.FromResult(false);
