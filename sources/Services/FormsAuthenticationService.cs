@@ -2,13 +2,6 @@
 
 namespace SetMeta.Web.Services
 {
-    public interface IFormsAuthenticationService
-    {
-        void SignIn(string id, string name, string email, string roleName, bool createPersistentCookie);
-
-        void SignOut();
-    }
-
     public class FormsAuthenticationService : IFormsAuthenticationService
     {
         public void SignIn(string id, string name, string email, string roleName, bool createPersistentCookie)
@@ -20,5 +13,12 @@ namespace SetMeta.Web.Services
         {
             FormsAuthentication.SignOut();
         }
+    }
+
+    public interface IFormsAuthenticationService
+    {
+        void SignIn(string id, string name, string email, string roleName, bool createPersistentCookie);
+
+        void SignOut();
     }
 }

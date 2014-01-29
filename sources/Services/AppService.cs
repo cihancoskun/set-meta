@@ -10,34 +10,14 @@ using SetMeta.Web.ViewModels;
 
 namespace SetMeta.Web.Services
 {
-    public interface IAppService
-    {
-        Task<bool> CreateApp(AppViewModel model);
-
-        Task<PagedList<App>> GetApps(int pageNumber);
-        Task<PagedList<App>> GetByUserId(long userId, int pageNumber);
-        Task<PagedList<App>> GetByUserId(string userPublicId, int pageNumber);
-
-        Task<App> Get(long appId);
-        Task<App> Get(string appPublicId);
-
-        Task<bool> CreateToken(TokenViewModel token);
-        Task<bool> DeleteToken(string token, long deletedBy);
-
-        Task<bool> IsTokenValid(string token);
-
-        Task<bool> ChangeStatus(long appId, bool isActive);
-        Task<bool> ChangeStatus(string appPublicId, bool isActive);
-    }
-
     public class AppService : BaseService, IAppService
     {
-        public async Task<bool> CreateApp(AppViewModel model)
+        public Task<bool> CreateApp(AppViewModel model)
         {
-            if (!model.IsValid()) return await Task.FromResult(false);
+            if (!model.IsValid()) return Task.FromResult(false);
 
             var user = _context.Set<User>().FirstOrDefault(x => x.Id == model.CreatedBy && x.IsActive);
-            if (user == null) await Task.FromResult(false);
+            if (user == null) Task.FromResult(false);
 
             var key = Guid.NewGuid().ToNoDashString();
             var app = new App
@@ -65,8 +45,9 @@ namespace SetMeta.Web.Services
 
             _context.Set<App>().Add(app);
             
-            return await Task.FromResult(_context.SaveChanges() > 0);
+            return Task.FromResult(_context.SaveChanges() > 0);
         }
+
 
         public Task<PagedList<App>> GetApps(int pageNumber)
         {
@@ -82,6 +63,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
         public Task<PagedList<App>> GetByUserId(long userId, int pageNumber)
         {
             if (pageNumber < 1)
@@ -96,6 +78,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
         public Task<PagedList<App>> GetByUserId(string userPublicId, int pageNumber)
         {
             if (pageNumber < 1)
@@ -110,6 +93,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<App>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
         public Task<App> Get(long appId)
         {
             if (appId < 1) return null;
@@ -117,6 +101,7 @@ namespace SetMeta.Web.Services
             var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.Id == appId);
             return Task.FromResult(app);
         }
+
         public Task<App> Get(string appPublicId)
         {
             if (string.IsNullOrEmpty(appPublicId)) return null;
@@ -145,6 +130,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+
         public Task<bool> DeleteToken(string token, long deletedBy)
         {
             if (string.IsNullOrEmpty(token)) return Task.FromResult(false);
@@ -159,10 +145,12 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
+
         public Task<bool> IsTokenValid(string token)
         {
             return Task.FromResult(_context.Set<Token>().Any(x => x.Key == token && x.IsActive && x.IsAppActive));
         }
+
 
         public Task<bool> ChangeStatus(long appId, bool isActive)
         {
@@ -181,6 +169,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+
         public Task<bool> ChangeStatus(string appPublicId, bool isActive)
         {
             if (string.IsNullOrEmpty(appPublicId)) return Task.FromResult(false);
@@ -198,5 +187,55 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+
+        public Task<bool> LogRequest(string token, string ip, string url)
+        {
+            if (string.IsNullOrEmpty(token)
+                && string.IsNullOrEmpty(url)) return Task.FromResult(false);
+
+            var tokenEntity = _context.Set<Token>().FirstOrDefault(x => x.Key == token);
+            if (tokenEntity == null) return Task.FromResult(false);
+
+            tokenEntity.UsageCount = tokenEntity.UsageCount + 1;
+
+            var log = new RequestLog
+            {
+                Token = token,
+                IP = ip,
+                Url = url
+            };
+            _context.Set<RequestLog>().Add(log);
+
+            return Task.FromResult(_context.SaveChanges() > 0);
+        }
+    }
+
+    public interface IAppService
+    {
+        Task<bool> CreateApp(AppViewModel model);
+
+        Task<PagedList<App>> GetApps(int pageNumber);
+        Task<PagedList<App>> GetByUserId(long userId, int pageNumber);
+        Task<PagedList<App>> GetByUserId(string userPublicId, int pageNumber);
+
+        Task<App> Get(long appId);
+        Task<App> Get(string appPublicId);
+
+        Task<bool> CreateToken(TokenViewModel token);
+        Task<bool> DeleteToken(string token, long deletedBy);
+
+        Task<bool> IsTokenValid(string token);
+
+        Task<bool> ChangeStatus(long appId, bool isActive);
+        Task<bool> ChangeStatus(string appPublicId, bool isActive);
+
+        /// <summary>
+        /// logs the api requests
+        /// </summary>
+        /// <param name="token">the request token passed in http header</param>
+        /// <param name="ip">the ip of the request</param>
+        /// <param name="url">the url of the request</param>
+        /// <returns></returns>
+        Task<bool> LogRequest(string token, string ip, string url);
     }
 }

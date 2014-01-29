@@ -14,6 +14,7 @@ namespace SetMeta.Web.Helpers
         public const string __Lang = "__Lang";
 
         public const string Authorization = "Authorization";
+        public const string Anonymous = "Anonymous";
 
         private static CultureInfo _cultureTR;
         public static CultureInfo CultureTR { get { return _cultureTR ?? (_cultureTR = new CultureInfo(CultureNameTR)); } }

@@ -55,12 +55,10 @@ namespace SetMeta.Web
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Component.For<IFormsAuthenticationService>()
-                         .ImplementedBy<FormsAuthenticationService>()
-                         .LifestylePerWebRequest()
-
-                //Component.For<IUserService>().ImplementedBy<UserService>().LifestylePerWebRequest(),
-
+                Component.For<IFormsAuthenticationService>().ImplementedBy<FormsAuthenticationService>().LifestylePerWebRequest(),
+                Component.For<IUserService>().ImplementedBy<UserService>().LifestylePerWebRequest(),
+                Component.For<IAppService>().ImplementedBy<AppService>().LifestylePerWebRequest(),
+                Component.For<IFeedbackService>().ImplementedBy<FeedbackService>().LifestylePerWebRequest()
                 );
         }
     }

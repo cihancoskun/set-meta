@@ -1,10 +1,9 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-using SetMeta.Web;
 using SetMeta.Web.Helpers;
 
-namespace SetLocale.Client.Web.Controllers
+namespace SetMeta.Web.Controllers
 {
     public class LangController : BaseController
     {

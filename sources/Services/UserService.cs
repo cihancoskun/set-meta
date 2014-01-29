@@ -10,28 +10,11 @@ using SetMeta.Web.ViewModels;
 
 namespace SetMeta.Web.Services
 {
-    public interface IUserService
-    {
-        Task<bool> Create(UserViewModel model, string roleName);
-
-        Task<PagedList<User>> GetUsers(int pageNumber);
-        Task<PagedList<User>> GetUsersByRoleId(int roleId, int pageNumber);
-
-        Task<User> Get(string userPublicId);
-        Task<User> Get(long userId);
-        Task<User> GetByEmail(string email);
-
-        Task<bool> Authenticate(string email, string password);
-
-        Task<bool> ChangeStatus(long userId, bool isActive);
-        Task<bool> ChangeStatus(string userPublicId, bool isActive);
-    }
-
     public class UserService : BaseService, IUserService
     {
-        public async Task<bool> Create(UserViewModel model, string roleName)
+        public Task<bool> Create(UserViewModel model, string roleName)
         {
-            if (!model.IsValid()) return await Task.FromResult(false);
+            if (!model.IsValid()) return Task.FromResult(false);
 
             var img = GravatarHelper.GetGravatarURL(model.Email);
             var user = new User
@@ -73,8 +56,9 @@ namespace SetMeta.Web.Services
                 _context.Set<App>().Add(app);
             }
 
-            return await Task.FromResult(_context.SaveChanges() > 0);
+            return Task.FromResult(_context.SaveChanges() > 0);
         }
+
 
         public Task<PagedList<User>> GetUsers(int pageNumber)
         {
@@ -90,6 +74,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<User>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
         public Task<PagedList<User>> GetUsersByRoleId(int roleId, int pageNumber)
         {
             if (pageNumber < 1)
@@ -104,6 +89,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<User>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
         public Task<User> Get(string userPublicId)
         {
             if (string.IsNullOrEmpty(userPublicId)) return null;
@@ -111,6 +97,7 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == userPublicId);
             return Task.FromResult(user);
         }
+
         public Task<User> Get(long userId)
         {
             if (userId < 1) return null;
@@ -118,6 +105,7 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.Id == userId);
             return Task.FromResult(user);
         }
+
         public Task<User> GetByEmail(string email)
         {
             if (email.IsEmail()) return null;
@@ -125,6 +113,7 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.Email == email);
             return Task.FromResult(user);
         }
+
 
         public Task<bool> Authenticate(string email, string password)
         {
@@ -152,6 +141,7 @@ namespace SetMeta.Web.Services
             return Task.FromResult(result);
         }
 
+
         public Task<bool> ChangeStatus(long userId, bool isActive)
         {
             if (userId < 1) return Task.FromResult(false);
@@ -175,6 +165,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+
         public Task<bool> ChangeStatus(string userPublicId, bool isActive)
         {
             if (string.IsNullOrEmpty(userPublicId)) return Task.FromResult(false);
@@ -198,5 +189,22 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+    }
+
+    public interface IUserService
+    {
+        Task<bool> Create(UserViewModel model, string roleName);
+
+        Task<PagedList<User>> GetUsers(int pageNumber);
+        Task<PagedList<User>> GetUsersByRoleId(int roleId, int pageNumber);
+
+        Task<User> Get(string userPublicId);
+        Task<User> Get(long userId);
+        Task<User> GetByEmail(string email);
+
+        Task<bool> Authenticate(string email, string password);
+
+        Task<bool> ChangeStatus(long userId, bool isActive);
+        Task<bool> ChangeStatus(string userPublicId, bool isActive);
     }
 }

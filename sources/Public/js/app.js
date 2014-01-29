@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $("input#btnSaveFeedback").click(function (x) {
+    $("button#btnSaveFeedback").click(function () {
         var info = $("textarea#txtFeedback").val();
         if (info.length < 1) return;
 
@@ -8,9 +8,12 @@
 
         $.ajax({
             url: "/Feedback/New",
-            type: "POST",
-            data: "info=" + info + "&email=" + email + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
+            type: "GET",
+            data: "info=" + info + "&email=" + email,
             success: function (r) {
+
+                console.log(r);
+
                 if (r && r.IsOk) {
                     $("#modalFeedback").modal('hide');
                 } else {

@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.ViewModels;
 
-namespace SetMeta.Web
+namespace SetMeta.Web.Controllers
 {
     public class BaseController : Controller
     {
