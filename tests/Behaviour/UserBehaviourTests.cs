@@ -31,6 +31,5 @@ namespace SetMeta.Tests.Behaviour
         public void any_user_in_user_role_can_NOT_add_meta_data() { }
         public void any_user_in_user_role_can_NOT_create_app() { }
         public void any_user_in_user_role_can_NOT_create_token() { }
-
     }
 }
