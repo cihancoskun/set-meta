@@ -23,5 +23,7 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<Sector> Sectors { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Continent> Continents { get; set; }
+        public DbSet<Horoscope> Horoscopes { get; set; }
+
     }
 }
