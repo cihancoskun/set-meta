@@ -7,7 +7,7 @@ namespace SetMeta.Web.ViewModels
 
         public override bool IsValid()
         {
-            return true;
+            return Result != null;
         }
     }
 }

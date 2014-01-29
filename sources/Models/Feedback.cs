@@ -1,7 +1,7 @@
-﻿namespace SetMeta.Web.Entities
+﻿namespace SetMeta.Web.Models
 {
-    public class Feedback
+    public class Feedback : BaseEntity
     {
-         
+
     }
 }
