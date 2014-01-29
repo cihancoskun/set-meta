@@ -139,9 +139,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain\Entities\Bank.cs" />
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\BaseMeta.cs" />
     <Compile Include="Domain\Entities\Continent.cs" />
+    <Compile Include="Domain\Entities\CarBrand.cs" />
+    <Compile Include="Domain\Entities\CreditCard.cs" />
+    <Compile Include="Domain\Entities\Currency.cs" />
     <Compile Include="Domain\Entities\Day.cs" />
     <Compile Include="Domain\Entities\Department.cs" />
     <Compile Include="Domain\Entities\JobTitle.cs" />
@@ -149,8 +153,12 @@
     <Compile Include="Domain\Entities\Month.cs" />
     <Compile Include="Domain\Entities\PagedList.cs" />
     <Compile Include="Domain\Entities\Sector.cs" />
+    <Compile Include="Domain\Entities\PaymentType.cs" />
+    <Compile Include="Domain\Entities\Quarter.cs" />
     <Compile Include="Domain\Entities\SetLocaleRole.cs" />
+    <Compile Include="Domain\Entities\Timezone.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Domain\Entities\VehicleType.cs" />
     <Compile Include="Domain\Repositories\IRepositories.cs" />
     <Compile Include="Domain\Repositories\Repositories.cs" />
     <Compile Include="Domain\Repositories\SetMetaDbContext.cs" />

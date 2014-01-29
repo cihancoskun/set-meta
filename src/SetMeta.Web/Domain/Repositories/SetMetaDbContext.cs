@@ -24,6 +24,14 @@ namespace SetMeta.Web.Domain.Repositories
         public DbSet<Department> Departments { get; set; }
         public DbSet<Continent> Continents { get; set; }
         public DbSet<Horoscope> Horoscopes { get; set; }
+        public DbSet<VehicleType> VehicleTypes { get; set; }
+        public DbSet<CarBrand> CarBrands { get; set; }
+        public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Timezone> Timezones { get; set; }
+        public DbSet<Quarter> Quarters { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<Bank> Banks { get; set; }
 
     }
 }
