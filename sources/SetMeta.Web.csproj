@@ -125,6 +125,8 @@
     <Content Include="Views\User\PasswordReset.cshtml" />
     <Content Include="Views\Shared\_Msg.cshtml" />
     <Content Include="Views\User\Apps.cshtml" />
+    <Content Include="Views\Data\New.cshtml" />
+    <Content Include="Views\Data\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,6 +141,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\LangController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\App.cs" />
@@ -175,6 +178,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MetaDataViewModel.cs" />
     <Compile Include="ViewModels\NameValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
