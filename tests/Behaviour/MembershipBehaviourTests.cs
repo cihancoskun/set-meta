@@ -9,6 +9,7 @@ using NUnit.Framework;
 using SetMeta.Tests._TestHelpers;
 using SetMeta.Tests._Builders;
 using SetMeta.Web.Helpers;
+using SetMeta.Web.Models;
 using SetMeta.Web.Services;
 using SetMeta.Web.ViewModels; 
 
@@ -27,7 +28,7 @@ namespace SetMeta.Tests.Behaviour
             //arrange
             var validModel = new UserViewModel
             {
-                Name = "model",
+                Name = "name",
                 Password = "pass",
                 Email = "test@test.com",
                 Language = Thread.CurrentThread.CurrentUICulture.Name,
@@ -60,22 +61,50 @@ namespace SetMeta.Tests.Behaviour
         }
 
         [Test]
-        public void any_user_can_login()
+        public async void any_user_can_login()
         {
             //arrange
+            var validModel = new LoginViewModel
+            { 
+                Password = "pass",
+                Email = "test@test.com" 
+            };
+
+            var user = new User
+            {
+                PublicId = "publicId", 
+                Name="name",
+                Email = "test@test.com",
+                RoleName = ConstHelper.Developer
+            };
+
+            var userService = new Mock<IUserService>();
+            userService.Setup(x => x.Authenticate(validModel.Email,validModel.Password))
+                       .Returns(Task.FromResult(true));
+
+            userService.Setup(x => x.GetByEmail(validModel.Email))
+                       .Returns(Task.FromResult(user));
+
+            var formAuthenticationService = new Mock<IFormsAuthenticationService>();
+            formAuthenticationService.Setup(x => x.SignIn(user.PublicId, user.Name, user.Email, ConstHelper.Developer, true));
 
             //act
-            var sut = new UserControllerBuilder().Build();
-            var result = sut.Login() as ViewResult;
+            var sut = new UserControllerBuilder().WithUserService(userService.Object)
+                                                 .WithFormsAuthenticationService(formAuthenticationService.Object)
+                                                 .Build();
 
-            //assert 
-            Assert.NotNull(result); 
-            Assert.NotNull(result.Model);
-            Assert.IsAssignableFrom<LoginViewModel>(result.Model);
-            Assert.IsInstanceOf<BaseViewModel>(result.Model);
+            var result = await sut.Login(validModel);
 
-            sut.AssertGetAttribute(ActionNameLogin);
-            sut.AssertAllowAnonymousAttribute(ActionNameLogin);
+            //assert
+            Assert.IsNotNull(result);
+            Assert.IsAssignableFrom<RedirectResult>(result);
+
+            userService.Verify(x => x.Authenticate(validModel.Email, validModel.Password), Times.Once);
+            userService.Verify(x => x.GetByEmail(validModel.Email), Times.Once);
+            formAuthenticationService.Verify(x => x.SignIn(user.PublicId, user.Name, user.Email, ConstHelper.Developer, true), Times.Once);
+
+            sut.AssertPostAttribute(ActionNameLogin, new[] { typeof(UserViewModel) });
+            sut.AssertAllowAnonymousAttribute(ActionNameLogin, new[] { typeof(UserViewModel) }); 
         }
 
         [Test]
