@@ -40,6 +40,7 @@ namespace SetMeta.Web.Services.Data
             var user = new User
             {
                 Email = email,
+                PublicId = Guid.NewGuid().ToNoDashString(),
                 Name = name,
                 RoleId = ConstHelper.BasicRoles[ConstHelper.Admin],
                 RoleName = ConstHelper.Admin,
