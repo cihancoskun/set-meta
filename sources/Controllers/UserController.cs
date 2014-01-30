@@ -59,6 +59,19 @@ namespace SetMeta.Web.Controllers
             return View(model);
         }
 
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<JsonResult> ChangeStatus(int id, bool isActive)
+        {
+            var model = new ResponseModel { IsOk = false };
+            if (id < 1)
+            {
+                return Json(model, JsonRequestBehavior.DenyGet);
+            }
+
+            model.IsOk = await _userService.ChangeStatus(id, isActive);
+            return Json(model, JsonRequestBehavior.DenyGet);
+        }
+
         #region Membership
         [HttpGet, AllowAnonymous]
         public ActionResult New()

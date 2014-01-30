@@ -206,5 +206,8 @@ namespace SetMeta.Web.Services
 
         Task<bool> ChangeStatus(long userId, bool isActive);
         Task<bool> ChangeStatus(string userPublicId, bool isActive);
+
+       
+
     }
 }
