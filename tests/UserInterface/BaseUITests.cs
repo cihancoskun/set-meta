@@ -7,9 +7,10 @@ namespace SetMeta.Tests.UserInterface
     {
         public const string BASE_URL = "http://localhost:8033";
 
-        public const string ACTION_ACCOUNT_NEW = "account/new";
-        public const string ACTION_CONTACT_NEW = "contact/new"; 
-
+        public const string ACTION_ACCOUNT_LOGIN = "/user/login";
+        public const string ACTION_ACCOUNT_LOGOUT = "/user/logout";
+        public const string ACTION_ACCOUNT_NEW = "/user/new"; 
+         
         public FirefoxDriver _browser;
 
         [SetUp]
