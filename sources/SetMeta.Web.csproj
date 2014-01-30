@@ -125,6 +125,11 @@
     <Content Include="Views\User\PasswordReset.cshtml" />
     <Content Include="Views\Shared\_Msg.cshtml" />
     <Content Include="Views\User\Apps.cshtml" />
+    <Content Include="Views\App\Detail.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\New.cshtml" />
+    <Content Include="Views\Admin\Apps.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -199,7 +203,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7967</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
