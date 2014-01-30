@@ -1,7 +1,7 @@
 ﻿$(function () {
     $("button#btnSaveFeedback").click(function () {
         var info = $("textarea#txtFeedback").val();
-        if (info.length < 1) return;
+        if (info.length < 1) { $("textarea#txtFeedback").parent().append('<label class="error">*</label>'); return; }
 
         var email = $("input#feedbackEmail").val();
         $("div#wrnFeedback").html('');
@@ -11,9 +11,6 @@
             type: "GET",
             data: "info=" + info + "&email=" + email,
             success: function (r) {
-
-                console.log(r);
-
                 if (r && r.IsOk) {
                     $("#modalFeedback").modal('hide');
                 } else {
@@ -25,5 +22,5 @@
         });
     });
 
-    $('#modalFeedback').on('hidden.bs.modal', function () { $("div#wrnFeedback").html(''); $("textarea#txtFeedback").val(''); });
+    $('#modalFeedback').on('hidden.bs.modal', function () { $("div#wrnFeedback").html(''); $("textarea#txtFeedback").val(''); $("label.error").remove(); });
 });

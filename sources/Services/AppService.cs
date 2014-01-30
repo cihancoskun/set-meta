@@ -16,7 +16,7 @@ namespace SetMeta.Web.Services
         {
             if (!model.IsValid()) return Task.FromResult(false);
 
-            var user = _context.Set<User>().FirstOrDefault(x => x.Id == model.CreatedBy && x.IsActive);
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy && x.IsActive);
             if (user == null) Task.FromResult(false);
 
             var key = Guid.NewGuid().ToNoDashString();
@@ -28,13 +28,13 @@ namespace SetMeta.Web.Services
                 Name = model.Name,
                 Url = model.Url,
                 IsActive = true,
-                CreatedBy = model.CreatedBy,
+                CreatedBy = user.Id,
                 Description = model.Description ?? string.Empty,
                 Tokens = new List<Token>
                 {
                     new Token
                     {
-                        CreatedBy = model.CreatedBy,
+                        CreatedBy = user.Id,
                         Key = key,
                         PublicId = key,
                         UsageCount = 0,
@@ -117,9 +117,12 @@ namespace SetMeta.Web.Services
             var app = _context.Set<App>().FirstOrDefault(x => x.PublicId == model.AppId);
             if (app != null) return Task.FromResult(false);
 
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy);
+            if (user == null) return Task.FromResult(false);
+
             var entity = new Token
             {
-                CreatedBy = model.CreatedBy,
+                CreatedBy = user.Id,
                 AppId = app.Id,
                 Key = model.Token,
                 PublicId = model.Token,
@@ -131,15 +134,18 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
-        public Task<bool> DeleteToken(string token, long deletedBy)
+        public Task<bool> DeleteToken(string token, string deletedBy)
         {
             if (string.IsNullOrEmpty(token)) return Task.FromResult(false);
 
             var item = _context.Set<Token>().FirstOrDefault(x => x.Key == token);
             if (item == null) return Task.FromResult(false);
 
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == deletedBy);
+            if (user == null) return Task.FromResult(false);
+
             item.DeletedAt = DateTime.Now;
-            item.DeletedBy = deletedBy;
+            item.DeletedBy = user.Id;
             item.IsDeleted = true;
 
             return Task.FromResult(_context.SaveChanges() > 0);
@@ -222,7 +228,7 @@ namespace SetMeta.Web.Services
         Task<App> Get(string appPublicId);
 
         Task<bool> CreateToken(TokenViewModel token);
-        Task<bool> DeleteToken(string token, long deletedBy);
+        Task<bool> DeleteToken(string token, string deletedBy);
 
         Task<bool> IsTokenValid(string token);
 

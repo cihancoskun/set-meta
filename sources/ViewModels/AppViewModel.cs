@@ -14,7 +14,7 @@ namespace SetMeta.Web.ViewModels
         public string Url { get; set; }
         public bool IsActive { get; set; }
         public List<TokenViewModel> Tokens { get; set; }
-        public int CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
 
         public long UsageCount
         {

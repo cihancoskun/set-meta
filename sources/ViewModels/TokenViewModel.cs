@@ -15,7 +15,7 @@ namespace SetMeta.Web.ViewModels
         }
 
         public long UsageCount { get; set; }
-        public long CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
         public string AppId { get; set; }
 
         public override bool IsValid()

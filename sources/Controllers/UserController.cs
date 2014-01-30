@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -13,13 +14,49 @@ namespace SetMeta.Web.Controllers
     {
         private readonly IFormsAuthenticationService _formsAuthenticationService;
         private readonly IUserService _userService;
+        private readonly IAppService _appService;
 
         public UserController(
             IFormsAuthenticationService formsAuthenticationService,
-            IUserService userService)
+            IUserService userService,
+            IAppService appService)
         {
             _formsAuthenticationService = formsAuthenticationService;
             _userService = userService;
+            _appService = appService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Apps(string id, int page = 1)
+        {
+            var pageNumber = page;
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+            }
+
+            if (string.IsNullOrEmpty(id))
+            {
+                id = User.Identity.GetId();
+            }
+
+            ViewBag.UserId = id;
+
+            var apps = await _appService.GetByUserId(id, pageNumber);
+            if (apps == null) return RedirectToHome();
+            
+            var list = apps.Items.Select(AppViewModel.Map).ToList();
+            var model = new PageViewModel<AppViewModel>
+            {
+                Items = list,
+                HasNextPage = apps.HasNextPage,
+                HasPrevPage = apps.HasPreviousPage,
+                PageNumber = apps.Number,
+                ItemCount = apps.TotalCount,
+                PageCount = apps.TotalPageCount
+            };
+
+            return View(model);
         }
 
         #region Membership
@@ -42,7 +79,7 @@ namespace SetMeta.Web.Controllers
             model.Id = Guid.NewGuid().ToNoDashString();
 
             var isCreated = await _userService.Create(model, ConstHelper.Developer);
-            if (isCreated)
+            if (!isCreated)
             {
                 SetPleaseTryAgain(model);
                 return View(model);

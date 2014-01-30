@@ -1,0 +1,44 @@
+﻿@model ResetViewModel
+
+@{
+    ViewBag.Title = Html.LocalizationString("password_reset_title");
+}
+
+<div class="col-lg-5">
+    <h3>@ViewBag.Title</h3>
+    <hr />
+
+    <form id="frm" name="frm" action="/user/reset" method="post">
+        @Html.Partial("_Msg")
+
+        <div class="col-lg-12">
+            <strong>@Html.LocalizationString("email")</strong>
+            <input type="text" class="form-control input-lg" name="email" id="email" value="@Model.Email" />
+        </div>
+
+        @Html.AntiForgeryToken()
+
+        <div class="col-lg-12">
+            <input type="submit" value="@Html.LocalizationString("btn_password_reset")" class="btn btn-primary btn-lg" />
+        </div>
+    </form>
+</div>
+
+@section script
+{
+    <script>
+        $(function () {
+            $("form#frm").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    email: "*"
+                }
+            });
+        });
+    </script>
+}

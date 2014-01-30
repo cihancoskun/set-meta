@@ -1,0 +1,10 @@
+﻿@if (Model != null 
+     && !string.IsNullOrWhiteSpace(Model.Msg))
+{
+    <div class="row">
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span>@Model.Msg</span>
+        </div>
+    </div>
+}

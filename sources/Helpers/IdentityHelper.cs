@@ -1,13 +1,12 @@
-﻿using System;
-using System.Security.Principal;
+﻿using System.Security.Principal;
 
 namespace SetMeta.Web.Helpers
 {
     public static class IdentityHelper
     {
-        public static int GetId(this IIdentity identity)
+        public static string GetId(this IIdentity identity)
         {
-            return identity.IsAuthenticated ? Convert.ToInt32(identity.Name.Split('|')[0]) : 0;
+            return identity.IsAuthenticated ? identity.Name.Split('|')[0] : string.Empty;
         }
 
         public static string GetFullName(this IIdentity identity)
