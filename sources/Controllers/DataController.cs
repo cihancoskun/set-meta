@@ -1,18 +1,30 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using SetMeta.Web.Helpers;
-using SetMeta.Web.ViewModels;
+﻿using System.Web.Mvc;
 
 namespace SetMeta.Web.Controllers
 {
+    [AllowAnonymous]
     public class DataController : BaseController
     {
-        [HttpGet]
-        public ActionResult New()
+        public DataController()
         {
-            return Redirect("/data/list");
+            
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            //todo get parent metas
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult List(string id)
+        {
+            var type = id;
+            //todo get parent metas
+
+            return View();
         }
     }
 }

@@ -125,8 +125,8 @@
     <Content Include="Views\User\PasswordReset.cshtml" />
     <Content Include="Views\Shared\_Msg.cshtml" />
     <Content Include="Views\User\Apps.cshtml" />
-    <Content Include="Views\Data\New.cshtml" />
     <Content Include="Views\Data\List.cshtml" />
+    <Content Include="Views\Data\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,6 +173,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Services\MetaDataService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
