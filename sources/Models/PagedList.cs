@@ -22,7 +22,7 @@ namespace SetMeta.Web.Models
             Size = pageSize;
             TotalCount = totalCount;
             TotalPageCount = (int)Math.Ceiling(totalCount / (double)pageSize);
-            HasPreviousPage = Number > 0;
+            HasPreviousPage = Number > 1;
             HasNextPage = Number < TotalPageCount;
         }
     }

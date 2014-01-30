@@ -2,10 +2,15 @@
 {
     public class MetaData : BaseEntity
     {
-        public string Type { get; set; }
+        public string TypeName { get; set; }
+        public string TypeCode { get; set; }
+        public string TypePublicId { get; set; }
 
-        public string ParentKey { get; set; }
-        public string Key { get; set; } 
+        public string ParentName { get; set; }
+        public string ParentCode { get; set; }
+        public string ParentPublicId { get; set; }
+        
+        public string Code { get; set; } 
         public string Value { get; set; }
         
         public string Description { get; set; } 

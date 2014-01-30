@@ -33,10 +33,25 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
+        public Task<PagedList<Feedback>> GetFeedbacks(int pageNumber)
+        {
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+            }
+
+            var query = _context.Set<Feedback>().Where(x => !x.IsDeleted);
+
+            var count = query.Count();
+            var items = query.OrderByDescending(x => x.Id).Skip(ConstHelper.PageSize * (pageNumber - 1)).Take(ConstHelper.PageSize).ToList();
+
+            return Task.FromResult(new PagedList<Feedback>(pageNumber, ConstHelper.PageSize, count, items));
+        }
     }
 
     public interface IFeedbackService
     {
         Task<bool> CreateFeedback(string info, string email);
+        Task<PagedList<Feedback>> GetFeedbacks(int pageNumber);
     }
 }

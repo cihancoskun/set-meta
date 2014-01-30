@@ -25,3 +25,8 @@
 #frm input {
     margin: 5px;
 }
+
+.nav li a {
+    padding-left:10px;
+    padding-right:10px;
+}
