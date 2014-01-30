@@ -127,6 +127,12 @@
     <Content Include="Views\User\Apps.cshtml" />
     <Content Include="Views\Data\List.cshtml" />
     <Content Include="Views\Data\Index.cshtml" />
+    <Content Include="Views\App\Detail.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\New.cshtml" />
+    <Content Include="Views\Admin\Apps.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\Feedbacks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,6 +181,7 @@
     </Compile>
     <Compile Include="Services\MetaDataService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="ViewModels\FeedbackViewModel.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -191,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -204,7 +210,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7967</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

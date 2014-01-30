@@ -9,6 +9,7 @@ namespace SetMeta.Web.Controllers
     public class BaseController : Controller
     {
         public HtmlHelper _htmlHelper;
+       
 
         public BaseController()
         {
