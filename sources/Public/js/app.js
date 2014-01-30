@@ -1,4 +1,25 @@
-﻿$(function () {
+﻿var textBtnDanger = "btn-danger";
+var textBtnSuccess = "btn-success";
+var textId = "id";
+var textIsActive = "isactive";
+
+$(function () {
+    $("button.btnAction").click(function () {
+        var textBtn = "button#btnModalAction";
+
+        var id = $(this).data(textId);
+        var isActive = $(this).data(textIsActive);
+
+        $(textBtn).removeClass(textBtnDanger).removeClass(textBtnSuccess);
+        if (isActive == "True") {
+            $(textBtn).addClass(textBtnDanger);
+        } else {
+            $(textBtn).addClass(textBtnSuccess);
+        }
+
+        $(textBtn).data(textId, id).data(textIsActive, isActive);
+    });
+
     $("button#btnSaveFeedback").click(function () {
         var info = $("textarea#txtFeedback").val();
         if (info.length < 1) { $("textarea#txtFeedback").parent().append('<label class="error">*</label>'); return; }

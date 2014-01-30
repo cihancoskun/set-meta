@@ -26,7 +26,7 @@
                     <td>
                         @if (User.Identity.GetId() != item.Id)
                         {
-                            <a type="button" class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
+                            <button class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</button>
                         }
                     </td>
                     <td>@item.Name</td>
@@ -44,7 +44,7 @@
                                 {
                                     <li><a href="~/admin/users/@ViewBag.RoleId?page=@(Model.PageNumber - 1)">&laquo;</a></li>
                                 }
-                                
+
                                 <li><a href="~/admin/users/@ViewBag.RoleId?page=@(Model.PageNumber)">@(Model.PageNumber)</a></li>
 
                                 @if (Model.HasNextPage)
@@ -67,15 +67,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <input type="button" class="close" data-dismiss="modal" aria-hidden="true" value="&times;" />
+                <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">@Html.LocalizationString("modal_title_users")</h4>
             </div>
             <div class="modal-body">
                 @Html.LocalizationString("modal_body_users")
             </div>
             <div class="modal-footer">
-                <input type="button" class="btn btn-success" data-dismiss="modal" value="@Html.LocalizationString("btn_cancel")" />
-                <input type="button" class="btn btn-danger" value="@Html.LocalizationString("btn_ok")" id="btnModalAction" data-id="" data-isactive="" />
+                <button class="btn btn-danger" data-dismiss="modal">@Html.LocalizationString("btn_cancel")</button>
+                <button class="btn btn-success" id="btnModalAction" name="btnModalAction" data-id="" data-isactive="">@Html.LocalizationString("btn_save")</button>
             </div>
         </div>
     </div>
@@ -88,26 +88,30 @@
             var textActivate = "@Html.LocalizationString("btn_activate")";
             var textDeactivate = "@Html.LocalizationString("btn_deactivate")";
 
-            $("input#btnModalAction").click(function () {
+            $("button#btnModalAction").click(function () {
                 var id = $(this).data("id");
                 var isActive = $(this).data("isactive");
+
+                console.log(id);
+                console.log(isActive);
 
                 $.ajax({
                     url: "/User/ChangeStatus",
                     type: "POST",
-                    data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val()
-                }).done(function (r) {
-                    if (r && r.Ok) {
-                        if (isActive) {
-                            $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
-                        }
-                        else {
-                            $("a[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
-                        }
+                    data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
+                    success: function (r) {
+                        if (r && r.Ok) {
+                            if (isActive) {
+                                $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
+                            }
+                            else {
+                                $("a[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
+                            }
 
-                        $("#DeactivateModal").modal('hide');
-                    } else {
-                        //todo:warning
+                            $("#DeactivateModal").modal('hide');
+                        } else {
+                            //todo:warning
+                        }
                     }
                 });
             });
