@@ -154,6 +154,7 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\MetaData.cs" />
     <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\MetaDataType.cs" />
     <Compile Include="Models\PagedList.cs" />
     <Compile Include="Models\RequestLog.cs" />
     <Compile Include="Models\Token.cs" />
