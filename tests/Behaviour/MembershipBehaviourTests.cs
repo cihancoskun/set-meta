@@ -103,8 +103,8 @@ namespace SetMeta.Tests.Behaviour
             userService.Verify(x => x.GetByEmail(validModel.Email), Times.Once);
             formAuthenticationService.Verify(x => x.SignIn(user.PublicId, user.Name, user.Email, ConstHelper.Developer, true), Times.Once);
 
-            sut.AssertPostAttribute(ActionNameNew, new[] { typeof(UserViewModel) });
-            sut.AssertAllowAnonymousAttribute(ActionNameNew, new[] { typeof(UserViewModel) }); 
+            sut.AssertPostAttribute(ActionNameLogin, new[] { typeof(UserViewModel) });
+            sut.AssertAllowAnonymousAttribute(ActionNameLogin, new[] { typeof(UserViewModel) }); 
         }
 
         [Test]
