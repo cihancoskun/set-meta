@@ -1,28 +1,36 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+
+using SetMeta.Web.Services;
 
 namespace SetMeta.Web.Controllers
 {
     [AllowAnonymous]
     public class DataController : BaseController
     {
-        public DataController()
+        private readonly IMetaDataService _metaDataService;
+
+        public DataController(IMetaDataService metaDataService)
         {
-            
+            _metaDataService = metaDataService;
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public async Task<ViewResult> Index()
         {
-            //todo get parent metas
-
-            return View();
+            var items = await _metaDataService.GetMetaDataTypes();
+            return View(items);
         }
 
         [HttpGet]
-        public ActionResult List(string id)
+        public async Task<ActionResult> List(string id, int page = 1)
         {
-            var type = id;
-            //todo get parent metas
+            if (string.IsNullOrEmpty(id))
+            {
+                return Redirect("/data");
+            }
+
+            var items = await _metaDataService.GetMetaDatas(id, page);
 
             return View();
         }

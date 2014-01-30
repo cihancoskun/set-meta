@@ -187,6 +187,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MetaDataTypeViewModel.cs" />
     <Compile Include="ViewModels\MetaDataViewModel.cs" />
     <Compile Include="ViewModels\NameValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
