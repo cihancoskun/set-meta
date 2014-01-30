@@ -108,7 +108,7 @@ namespace SetMeta.Web.Services
 
         public Task<User> GetByEmail(string email)
         {
-            if (email.IsEmail()) return null;
+            if (!email.IsEmail()) return null;
 
             var user = _context.Set<User>().FirstOrDefault(x => x.Email == email);
             return Task.FromResult(user);
@@ -117,7 +117,7 @@ namespace SetMeta.Web.Services
 
         public Task<bool> Authenticate(string email, string password)
         {
-            if (email.IsEmail() || string.IsNullOrEmpty(password)) return Task.FromResult(false);
+            if (!email.IsEmail() || string.IsNullOrEmpty(password)) return Task.FromResult(false);
 
             var user = _context.Set<User>().FirstOrDefault(x => x.Email == email);
             if (user == null) return Task.FromResult(false);

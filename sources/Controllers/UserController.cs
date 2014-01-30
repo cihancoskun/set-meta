@@ -126,6 +126,12 @@ namespace SetMeta.Web.Controllers
             }
 
             var user = await _userService.GetByEmail(model.Email);
+            if (user == null)
+            {
+                SetPleaseTryAgain(model);
+                return View(model);
+            }
+
             _formsAuthenticationService.SignIn(user.PublicId, user.Name, user.Email, user.RoleName, true);
 
             if (!string.IsNullOrEmpty(model.ReturnUrl))
