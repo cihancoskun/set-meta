@@ -2,12 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+
 using Moq;
 using NUnit.Framework;
+
 using SetMeta.Tests._TestHelpers;
-using SetMeta.Web.Controllers;
-using SetMeta.Web.Helpers;
 using SetMeta.Tests._Builders;
+using SetMeta.Web.Helpers;
 using SetMeta.Web.Services;
 using SetMeta.Web.ViewModels; 
 
@@ -19,15 +20,25 @@ namespace SetMeta.Tests.Behaviour
         const string ActionNameNew = "New";
         const string ActionNameLogin = "Login";
         const string ActionNameReset = "PasswordReset";
+
         [Test]
         public async void any_visitor_can_create_developer_account()
         {
             //arrange
-            var validModel = new UserViewModel {Name = "model", Password="pass", Email = "test@test.com", Language = Thread.CurrentThread.CurrentUICulture.Name , Id = Guid.NewGuid().ToNoDashString()};
-            var userService = new Mock<IUserService>(); 
+            var validModel = new UserViewModel
+            {
+                Name = "model",
+                Password = "pass",
+                Email = "test@test.com",
+                Language = Thread.CurrentThread.CurrentUICulture.Name,
+                Id = Guid.NewGuid().ToNoDashString()
+            };
+
+            var userService = new Mock<IUserService>();
+            userService.Setup(x => x.Create(validModel, ConstHelper.Developer))
+                       .Returns(Task.FromResult(true));
+
             var formAuthenticationService = new Mock<IFormsAuthenticationService>();
-            
-            userService.Setup(x => x.Create(validModel,ConstHelper.Developer)).Returns(Task.FromResult(true));
             formAuthenticationService.Setup(x => x.SignIn(validModel.Id, validModel.Name, validModel.Email, ConstHelper.Developer, true));
 
             //act
@@ -66,20 +77,15 @@ namespace SetMeta.Tests.Behaviour
             sut.AssertGetAttribute(ActionNameLogin);
             sut.AssertAllowAnonymousAttribute(ActionNameLogin);
         }
+
         [Test]
         public void any_user_can_request_password_reset_link()
         {
+            //arrange
+
             //act
-            var sut = new UserControllerBuilder().BuildWithMockControllerContext();
-            var result = sut.PasswordReset() as ViewResult;
 
             //assert
-            Assert.NotNull(result); 
-            Assert.NotNull(result.Model);
-            Assert.IsAssignableFrom<PasswordResetViewModel>(result.Model);
-
-            sut.AssertGetAttribute(ActionNameReset);
-            sut.AssertAllowAnonymousAttribute(ActionNameReset);
         }
 
         public void any_user_can_change_password()
