@@ -255,12 +255,289 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region JobTitles
+            var jobTitlesPublicId = AddMetaDataType(context, "JobTitles");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "General Manager", "general_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Software Developer", "software_developer");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Logo Support", "logo_support");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Department Chief", "department_chief");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Secretary", "secretary");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Administrative Manager", "administrative_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Service Manager", "service_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "IT Manager", "it_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Technical Service", "technical_service");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "It Specialist", "it_specialist");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Customer Representative", "customer_representative");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Accounting Personnel", "accounting_personnel");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Customer Services", "customer_services");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Project Manager", "project_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Sales Representative", "sales_representative");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Chief Executive Officer", "chief_executive_officer");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Call Center Operator", "call_center_operator");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Business Development Project Manager", "business_development_project_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Vice General Manager", "vice_general_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Purchasing Manager", "purchasing_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Manager", "manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Assistant Manager", "assistant_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Quality Management Specialist", "quality_management_specialist");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "System Manager", "system_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Accounting Manager", "accounting_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Quality Assurance Manager", "quality_assurance_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "IT Personnel", "it_personnel");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Quality System manager", "quality_system_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "General Secretary", "general_secretary");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Vice President Corporate Affairs", "vice_president_corporate_affairs");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "President Corporate Affairs", "president_corporate_affairs");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Rector", "rector");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Coordinator", "coordinator");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Operation Manager", "operation_manager");
+            AddMetaData(context, "JobTitles", jobTitlesPublicId, "Administrator", "administrator");
 
+            #endregion
 
             #region Countries
 
             var countryPublicId = AddMetaDataType(context, "Countries");
 
+
+            #endregion
+
+            #region Sectors
+            var sectorPublicId = AddMetaDataType(context, "Sectors");
+
+            AddMetaData(context, "Sectors", sectorPublicId, "Fuel Oil", "fuel_oil");
+            AddMetaData(context, "Sectors", sectorPublicId, "Packing", "Packing");
+            AddMetaData(context, "Sectors", sectorPublicId, "Banking", "banking");
+            AddMetaData(context, "Sectors", sectorPublicId, "Informatics", "informatics");
+            AddMetaData(context, "Sectors", sectorPublicId, "Cement", "cement");
+            AddMetaData(context, "Sectors", sectorPublicId, "Iron And Steel", "iron_and_steel");
+            AddMetaData(context, "Sectors", sectorPublicId, "Pharmacy", "pharmacy");
+            AddMetaData(context, "Sectors", sectorPublicId, "Electronics", "electronics");
+            AddMetaData(context, "Sectors", sectorPublicId, "Electricity", "electricity");
+            AddMetaData(context, "Sectors", sectorPublicId, "Food", "food");
+            AddMetaData(context, "Sectors", sectorPublicId, "General", "general");
+            AddMetaData(context, "Sectors", sectorPublicId, "Customs", "customs");
+            AddMetaData(context, "Sectors", sectorPublicId, "Service", "service");
+            AddMetaData(context, "Sectors", sectorPublicId, "Medicine", "medicine");
+            AddMetaData(context, "Sectors", sectorPublicId, "Construction", "construction");
+            AddMetaData(context, "Sectors", sectorPublicId, "Importation", "importation");
+            AddMetaData(context, "Sectors", sectorPublicId, "Chemistry", "chemistry");
+            AddMetaData(context, "Sectors", sectorPublicId, "Jeweler", "jeweler");
+            AddMetaData(context, "Sectors", sectorPublicId, "Machine", "machine");
+            AddMetaData(context, "Sectors", sectorPublicId, "Metal", "metal");
+            AddMetaData(context, "Sectors", sectorPublicId, "Transportation", "transportation");
+            AddMetaData(context, "Sectors", sectorPublicId, "Chambers", "chamber");
+            AddMetaData(context, "Sectors", sectorPublicId, "Automotive", "automotive");
+            AddMetaData(context, "Sectors", sectorPublicId, "Plastic", "plastic");
+            AddMetaData(context, "Sectors", sectorPublicId, "Health", "health");
+            AddMetaData(context, "Sectors", sectorPublicId, "Insurance", "insurance");
+            AddMetaData(context, "Sectors", sectorPublicId, "Indepentet Accountent", "indepentet_accountent");
+            AddMetaData(context, "Sectors", sectorPublicId, "Tourism", "tourism");
+            AddMetaData(context, "Sectors", sectorPublicId, "Shipping", "shipping");
+            AddMetaData(context, "Sectors", sectorPublicId, "Structure", "structure");
+
+            #endregion
+
+            #region Departments
+
+            var departmentPublicId = AddMetaDataType(context, "Deparments"); 
+
+            AddMetaData(context, "Departments", departmentPublicId, "General", "general");
+            AddMetaData(context, "Departments", departmentPublicId, "Management", "management");
+            AddMetaData(context, "Departments", departmentPublicId, "Technical Service", "technical_service");
+            AddMetaData(context, "Departments", departmentPublicId, "Accounting", "accounting");
+            AddMetaData(context, "Departments", departmentPublicId, "Software", "software");
+            AddMetaData(context, "Departments", departmentPublicId, "Hardware", "hardware");
+            AddMetaData(context, "Departments", departmentPublicId, "Logo Support", "logo_support");
+            AddMetaData(context, "Departments", departmentPublicId, "Consultant", "consultant");
+            AddMetaData(context, "Departments", departmentPublicId, "Sale", "sale");
+            AddMetaData(context, "Departments", departmentPublicId, "Purchase", "purchase");
+            AddMetaData(context, "Departments", departmentPublicId, "Information Technology", "information_technology");
+            AddMetaData(context, "Departments", departmentPublicId, "Personnel Directorate", "personnel_directorate");
+            AddMetaData(context, "Departments", departmentPublicId, "Account Executive", "account_executive");
+            AddMetaData(context, "Departments", departmentPublicId, "Organization Management", "organization_management");
+            AddMetaData(context, "Departments", departmentPublicId, "Shipment", "shipment");
+            AddMetaData(context, "Departments", departmentPublicId, "Customer Services", "customer_services");
+            AddMetaData(context, "Departments", departmentPublicId, "Insurance", "insurance");
+            AddMetaData(context, "Departments", departmentPublicId, "Chancellery", "chancellery");
+            AddMetaData(context, "Departments", departmentPublicId, "Marketing", "marketing");
+            AddMetaData(context, "Departments", departmentPublicId, "Transportation", "transportation");
+            AddMetaData(context, "Departments", departmentPublicId, "Human Resources", "human_resources");
+
+            #endregion
+
+            #region Currency
+
+            var currencyPublicId = AddMetaDataType(context, "Currencies");
+
+            AddMetaData(context, "Currency", currencyPublicId, "Afghan Afghani", "AFN");
+            AddMetaData(context, "Currency", currencyPublicId, "Albanian Lek", "ALL");
+            AddMetaData(context, "Currency", currencyPublicId, "Armenian Dram", "AMD");
+            AddMetaData(context, "Currency", currencyPublicId, "Dutch Guilder", "ANG");
+            AddMetaData(context, "Currency", currencyPublicId, "Angolan Kwanza", "AOA");
+            AddMetaData(context, "Currency", currencyPublicId, "Argentine Peso", "ARS");
+            AddMetaData(context, "Currency", currencyPublicId, "Australian Dollar", "AUD");
+            AddMetaData(context, "Currency", currencyPublicId, "Aruban or Dutch Guilder", "AWG");
+            AddMetaData(context, "Currency", currencyPublicId, "Azerbaijani New Manat", "AZN");
+            AddMetaData(context, "Currency", currencyPublicId, "Bosnian Convertible Marka", "BAM");
+            AddMetaData(context, "Currency", currencyPublicId, "Barbadian or Bajan Dollar", "BBD");
+            AddMetaData(context, "Currency", currencyPublicId, "Bangladeshi Taka", "BDT");
+            AddMetaData(context, "Currency", currencyPublicId, "Bulgarian Lev", "BGN");
+            AddMetaData(context, "Currency", currencyPublicId, "Bahraini Dinar", "BHD");
+            AddMetaData(context, "Currency", currencyPublicId, "Burundian Franc", "BIF");
+            AddMetaData(context, "Currency", currencyPublicId, "Bermudian Dollar", "BMD");
+            AddMetaData(context, "Currency", currencyPublicId, "Bruneian Dollar", "BND");
+            AddMetaData(context, "Currency", currencyPublicId, "Bolivian Boliviano", "BOB");
+            AddMetaData(context, "Currency", currencyPublicId, "Brazilian Real", "BRL");
+            AddMetaData(context, "Currency", currencyPublicId, "Bahamian Dollar", "BSD");
+            AddMetaData(context, "Currency", currencyPublicId, "Bhutanese Ngultrum", "BTN");
+            AddMetaData(context, "Currency", currencyPublicId, "Botswana Pula", "BWP");
+            AddMetaData(context, "Currency", currencyPublicId, "Belarusian Ruble", "BYR");
+            AddMetaData(context, "Currency", currencyPublicId, "Belizean Dollar", "BZD");
+            AddMetaData(context, "Currency", currencyPublicId, "Canadian Dollar", "CAD");
+            AddMetaData(context, "Currency", currencyPublicId, "Congolese Franc", "CDF");
+            AddMetaData(context, "Currency", currencyPublicId, "Swiss Franc", "CHF");
+            AddMetaData(context, "Currency", currencyPublicId, "Chilean Peso", "CLP");
+            AddMetaData(context, "Currency", currencyPublicId, "Chinese Yuan Renminbi", "CNY");
+            AddMetaData(context, "Currency", currencyPublicId, "Colombian Peso", "COP");
+            AddMetaData(context, "Currency", currencyPublicId, "Costa Rican Colon", "CRC");
+            AddMetaData(context, "Currency", currencyPublicId, "Cuban Convertible Peso", "CUC");
+            AddMetaData(context, "Currency", currencyPublicId, "Cuban Peso", "CUP");
+            AddMetaData(context, "Currency", currencyPublicId, "Cape Verdean Escudo", "CVE");
+            AddMetaData(context, "Currency", currencyPublicId, "Czech Koruna", "CZK");
+            AddMetaData(context, "Currency", currencyPublicId, "Djiboutian Franc", "DJF");
+            AddMetaData(context, "Currency", currencyPublicId, "Danish Krone", "DKK");
+            AddMetaData(context, "Currency", currencyPublicId, "Dominican Peso", "DOP");
+            AddMetaData(context, "Currency", currencyPublicId, "Algerian Dinar", "DZD");
+            AddMetaData(context, "Currency", currencyPublicId, "Egyptian Pound", "EGP");
+            AddMetaData(context, "Currency", currencyPublicId, "Eritrean Nakfa", "ERN");
+            AddMetaData(context, "Currency", currencyPublicId, "Ethiopian Birr", "ETB");
+            AddMetaData(context, "Currency", currencyPublicId, "Euro", "EUR ");
+            AddMetaData(context, "Currency", currencyPublicId, "Fijian Dollar", "FJD");
+            AddMetaData(context, "Currency", currencyPublicId, "Falkland Island Pound", "FKP");
+            AddMetaData(context, "Currency", currencyPublicId, "British Pound", "GBP");
+            AddMetaData(context, "Currency", currencyPublicId, "Georgian Lari", "GEL");
+            AddMetaData(context, "Currency", currencyPublicId, "Guernsey Pound", "GGP");
+            AddMetaData(context, "Currency", currencyPublicId, "Ghanaian Cedi", "GHS");
+            AddMetaData(context, "Currency", currencyPublicId, "Gibraltar Pound", "GIP");
+            AddMetaData(context, "Currency", currencyPublicId, "Gambian Dalasi", "GMD");
+            AddMetaData(context, "Currency", currencyPublicId, "Guinean Franc", "GNF");
+            AddMetaData(context, "Currency", currencyPublicId, "Guatemalan Quetzal", "GTQ");
+            AddMetaData(context, "Currency", currencyPublicId, "Guyanese Dollar", "GYD");
+            AddMetaData(context, "Currency", currencyPublicId, "Hong Kong Dollar", "HKD");
+            AddMetaData(context, "Currency", currencyPublicId, "Honduran Lempira", "HNL");
+            AddMetaData(context, "Currency", currencyPublicId, "Croatian Kuna", "HRK");
+            AddMetaData(context, "Currency", currencyPublicId, "Haitian Gourde", "HTG");
+            AddMetaData(context, "Currency", currencyPublicId, "Hungarian Forint", "HUF");
+            AddMetaData(context, "Currency", currencyPublicId, "Indonesian Rupiah", "IDR");
+            AddMetaData(context, "Currency", currencyPublicId, "Israeli Shekel", "ILS");
+            AddMetaData(context, "Currency", currencyPublicId, "Isle of Man Pound", "IMP");
+            AddMetaData(context, "Currency", currencyPublicId, "Indian Rupee", "INR");
+            AddMetaData(context, "Currency", currencyPublicId, "Iraqi Dinar", "IQD");
+            AddMetaData(context, "Currency", currencyPublicId, "Iranian Rial", "IRR");
+            AddMetaData(context, "Currency", currencyPublicId, "Icelandic Krona", "ISK");
+            AddMetaData(context, "Currency", currencyPublicId, "Jersey Pound", "JEP");
+            AddMetaData(context, "Currency", currencyPublicId, "Jamaican Dollar", "JMD");
+            AddMetaData(context, "Currency", currencyPublicId, "Jordanian Dinar", "JOD");
+            AddMetaData(context, "Currency", currencyPublicId, "Japanese Yen", "JPY");
+            AddMetaData(context, "Currency", currencyPublicId, "Kenyan Shilling", "KES");
+            AddMetaData(context, "Currency", currencyPublicId, "Kyrgyzstani Som", "KGS");
+            AddMetaData(context, "Currency", currencyPublicId, "Cambodian Riel", "KHR");
+            AddMetaData(context, "Currency", currencyPublicId, "Comoran Franc", "KMF");
+            AddMetaData(context, "Currency", currencyPublicId, "North Korean Won", "KPW");
+            AddMetaData(context, "Currency", currencyPublicId, "South Korean Won", "KRW");
+            AddMetaData(context, "Currency", currencyPublicId, "Kuwaiti Dinar", "KWD");
+            AddMetaData(context, "Currency", currencyPublicId, "Caymanian Dollar", "KYD");
+            AddMetaData(context, "Currency", currencyPublicId, "Kazakhstani Tenge", "KZT");
+            AddMetaData(context, "Currency", currencyPublicId, "Lao or Laotian Kip", "LAK");
+            AddMetaData(context, "Currency", currencyPublicId, "Lebanese Pound", "LBP");
+            AddMetaData(context, "Currency", currencyPublicId, "Sri Lankan Rupee", "LKR");
+            AddMetaData(context, "Currency", currencyPublicId, "Liberian Dollar", "LRD");
+            AddMetaData(context, "Currency", currencyPublicId, "Basotho Loti", "LSL");
+            AddMetaData(context, "Currency", currencyPublicId, "Lithuanian Litas", "LTL");
+            AddMetaData(context, "Currency", currencyPublicId, "Latvian Lat", "LVL");
+            AddMetaData(context, "Currency", currencyPublicId, "Libyan Dinar", "LYD");
+            AddMetaData(context, "Currency", currencyPublicId, "Moroccan Dirham", "MAD");
+            AddMetaData(context, "Currency", currencyPublicId, "Moldovan Leu", "MDL");
+            AddMetaData(context, "Currency", currencyPublicId, "Malagasy Ariary", "MGA");
+            AddMetaData(context, "Currency", currencyPublicId, "Macedonian Denar", "MKD");
+            AddMetaData(context, "Currency", currencyPublicId, "Burmese Kyat", "MMK");
+            AddMetaData(context, "Currency", currencyPublicId, "Mongolian Tughrik", "MNT");
+            AddMetaData(context, "Currency", currencyPublicId, "Macau Pataca", "MOP");
+            AddMetaData(context, "Currency", currencyPublicId, "Mauritanian Ouguiya", "MRO");
+            AddMetaData(context, "Currency", currencyPublicId, "Mauritian Rupee", "MUR");
+            AddMetaData(context, "Currency", currencyPublicId, "Maldivian Rufiyaa", "MVR");
+            AddMetaData(context, "Currency", currencyPublicId, "Malawian Kwacha", "MWK");
+            AddMetaData(context, "Currency", currencyPublicId, "Mexican Peso", "MXN");
+            AddMetaData(context, "Currency", currencyPublicId, "Malaysian Ringgit", "MYR");
+            AddMetaData(context, "Currency", currencyPublicId, "Mozambican Metical", "MZN");
+            AddMetaData(context, "Currency", currencyPublicId, "Namibian Dollar", "NAD");
+            AddMetaData(context, "Currency", currencyPublicId, "Nigerian Naira", "NGN");
+            AddMetaData(context, "Currency", currencyPublicId, "Nicaraguan Cordoba", "NIO");
+            AddMetaData(context, "Currency", currencyPublicId, "Norwegian Krone", "NOK");
+            AddMetaData(context, "Currency", currencyPublicId, "Nepalese Rupee", "NPR");
+            AddMetaData(context, "Currency", currencyPublicId, "New Zealand Dollar", "NZD");
+            AddMetaData(context, "Currency", currencyPublicId, "Omani Rial", "OMR");
+            AddMetaData(context, "Currency", currencyPublicId, "Panamanian Balboa", "PAB");
+            AddMetaData(context, "Currency", currencyPublicId, "Peruvian Nuevo Sol", "PEN");
+            AddMetaData(context, "Currency", currencyPublicId, "Papua New Guinean Kina", "PGK");
+            AddMetaData(context, "Currency", currencyPublicId, "Philippine Peso", "PHP");
+            AddMetaData(context, "Currency", currencyPublicId, "Pakistani Rupee", "PKR");
+            AddMetaData(context, "Currency", currencyPublicId, "Polish Zloty", "PLN");
+            AddMetaData(context, "Currency", currencyPublicId, "Paraguayan Guarani", "PYG");
+            AddMetaData(context, "Currency", currencyPublicId, "Qatari Riyal", "QAR");
+            AddMetaData(context, "Currency", currencyPublicId, "Romanian New Leu", "RON");
+            AddMetaData(context, "Currency", currencyPublicId, "Serbian Dinar", "RSD");
+            AddMetaData(context, "Currency", currencyPublicId, "Russian Ruble", "RUB");
+            AddMetaData(context, "Currency", currencyPublicId, "Rwandan Franc", "RWF");
+            AddMetaData(context, "Currency", currencyPublicId, "Saudi Arabian Riyal", "SAR");
+            AddMetaData(context, "Currency", currencyPublicId, "Solomon Islander Dollar", "SBD");
+            AddMetaData(context, "Currency", currencyPublicId, "Seychellois Rupee", "SCR");
+            AddMetaData(context, "Currency", currencyPublicId, "Sudanese Pound", "SDG");
+            AddMetaData(context, "Currency", currencyPublicId, "Swedish Krona", "SEK");
+            AddMetaData(context, "Currency", currencyPublicId, "Singapore Dollar", "SGD");
+            AddMetaData(context, "Currency", currencyPublicId, "Saint Helenian Pound", "SHP");
+            AddMetaData(context, "Currency", currencyPublicId, "Sierra Leonean Leone", "SLL");
+            AddMetaData(context, "Currency", currencyPublicId, "Somali Shilling", "SOS");
+            AddMetaData(context, "Currency", currencyPublicId, "Seborgan Luigino", "SPL");
+            AddMetaData(context, "Currency", currencyPublicId, "Surinamese Dollar", "SRD");
+            AddMetaData(context, "Currency", currencyPublicId, "Sao Tomean Dobra", "STD");
+            AddMetaData(context, "Currency", currencyPublicId, "Salvadoran Colon", "SVC");
+            AddMetaData(context, "Currency", currencyPublicId, "Syrian Pound", "SYP");
+            AddMetaData(context, "Currency", currencyPublicId, "Swazi Lilangeni", "SZL");
+            AddMetaData(context, "Currency", currencyPublicId, "Thai Baht", "THB");
+            AddMetaData(context, "Currency", currencyPublicId, "Tajikistani Somoni", "TJS");
+            AddMetaData(context, "Currency", currencyPublicId, "Turkmenistani Manat", "TMT");
+            AddMetaData(context, "Currency", currencyPublicId, "Tunisian Dinar", "TND");
+            AddMetaData(context, "Currency", currencyPublicId, "Tongan Pa'anga", "TOP");
+            AddMetaData(context, "Currency", currencyPublicId, "Turkish Lira", "TRY");
+            AddMetaData(context, "Currency", currencyPublicId, "Trinidadian Dollar", "TTD");
+            AddMetaData(context, "Currency", currencyPublicId, "Tuvaluan Dollar", "TVD");
+            AddMetaData(context, "Currency", currencyPublicId, "Taiwan New Dollar", "TWD");
+            AddMetaData(context, "Currency", currencyPublicId, "Tanzanian Shilling", "TZS");
+            AddMetaData(context, "Currency", currencyPublicId, "Ukrainian Hryvna", "UAH");
+            AddMetaData(context, "Currency", currencyPublicId, "Ugandan Shilling", "UGX");
+            AddMetaData(context, "Currency", currencyPublicId, "US Dollar", "USD");
+            AddMetaData(context, "Currency", currencyPublicId, "Uruguayan Peso", "UYU");
+            AddMetaData(context, "Currency", currencyPublicId, "Uzbekistani Som", "UZS");
+            AddMetaData(context, "Currency", currencyPublicId, "Venezuelan Bolivar", "VEF");
+            AddMetaData(context, "Currency", currencyPublicId, "Vietnamese Dong", "VND");
+            AddMetaData(context, "Currency", currencyPublicId, "Ni-Vanuatu Vatu", "VUV");
+            AddMetaData(context, "Currency", currencyPublicId, "Samoan Tala", "WST");
+            AddMetaData(context, "Currency", currencyPublicId, "Central African CFA Franc BEAC", "XAF");
+            AddMetaData(context, "Currency", currencyPublicId, "Silver Ounce", "XAG");
+            AddMetaData(context, "Currency", currencyPublicId, "Gold Ounce", "XAU");
+            AddMetaData(context, "Currency", currencyPublicId, "Bitcoin", "XBT");
+            AddMetaData(context, "Currency", currencyPublicId, "East Caribbean Dollar", "XCD");
+            AddMetaData(context, "Currency", currencyPublicId, "IMF Special Drawing Rights", "XDR");
+            AddMetaData(context, "Currency", currencyPublicId, "CFA Franc", "XOF");
+            AddMetaData(context, "Currency", currencyPublicId, "Palladium Ounce", "XPD");
+            AddMetaData(context, "Currency", currencyPublicId, "CFP Franc", "XPF");
+            AddMetaData(context, "Currency", currencyPublicId, "Platinum Ounce", "XPT");
+            AddMetaData(context, "Currency", currencyPublicId, "Yemeni Rial", "YER");
+            AddMetaData(context, "Currency", currencyPublicId, "South African Rand", "ZAR");
+            AddMetaData(context, "Currency", currencyPublicId, "Zambian Kwacha", "ZMW");
+            AddMetaData(context, "Currency", currencyPublicId, "Zimbabwean Dollar", "ZWD ");
 
             #endregion
 
