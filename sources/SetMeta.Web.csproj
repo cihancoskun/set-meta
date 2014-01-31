@@ -133,6 +133,7 @@
     <Content Include="Views\Admin\Apps.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\Feedbacks.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,6 +34,11 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
+        public Task<bool> CreateContactMessage(string name, string email, string title, string info)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Task<PagedList<Feedback>> GetFeedbacks(int pageNumber)
         {
             if (pageNumber < 1)
@@ -53,6 +58,7 @@ namespace SetMeta.Web.Services
     public interface IFeedbackService
     {
         Task<bool> CreateFeedback(string info, string email);
+        Task<bool> CreateContactMessage(string name, string email, string title, string info);
         Task<PagedList<Feedback>> GetFeedbacks(int pageNumber);
     }
 }
