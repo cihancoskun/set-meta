@@ -1,11 +1,23 @@
-﻿using NUnit.Framework;
+﻿using System.Threading.Tasks;
+using Moq;
+using NUnit.Framework;
+using SetMeta.Web.Models;
+using SetMeta.Web.Services;
+using SetMeta.Web.ViewModels;
 
 namespace SetMeta.Tests.Behaviour
 {
     [TestFixture]
     public class UserBehaviourTests
     {
-        public void any_user_in_developer_role_can_create_app() { }
+        public void any_user_in_developer_role_can_create_app()
+        {
+            var validModel = new AppViewModel {Name = "name", Url = "url"};
+            var appService = new Mock<IAppService>();
+
+            appService.Setup(x => x.CreateApp(validModel)).Returns(Task.FromResult(true));
+
+        }
         public void any_user_in_developer_role_can_deactivate_app() { }
         public void any_user_in_developer_role_can_activate_app() { }
 
