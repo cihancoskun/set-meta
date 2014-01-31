@@ -25,7 +25,7 @@
                 var buttonCss = item.IsActive ? "btn-warning" : "btn-success";
                 <tr>
                     <td>
-                        <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
+                        <button class="btn btn-sm @buttonCss btnAction" data-toggle="modal" data-target="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</button>
                     </td>
                     <td><a href="/app/detail/@item.Id">@item.Name</a></td>
                     <td>@item.Description</td>
@@ -74,8 +74,8 @@
                 @Html.LocalizationString("modal_body_apps")
             </div>
             <div class="modal-footer">
-                <input type="button" class="btn btn-success" data-dismiss="modal" value="@Html.LocalizationString("btn_cancel")" />
-                <input type="button" class="btn btn-danger" value="@Html.LocalizationString("btn_ok")" id="btnModalAction" data-id="" data-isactive="" />
+                <button class="btn btn-danger" data-dismiss="modal">@Html.LocalizationString("btn_cancel")</button>
+                <button class="btn btn-success" id="btnModalAction" name="btnModalAction" data-id="" data-isactive="">@Html.LocalizationString("btn_save")</button>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
             var textActivate = "@Html.LocalizationString("btn_activate")";
             var textDeactivate = "@Html.LocalizationString("btn_deactivate")";
 
-            $("input#btnModalAction").click(function () {
+            $("button#btnModalAction").click(function () {
                 var id = $(this).data("id");
                 var isActive = $(this).data("isactive");
                 $.ajax({
@@ -96,12 +96,12 @@
                     type: "POST",
                     data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
                     success: function (r) {
-                        if (r && r.Ok) {
+                        if (r && r.IsOk) {
                             if (isActive) {
-                                $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
                             }
                             else {
-                                $("a[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
                             }
 
                             $("#DeactivateModal").modal('hide');
