@@ -38,7 +38,8 @@ namespace SetMeta.Web.Services
                         Key = key,
                         PublicId = key,
                         UsageCount = 0,
-                        IsAppActive = true
+                        IsAppActive = true,
+                        IsActive = true
                     }
                 }
             };
@@ -127,7 +128,8 @@ namespace SetMeta.Web.Services
                 Key = model.Token,
                 PublicId = model.Token,
                 UsageCount = 0,
-                IsAppActive = true
+                IsAppActive = true,
+                IsActive = true
             };
             _context.Set<Token>().Add(entity);
 

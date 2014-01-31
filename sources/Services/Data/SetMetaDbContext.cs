@@ -22,5 +22,6 @@ namespace SetMeta.Web.Services.Data
         public DbSet<Feedback> Feedbacks { get; set; }
 
         public DbSet<MetaData> MetaDatas { get; set; }
+        public DbSet<MetaDataType> MetaDataTypes { get; set; }
     }
 }
