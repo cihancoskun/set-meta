@@ -2,37 +2,38 @@
 
 using NUnit.Framework;
 
-using OpenQA.Selenium.Firefox;
+using SetMeta.Web.Helpers;
 
 namespace SetMeta.Tests.UserInterface
 {
-
     [TestFixture]
-    public class NewAppTests
+    public class AppUITests : BaseUITest
     {
-        private const string BaseUrl = "http://localhost:7967/";
+        [Test]
+        public void should_add_new_app()
+        {
+            _browser.Navigate().GoToUrl(string.Format("{0}/user/logout", BASE_URL));
+            _browser.Navigate().GoToUrl(string.Format("{0}/user/login", BASE_URL));
+            
+            _browser.FindElementById("email").SendKeys("mehmet.sabancioglu@gmail.com");
+            _browser.FindElementById("password").SendKeys("password");
+            _browser.FindElementById("frm").Submit();
+            
+            _browser.Navigate().GoToUrl(string.Format("{0}/app/new", BASE_URL));
+            
+            _browser.FindElementById("name").SendKeys(Guid.NewGuid().ToNoDashString());
+            _browser.FindElementById("url").SendKeys(Guid.NewGuid().ToNoDashString());
+            _browser.FindElementById("description").SendKeys(Guid.NewGuid().ToNoDashString());
+            _browser.FindElementById("frm").Submit();
+           
+            CloseBrowser();
+        }
 
         [Test]
-        public void should_new_app()
+        public void should_create_new_token()
         {
-            var browser = new FirefoxDriver();
 
-            browser.Navigate().GoToUrl(string.Format("{0}user/logout", BaseUrl));
-            browser.Navigate().GoToUrl(string.Format("{0}user/login", BaseUrl));
-
-            browser.FindElementById("email").SendKeys("mehmet.sabancioglu@gmail.com");
-            browser.FindElementById("password").SendKeys("password");
-            browser.FindElementById("frm").Submit();
-
-            browser.Navigate().GoToUrl(string.Format("{0}app/new", BaseUrl));
-
-            browser.FindElementById("name").SendKeys(Guid.NewGuid().ToString().Replace("-", ""));
-            browser.FindElementById("url").SendKeys(Guid.NewGuid().ToString().Replace("-", ""));
-            browser.FindElementById("description").SendKeys(Guid.NewGuid().ToString().Replace("-", ""));
-            browser.FindElementById("frm").Submit();
-
-            browser.Close();
+            CloseBrowser();
         }
     }
-
 }
