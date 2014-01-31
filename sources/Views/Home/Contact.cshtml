@@ -1,1 +1,73 @@
-﻿
+﻿@model ContactModel
+
+@{
+    ViewBag.Title = Html.LocalizationString("contact_view_title");
+}
+
+<div class="col-lg-5">
+    <h3>@ViewBag.Title</h3>
+    <hr />
+
+    <form id="frm" name="frm" action="/home/contact" method="post">
+        @Html.Partial("_Msg")
+        @{
+            if (!Model.IsSend)
+            {
+                <div class="col-xs-12">
+                    <strong>@Html.LocalizationString("name")</strong>
+                    <input type="text" class="form-control input-sm" name="name" id="name" value="@Model.Name" />
+                </div>
+                <div class="col-xs-12">
+                    <strong>@Html.LocalizationString("email")</strong>
+                    <input type="text" class="form-control input-sm" name="email" id="email" value="@Model.Email" />
+                </div>
+
+                <div class="col-xs-12">
+                     <strong>@Html.LocalizationString("title")</strong>
+                     <input type="text" class="form-control input-sm" name="title" id="title" value="@Model.Title" />
+                 </div>
+
+                 <div class="col-xs-12">
+                      <strong>@Html.LocalizationString("info")</strong>
+                      <input type="text" class="form-control input-lg" name="info" id="info" value="@Model.Info" />
+                 </div>
+
+                 @Html.AntiForgeryToken()
+
+                 <div class="col-xs-12">
+                    <input type="submit" value="@Html.LocalizationString("btn_send")" class="btn btn-primary btn-info"  />
+                 </div>
+            }
+            
+        }
+
+    </form>
+</div>
+
+@section script
+{
+    <script>
+        $(function () {
+            $("form#frm").validate({
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    info: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: "*",
+                    email: "*",
+                    info: "*",
+
+                }
+            });
+        });
+    </script>
+}
