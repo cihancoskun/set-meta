@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-
+using SetMeta.Web.Data.Entities;
+using SetMeta.Web.Models;
 using SetMeta.Web.Services;
 
 namespace SetMeta.Web.Controllers
@@ -23,16 +25,12 @@ namespace SetMeta.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> List(string id, int page = 1)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return Redirect("/data");
-            }
-
-            var items = await _metaDataService.GetMetaDatas(id, page);
-
-            return View();
+        public async Task<ActionResult> List()
+        { 
+            var items = await _metaDataService.GetMetaDataTypes();
+            var list = items.Select(MetaDataTypeModel.Map).ToList();
+             
+            return View(list);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
-
+using ServiceStack;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Data.Entities;
 
@@ -21,14 +21,9 @@ namespace SetMeta.Web.Services.Data
 
             #region Users
 
-            AddAdmin(context, "Serdar Büyüktemiz", "hserdarb@gmail.com");
-            AddAdmin(context, "Caner Çavuş", "canercvs@gmail.com");
-            AddAdmin(context, "Ramiz Sümer", "ramiz.sumerr@gmail.com");
-            AddAdmin(context, "Mehmet Sabancıoğlu", "mehmet.sabancioglu@gmail.com");
-            AddAdmin(context, "Cihan Çoşkun", "cihancoskun@gmail.com");
-            AddAdmin(context, "Kemal Çolak", "kml.colak@gmail.com");
-            AddAdmin(context, "Duygu Sevim", "sevimduygu@gmail.com");
-            AddAdmin(context, "Max Voloshin", "mx.voloshin@gmail.com");
+            AddUser(context, ConstHelper.Admin, "admin@test.com", ConstHelper.Admin);
+            AddUser(context, ConstHelper.Developer, "dev@test.com", ConstHelper.Developer);
+            AddUser(context, ConstHelper.User, "user@test.com", ConstHelper.User);
 
             #endregion
 
@@ -242,19 +237,6 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
-            #region Continents
-
-            var continentsPublicId = AddMetaDataType(context, "Continents");
-            AddMetaData(context, "Continents", continentsPublicId, "Asia", "1");
-            AddMetaData(context, "Continents", continentsPublicId, "Africa", "2");
-            AddMetaData(context, "Continents", continentsPublicId, "Antarctica", "3");
-            AddMetaData(context, "Continents", continentsPublicId, "North America", "4");
-            AddMetaData(context, "Continents", continentsPublicId, "Europe", "5");
-            AddMetaData(context, "Continents", continentsPublicId, "Oceania", "6");
-            AddMetaData(context, "Continents", continentsPublicId, "South America", "7");
-
-            #endregion
-
             #region JobTitles
             var jobTitlesPublicId = AddMetaDataType(context, "JobTitles");
             AddMetaData(context, "JobTitles", jobTitlesPublicId, "General Manager", "general_manager");
@@ -295,14 +277,8 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
-            #region Countries
-
-            var countryPublicId = AddMetaDataType(context, "Countries");
-
-
-            #endregion
-
             #region Sectors
+
             var sectorPublicId = AddMetaDataType(context, "Sectors");
 
             AddMetaData(context, "Sectors", sectorPublicId, "Fuel Oil", "fuel_oil");
@@ -340,7 +316,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Departments
 
-            var departmentPublicId = AddMetaDataType(context, "Deparments"); 
+            var departmentPublicId = AddMetaDataType(context, "Deparments");
 
             AddMetaData(context, "Departments", departmentPublicId, "General", "general");
             AddMetaData(context, "Departments", departmentPublicId, "Management", "management");
@@ -541,14 +517,690 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region Measurement Units
+
+            #region Stress and Pressure
+
+            var stressAndPressurePublicId = AddMetaDataType(context, "Stress and Pressure");
+
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Hectopascal", "hPa");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilonewton per square meter", "kN/m²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilopascal", "kPa");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilogram per square centimeter", "kgf/cm²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilogram per square meter", "kgf/m²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "physical atmosphere", "atm");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Planck pressure", "L¯¹MT¯²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Meganewton per square meter", "MN/m²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Megapascal", "Mpa");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square centimeter", "N/cm²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square meter", "N/m²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square millimeter", "N/mm²");
+            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Pascal", "Pa");
+
+            #endregion
+
+            #region Acceleration
+
+            var accelerationPublicId = AddMetaDataType(context, "Acceleration");
+
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Foot per second squared", "ft/s²");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Galileo", "Gal");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "meter per second squared", "m/s²");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Millimeter per second squared", "mm/s²");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Kilometer per second squared", "km/s²");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Standard acceleration of free fall on Earth", "gn index");
+            AddMetaData(context, "Acceleration", accelerationPublicId, "Inch per second squared", "in/s²");
+
+            #endregion
+
+            #region Area
+
+            var areaPublicId = AddMetaDataType(context, "Area");
+
+            AddMetaData(context, "Area", areaPublicId, "Are", "a");
+            AddMetaData(context, "Area", areaPublicId, "Barn", "b");
+            AddMetaData(context, "Area", areaPublicId, "Square centimeter", "cm²");
+            AddMetaData(context, "Area", areaPublicId, "Square decimeter", "dm²");
+            AddMetaData(context, "Area", areaPublicId, "Square foot", "ft²");
+            AddMetaData(context, "Area", areaPublicId, "Square inch", "in²");
+            AddMetaData(context, "Area", areaPublicId, "Square kilometer", "km²");
+            AddMetaData(context, "Area", areaPublicId, "Planck area", "L²");
+            AddMetaData(context, "Area", areaPublicId, "Square meter", "m²");
+            AddMetaData(context, "Area", areaPublicId, "Square millimeter", "mm²");
+
+            #endregion
+
+            #region Capacity and volume
+
+            var capacityAndVolumePublicId = AddMetaDataType(context, "Capacity and volume");
+
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Barrel", "bbl");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Bushel", "bu");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic centimeter", "cc");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "centiliter", "cl");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic decimeter", "dm³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic foot", "ft³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic inch ", "in³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic kilometer", "km³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic meter ", "m³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic millimeter", "mm³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic yard", "yd³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Deciliter", "dl");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Fluid ounce", "oz");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Gallon", "gal");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Hectoliter", "hl");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Planck volume", "L³");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Liter", "l");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Microliter ", "µl");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Milliliter", "ml");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Peck", "pk");
+            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Quart", "qt");
+
+            #endregion
+
+            #region Circular measure
+
+            var circularMeasurePublicId = AddMetaDataType(context, "Circular measure");
+
+            AddMetaData(context, "Circular measure", circularMeasurePublicId, "circumference", "circle");
+            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Degree", "deg");
+            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Grade", "grad");
+            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Radian", "rad");
+
+            #endregion
+
+            #region Computer Storage
+
+            var computerStoragePublicId = AddMetaDataType(context, "Computer Storage");
+
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Exbibyte [exabyte]", "Eb [EiB]");
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Exabit [exbibit]", "Ebit [Eibit]");
+            AddMetaData(context, "Computer storage", computerStoragePublicId, "Gigabyte [gibibyte]", "Gb [GiB]");
+            AddMetaData(context, "Computer storage", computerStoragePublicId, " Gigabit [gibibit]", "Gbit [Gibit]");
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "megabyte [mebibyte]", "Mb [MiB] ");
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "megabit [mebibit]", "Mbit [Mibit]");
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Storage length in meters", "m");
+            AddMetaData(context, "computer Storage", computerStoragePublicId, "Terabit [tebibit] ", "Tbit [Tibit]");
+            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Terabyte [tebibyte] ", "Tb [TiB]");
+            AddMetaData(context, "Computer storage", computerStoragePublicId, "Kilobyte [kibybyte]", "Kb [KiB]");
+            AddMetaData(context, "Computer storage", computerStoragePublicId, "Kilobit [kibibit]", "Kbit [Kibit]");
+
+            #endregion
+
+            #region Data transfer rate
+
+            var dataTransferRatePublicId = AddMetaDataType(context, "Data transfer rate");
+
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "byte per second", "B/s ");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Gigabyte per second", "GB/s");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Gigabit per second", "Gbps");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Kilobyte per second", "KB/s");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Megabyte per second", "MB/s");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "megabit per second", "Mbps");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Terabyte per second", "TB/s");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Terabit per second (Tbps)", "Tbps");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "bit per second", "bps");
+            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Kilobit per second", "kbps");
+
+            #endregion
+
+            #region Density
+
+            var densityPublicId = AddMetaDataType(context, "Density");
+
+            AddMetaData(context, "Density", densityPublicId, "Planck density", "L¯³M ");
+            AddMetaData(context, "Density", densityPublicId, "Pound per cubic foot", "lb/ft³");
+            AddMetaData(context, "Density", densityPublicId, "Pound per U.S. gallon", "lb/gal");
+            AddMetaData(context, "Density", densityPublicId, "Pound per cubic inch", "lb/in³");
+            AddMetaData(context, "Density", densityPublicId, "Pound per cubic yard", "lb/yd³");
+            AddMetaData(context, "Density", densityPublicId, "Milligram per cubic meter", "mg/m³");
+            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic foot ", "oz/ft³");
+            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic inch ", "oz/in³");
+            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic yard ", "oz/yd³");
+            AddMetaData(context, "Density", densityPublicId, "Gram per litre", "g/L");
+            AddMetaData(context, "Density", densityPublicId, " Gram per cubic meter", "g/m³");
+            AddMetaData(context, "Density", densityPublicId, "Kilogram per litre", "kg/L");
+            AddMetaData(context, "Density", densityPublicId, "Kilogram per cubic meter", "kg/m³");
+            AddMetaData(context, "Density", densityPublicId, " Gram per millilitre", "g/mL");
+
+            #endregion
+
+            #region Distance and Length
+
+            var distanceAndLenghtPublicId = AddMetaDataType(context, "Distance and Length");
+
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "astronomical unit", "au");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Cable length", "cbl");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Gunter's (surveyors') chain", "ch");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Ramsden's (engineers') chain", "ch");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Centimeter", "cm");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Cubit", "cu");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Decimeter", "dm");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Fathom", "fath");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Foot", "ft");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Hand", "hd");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Inch", "in");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Kilometer", "km");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Planck length", "L");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "meter", "m");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Mile", "mi");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Millimeter", "mm");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Nanometer", "nm");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Palm", "plm");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Parsec", "pc");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Point", "pt");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Pixel", "px");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Rod", "rd");
+            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Yard", "yd");
+
+            #endregion
+
+            #region Energy and Work
+
+            var energyAndWorkPublicId = AddMetaDataType(context, "Energy and Work");
+
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "billion barrel of oil equivalent", "BBOE");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "barrel of oil equivalent", "BOE");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "British Thermal Unit", "BTU");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Calorie", "cal");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Electronvolt", "eV");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Foot-Pound", "ft*lbs");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Gigatonne of oil equivalent", "Gtoe");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Joule", "J");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilobarrel of oil equivalent", "kBOE");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilojoule", "kJ");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilowatt hour", "kW*h");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilocalorie", "kcal");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Planck energy", "L²MT¯²");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Megajoule", "MJ");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Million BTU", "MMBTU");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "megacalorie", "Mcal");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "megatonne of oil equivalent", "Mtoe");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Metre-kilogram", "mkg");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Watt hour", "W*h");
+            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Watt second", "W*s");
+
+            #endregion
+
+            #region Flow rate by mass
+
+            var flowRateByMassPublicId = AddMetaDataType(context, "Flow rate by mass");
+
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per day", "g/day");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per hour", "g/hour");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per day", "kg/day");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per hour", "kg/hour");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per minute", "kg/min");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per second", "kg/s");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per year", "kg/year");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per day", "lb/day");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per second", "lb/s");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per minute", "lb/min");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per hour", "lb/hour");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, " Gram per minute", "g/min");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per second", "g/s");
+            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per year", "g/year");
+
+            #endregion
+
+            #region Flow rate by volume
+
+            var flowRateByVolumePublicId = AddMetaDataType(context, "Flow rate by volume");
+
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per second", "ft³/s");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per minute", "ft³/min");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per hour", "ft³/hour");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per day", "ft³/day");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per year", "ft³/year");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per second", "in³/s");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per minute", "in³/min");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per hour", "in³/hour");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per day", "in³/day");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per year", "in³/year");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per second", "m³/s");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per minute", "m³/min");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per hour", "m³/hour");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per day", "m³/day");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per year", "m³/year");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per day", "gal/day");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per year", "gal/year");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per hour", "gph");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per minute", "gpm");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per second", "gps");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per day", "l/day");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per hour", "l/hour");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per minute", "l/min");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per second", "l/s");
+            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per year", "l/year");
+
+            #endregion
+
+            #region Force
+
+            var forcePublicId = AddMetaDataType(context, "Force");
+
+            AddMetaData(context, "Force", forcePublicId, "Dyne", "dyn");
+            AddMetaData(context, "Force", forcePublicId, "Grave-force", "Gf");
+            AddMetaData(context, "Force", forcePublicId, "Kilonewton", "kN");
+            AddMetaData(context, "Force", forcePublicId, "Kilogram-force", "kgf");
+            AddMetaData(context, "Force", forcePublicId, "Kilopond", "kp");
+            AddMetaData(context, "Force", forcePublicId, "Planck force", "LMT²");
+            AddMetaData(context, "Force", forcePublicId, "Pound-force", "lbf");
+            AddMetaData(context, "Force", forcePublicId, "Meganewton", "MN");
+            AddMetaData(context, "Force", forcePublicId, "Milligrave-force", "mGf");
+            AddMetaData(context, "Force", forcePublicId, "Millinewton", "mN");
+            AddMetaData(context, "Force", forcePublicId, "Micronewton ", "µN");
+            AddMetaData(context, "Force", forcePublicId, "Newton", "N");
+
+            #endregion
+
+            #region Franctions and Percent
+
+            var franctionsAndPercentPublicId = AddMetaDataType(context, "Franctions and Percent");
+
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Atto", "a");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Centil", "c");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Deci", "d");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Deka", "da");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Exa", "E");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Femto", "f");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Hecto", "h");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Half", "½");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Kilo", "k");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Mega", "M");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "milli", "m");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Micro", "µ; mc");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Micromole ", "µmol");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Millimole", "mmol");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Mole", "mol");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Nano", "n");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Tera", "T");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Permille", "‰");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Yotta", "Y");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Zetta", "Z");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Percent", "%");
+            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Giga", "g");
+
+            #endregion
+
+            #region Mass and weight
+
+            var massAndWeightPublicId = AddMetaDataType(context, "Mass and weight");
+
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Carat", "ct");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Dram", "dr");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Pennyweight", "dwt");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Gram", "g");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Grain", "gr");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Kilogram", "kg");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Pound", "lb");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Planck mass", "M");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Microgram", "mcg");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Milligram", "mg");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Ounce ", "oz");
+            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "atomic mass unit", "amu");
+
+            #endregion
+
+            #region Power
+
+            var powerPublicId = AddMetaDataType(context, "Power");
+
+            AddMetaData(context, "Power", powerPublicId, "Foot pound-force per second", "ft*lbf/s");
+            AddMetaData(context, "Power", powerPublicId, "Horsepower, electric", "hp(E)");
+            AddMetaData(context, "Power", powerPublicId, "Horsepower, mechanical (imperial)", "hp(I) ");
+            AddMetaData(context, "Power", powerPublicId, "Horsepower, metric", "hp(M)");
+            AddMetaData(context, "Power", powerPublicId, "Horsepower, boiler", "hp(S)");
+            AddMetaData(context, "Power", powerPublicId, "Kilowatt", "kW");
+            AddMetaData(context, "Power", powerPublicId, "Planck power", "L²MT¯³");
+            AddMetaData(context, "Power", powerPublicId, "Megawatt", "MW");
+            AddMetaData(context, "Power", powerPublicId, "Volt-ampere", "VA");
+            AddMetaData(context, "Power", powerPublicId, "Watt", "W");
+
+            #endregion
+
+            #region Radiation
+
+            var radiationPublicId = AddMetaDataType(context, "Radiation");
+
+            AddMetaData(context, "Radiation", radiationPublicId, "Centigrey", "cGy");
+            AddMetaData(context, "Radiation", radiationPublicId, "Gray", "Gy");
+            AddMetaData(context, "Radiation", radiationPublicId, "Milligray", "mGy");
+            AddMetaData(context, "Radiation", radiationPublicId, "Milliroentgen", "mR");
+            AddMetaData(context, "Radiation", radiationPublicId, "Millisievert", "mSv");
+            AddMetaData(context, "Radiation", radiationPublicId, "Microgray ", "µGy");
+            AddMetaData(context, "Radiation", radiationPublicId, "Microroentgen ", "µR");
+            AddMetaData(context, "Radiation", radiationPublicId, "Microsievert ", "µSv");
+
+            #endregion
+
+            #region Radioactivity
+
+            var radioActivityPublicId = AddMetaDataType(context, "Radioactivity");
+
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Becquerel ", "Bq");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Curie", "Ci");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Disintegrations per minute", "dpm");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Gigabecquerel", "GBq");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Kilobecquerel", "kBq");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Megabecquerel", "MBq");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Millicurie", "mCi");
+            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Microcurie", "µCi");
+
+            #endregion
+
+            #region Speed
+
+            var speedPublicId = AddMetaDataType(context, "Speed");
+
+            AddMetaData(context, "Speed", speedPublicId, "Kilometer per second", "km/s");
+            AddMetaData(context, "Speed", speedPublicId, "meter per second", "m/s");
+            AddMetaData(context, "Speed", speedPublicId, "Mile per hour ", "mph");
+            AddMetaData(context, "Speed", speedPublicId, "Mile per hour ", "mph");
+
+            #endregion
+
+            #region Temperature
+
+            var temperaturePublicId = AddMetaDataType(context, "Temperature");
+
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Celsius ", "°C ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Delisle ", "°D ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Fahrenheit ", "°F ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Newton ", "°N ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Rømer ", "°R ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Rankine ", "°RØ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Reaumur", "°Re ");
+            AddMetaData(context, "Temperature", temperaturePublicId, "Kelvin", "K");
+
+            #endregion
+
+            #region Time
+
+            var timePublicId = AddMetaDataType(context, "Time");
+
+            AddMetaData(context, "Time", timePublicId, "Minute", "min");
+            AddMetaData(context, "Time", timePublicId, "Second", "s");
+            AddMetaData(context, "Time", timePublicId, "Planck time", "T");
+
+            #endregion
+
+            #endregion
+
+            #region Continents
+
+            var continentsPublicId = AddMetaDataType(context, "Continents");
+            var asiaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Asia", "1");
+            var africaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Africa", "2");
+            var antarcticaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Antarctica", "3");
+            var europePublicId = AddMetaData(context, "Continents", continentsPublicId, "Europe", "4");
+            var oceaniaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Oceania", "5");
+            var northAmericaPublicId = AddMetaData(context, "Continents", continentsPublicId, "North America", "6");
+            var southAmericaPublicId = AddMetaData(context, "Continents", continentsPublicId, "South America", "7");
+
+            #endregion
+
+            #region Countries
+
+            var countryPublicId = AddMetaDataType(context, "Countries");
+            AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Albania", "AL", "+355", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Algeria", "DZ", "+213", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "American Samoa", "AS", "+1684", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Andorra", "AD", "+376", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Angola", "AO", "+244", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Anguilla", "AI", "+1264", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Antigua and Barbuda", "AG", "+1268", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Argentina", "AR", "+54", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Armenia", "AM", "+374", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Aruba", "AW", "+297", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Australia", "AU", "+61", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Austria", "AT", "+43", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Azerbaijan", "AZ", "+994", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bahamas", "BS", "+1242", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bahrain", "BH", "+973", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bangladesh", "BD", "+880", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Barbados", "BB", "+1246", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Belarus", "BY", "+375", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Belgium", "BE", "+32", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Belize", "BZ", "+501", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Benin", "BJ", "+229", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bermuda", "BM", "+1 441", "North America", northAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bhutan", "BT", " +975", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bolivia", "BO", "+591", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bosnia and Herzegovina", "BA", "+387", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Botswana", "BW", "+267", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Brazil", "BR", "+55", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Brunei", "BN", "+673", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Bulgaria", "BG", "+359", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Burkina Faso", "BF", "+226", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Burundi", "BI", "+257", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cambodia", "KH", "+855", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cameroon", "CM", "+237", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Canada", "CA", "+1", "North America", northAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cape Verde", "CV", "+238", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cayman Islands", "CJ", "+1345", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Central African Republic", "CF", "+236", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Chad", "TD", "+235", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Chile", "CL", "+56", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "China", "CN", "+86", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Colombia", "CO", "+57", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Comoros", "KM", "+269", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Democratic Republic of the Congo", "CD", "+243", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Republic of the Congo", "CG", "+242", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Costa Rica", "CR", "+506", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ivory Coast", "CI", "+225", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Croatia", "HR", "+385", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cuba", "CU", "+53", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Cyprus", "CY", "+357", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Czech Republic ", "CZ", "+420", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Denmark", "DK", "+45", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Djibouti", "DJ", "+253", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Dominica", "DM", "+1 767", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Dominican Republic", "DO", "+1 809, or 829, 849", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "East Timor", "TL", "+670", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ecuador", "EC", "+593", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Egypt", "EG", "+20", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "El Salvador", "SV", "+503", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Equatorial Guinea", "GQ", "+240", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Eritrea", "ER", "+291", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Estonia", "EE", "+372", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ethiopia", "ET", "+251", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Faroe Islands", "FO", "+298", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Fiji", "FJ", "+679", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Finland", "FI", "+358", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "France", "FR", "+33", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "French Guiana", "GF", "+594", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "French Polynesia", "PF", "+689", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Gabon", "GA", "+241", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Gambia", "GM", "+220", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Georgia", "GE", "+995", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Germany", "DE", "+49", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ghana", "GH", "+233", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Great Britain", "GB", "+44", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Greece", "GR", "+30", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Greenland", "GL", "+299", "North America", northAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Grenada", "GD", "+1 473", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guadeloupe", "GP", "+590", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guam", "GU", "+1 671", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guatemala", "GT", "+502", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guinea", "GN", "+224", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guinea-Bissau", "GW", "+245", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Guyana", "GY", "+592", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Haiti", "HT", "+509", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Vatican City State", "VA", "+379", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Honduras", "HN", " +504", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Hong Kong", "HK", "+852", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Hungary", "HU", "+36", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Iceland", "IS", "+354", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "India", "IN", "+91", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Indonesia", "ID", "+62", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Iran", "IR", "+98", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Iraq", "IQ", "+964", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ireland", "IE", "+353", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Israel", "IL", "+972", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Italy", "IT", "+39", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Jamaica", "JM", "+1 876", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Japan", "JP", "+81", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Jordan", "JO", "+962", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kazakhstan", "KZ", "+7", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kenya", "KE", "+254", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kiribati", "KI", "+686", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "North Korea", "KP", "+850", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "South Korea", "KR", "+82", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kosovo", "KV", "+381", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kuwait", "KW", "+965", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Kyrgyzstan", "KG", "+996", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Lao", "LS", "+856", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Latvia", "LV", "+371", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Lebanon", "LB", "+961", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Lesotho", "LS", "+266", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Liberia", "LR", "+231", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Libya", "LY", "+218", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Liechtenstein", "LI", "+423", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Lithuania", "LT", "+370", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Luxembourg", "LU", "+352", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Macau", "MO", "+853", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Republic of Macedonia", "MK", "+389", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Madagascar", "MG", "+261", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Malawi", "MW", "+265", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Malaysia", "MY", "+60", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Maldives", "MV", " +960", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mali", "ML", "+223", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Malta", "MT", "+356", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Marshall Islands", "MH", "+692", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Martinique", "MQ", "+596", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mauritania", "MR", "+222", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mauritius", "MU", "+230", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mexico", "MX", "+52", "North America", northAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Federated States of Micronesia", "FM", "+691", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Moldova", "MD", "+373", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Monaco", "MC", "+377", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mongolia", "MN", "+976", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Montenegro", "ME", "+382", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Montserrat", "MS", " +1 664", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Morocco", "MA", "+212", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Mozambique", "MZ", "+258", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Myanmar - Burma", "MM", "+95", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Namibia", "NA", "+264", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Nauru", "NR", "+674", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Nepal", "NP", "+977", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Netherlands", "NL", "+31", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Netherlands Antilles", "AN", "+599", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "New Caledonia", "NC", "+687", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "New Zealand", "NZ", "+64", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Nicaragua", "NI", "+505", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Niger", "NE", "+227", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Nigeria", "NG", "+234", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Northern Mariana Islands", "MP", "+1 670", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Norway", "NO", "+47", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Oman", "OM", "+968", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Pakistan", "PK", "+92", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Palau", "PW", "+680", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Palestinian territories", "PS", "+970", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Panama", "PA", "+507", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Papua New Guinea", "PG", "+675", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Paraguay", "PY", "+595", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Peru", "PE", "+51", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Philippines", "PH", "+63", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Pitcairn Islands", "PN", "+870", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Poland", "PL", "+48", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Portugal", "PT", "+351", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Puerto Rico", "PR", "+1 787 or +1 939", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Qatar", "QA", "+974", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Reunion Island", "RE", "+262", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Romania", "RO", "+40", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Russian Federation", "RU", "+7", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Rwanda", "RW", "+250", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Saint Kitts and Nevis", "KN", "+1 869", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Saint Lucia", "LC", "+1 758", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Saint Vincent and the Grenadines", "VC", "+1 784", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Samoa", "WS", "+685", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "San Marino", "SM", " +378", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Sao Tome and Principe", "ST", "+239", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Saudi Arabia", "SA", "+966", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Senegal", "SN", "+221", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Serbia", "RS", "+381", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Seychelles", "SC", "+248", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Sierra Leone", "SL", "+232", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Singapore", "SG", "+65", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Slovakia", "SK", "+421", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Slovenia", "SI", "+386", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Solomon Islands", "SB", "+677", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Somalia", "SO", "+252", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "South Africa", "ZA", "+27", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "South Sudan", "SS", "+211", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Spain", "ES", "+34", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Sri Lanka", "LK", "+94", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Sudan", "SD", "+249", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Suriname", "SR", " +597", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Swaziland", "SZ", " +268", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Sweden", "SE", "+46", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Switzerland", "CH", "+41", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Taiwan", "TW", "+886", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tajikistan", "TJ", "+922", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "United Republic of Tanzania", "TZ", "+255", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Thailand", "TH", " +66", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tibet", "TI", "+0086", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Timor-Leste", "TL", "+670", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Togo", "TG", "+228", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tokelau", "TK", "+690", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tonga", "TO", "+676", " Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Trinidad and Tobago", "TT", "+1 868", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tunisia", "TN", "+216", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Turkey", "TR", "+90", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Turkmenistan", "TM", "+993", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Tuvalu", "TV", "+688", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Uganda", "UG", "+256", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Ukraine", "UA", "+380", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "United Arab Emirates", "AE", "+971", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "United Kingdom", "GB", "+44", "Europe", europePublicId);
+            AddMetaData(context, "Countries", countryPublicId, "United States", "US", "+1", "North America", northAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Uruguay", "UY", "+598", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Uzbekistan", "UZ", "+998", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Vanuatu", "VU", "+678", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Venezuela", "VE", "+58", "South America", southAmericaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Vietnam", "VN", "+84", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "British Virgin Islands", "VG", "+1 284", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "US Virgin Islands", "VI", "+1 340", "Oceania", oceaniaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Yemen", "YE", "+967", "Asia", asiaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Zambia", "ZM", "+260", "Africa", africaPublicId);
+            AddMetaData(context, "Countries", countryPublicId, "Zimbabwe", "ZW", "+263", "Africa", africaPublicId);
+
+            #endregion
+
             context.SaveChanges();
         }
 
-        private void AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string value)
+        private void AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string code, string value, string parentName, string parentPublicId = "")
         {
             var metaData = new MetaData
             {
                 PublicId = Guid.NewGuid().ToNoDashString(),
+                IsActive = true,
+                Name = name,
+                Code = code,
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+                Value = value,
+                ParentName = parentName,
+                ParentCode = parentName.ToUrlSlug(),
+                ParentPublicId = parentPublicId
+            };
+
+            context.MetaDatas.Add(metaData);
+        }
+
+        private string AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string value)
+        {
+            var publicId = Guid.NewGuid().ToNoDashString();
+            var metaData = new MetaData
+            {
+                PublicId = publicId,
                 IsActive = true,
                 Name = name,
                 Code = name.ToUrlSlug(),
@@ -559,6 +1211,8 @@ namespace SetMeta.Web.Services.Data
             };
 
             context.MetaDatas.Add(metaData);
+
+            return publicId;
         }
 
         private string AddMetaDataType(SetMetaDbContext context, string name)
@@ -577,15 +1231,15 @@ namespace SetMeta.Web.Services.Data
             return publicId;
         }
 
-        private static void AddAdmin(SetMetaDbContext context, string name, string email)
+        private static void AddUser(SetMetaDbContext context, string name, string email, string role)
         {
             var user = new User
             {
                 Email = email,
                 PublicId = Guid.NewGuid().ToNoDashString(),
                 Name = name,
-                RoleId = ConstHelper.BasicRoles[ConstHelper.Admin],
-                RoleName = ConstHelper.Admin,
+                RoleId = ConstHelper.BasicRoles[role],
+                RoleName = role,
                 ImageUrl = GravatarHelper.GetGravatarURL(email),
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword("password"),
                 LastLoginAt = DateTime.Now,
