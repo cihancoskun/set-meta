@@ -8,13 +8,7 @@ namespace SetMeta.Tests.UserInterface
         [Test]
         public void should_login()
         {
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGOUT));
-
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
-
-            _browser.FindElementById("email").SendKeys("test@test.com");
-            _browser.FindElementById("password").SendKeys("password");
-            _browser.FindElementById("frm").Submit();
+            LoginAsUser();
 
             _browser.Close();
         }
@@ -22,7 +16,7 @@ namespace SetMeta.Tests.UserInterface
         [Test]
         public void should_signup()
         {
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGOUT));
+            LogOut();
 
             _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_NEW));
 
@@ -37,7 +31,7 @@ namespace SetMeta.Tests.UserInterface
         [Test]
         public void should_open_contact()
         {
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGOUT));
+            LogOut();
 
             _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_CONTACT));
               

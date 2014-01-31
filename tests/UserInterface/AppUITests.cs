@@ -29,7 +29,7 @@ namespace SetMeta.Tests.UserInterface
 
         private void CreateApp()
         {
-            _browser.Navigate().GoToUrl(string.Format("{0}/user/logout", BASE_URL));
+            LogOut();
             _browser.Navigate().GoToUrl(string.Format("{0}/user/login", BASE_URL));
 
             _browser.FindElementById("email").SendKeys("mehmet.sabancioglu@gmail.com");
