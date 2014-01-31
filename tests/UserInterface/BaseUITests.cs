@@ -9,7 +9,8 @@ namespace SetMeta.Tests.UserInterface
 
         public const string ACTION_ACCOUNT_LOGIN = "/user/login";
         public const string ACTION_ACCOUNT_LOGOUT = "/user/logout";
-        public const string ACTION_ACCOUNT_NEW = "/user/new"; 
+        public const string ACTION_ACCOUNT_NEW = "/user/new";
+        public const string ACTION_ACCOUNT_CONTACT = "/home/contact"; 
          
         public FirefoxDriver _browser;
 

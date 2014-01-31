@@ -34,5 +34,15 @@ namespace SetMeta.Tests.UserInterface
 
             _browser.Close();
         }
+
+        [Test]
+        public void should_open_contact()
+        {
+            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGOUT));
+
+            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_CONTACT));
+              
+            _browser.Close();
+        }
     }
 }
