@@ -28,7 +28,7 @@
             {
                 <tr>
                     <td>
-                        <a class="btn btn-sm btn-warning btnAct" data-toggle="modal" href="#DeleteModal" data-id="@item.Token">@Html.LocalizationString("btn_delete")</a>
+                        <button class="btn btn-sm btn-warning btnAct" data-toggle="modal" data-href="#DeleteModal" data-id="@item.Token">@Html.LocalizationString("btn_delete")</button>                 
                     </td>
                     <td>@item.Token</td>
                     <td>@item.CreationDate.ToString("f")</td>
@@ -50,8 +50,8 @@
                 @Html.LocalizationString("modal_body_delete_token")
             </div>
             <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="@Html.LocalizationString("btn_cancel")" />
-                <input type="button" class="btn btn-primary" value="@Html.LocalizationString("btn_ok")" id="btnDelete" data-id="" />
+                <button class="btn btn-danger" data-dismiss="modal">@Html.LocalizationString("btn_cancel")</button>
+                <button class="btn btn-success" id="btnDelete" name="btnDelete" data-id="">@Html.LocalizationString("btn_save")</button>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
     <script>
         $(function () {
             var fnBtnActionClick = function () {
-                var textBtn = "input#btnDelete";
+                var textBtn = "button#btnDelete";
                 
                 var id = $(this).data(textId);
                 var isActive = $(this).data(textIsActive);
@@ -77,9 +77,9 @@
                 $(textBtn).data(textId, id).data(textIsActive, isActive);
             };
 
-            $("a.btnAct").click(fnBtnActionClick);
+            $("button.btnAct").click(fnBtnActionClick);
             
-            $("input#btnDelete").click(function () {
+            $("button#btnDelete").click(function () {
                 var token = $(this).data("id");
 
                 $.ajax({
@@ -87,8 +87,8 @@
                     type: "POST",
                     data: "token=" + token + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
                 }).done(function (r) {
-                    if (r && r.Ok) {
-                        $("a[data-id='" + token + "']").parent().parent().remove();
+                    if (r && r.IsOk) {
+                        $("button[data-id='" + token + "']").parent().parent().remove();
                         $("#DeleteModal").modal('hide');
 
                     } else {
@@ -97,9 +97,9 @@
                 });
             });
 
-            $("input.btnNewToken").click(function () {
+            $("button.btnNewToken").click(function () {
                 var appId = $(this).data("id");
-                $("input#btnDelete").data("id", appId);
+                $("button#btnDelete").data("id", appId);
                 
                 $.ajax({
                     url: "/ajax/newtoken",
@@ -110,12 +110,12 @@
 
                         var row = $("<tr />");
                         var url = "#DeleteModal";
-                        var aDeleteButton = $("<a />");
+                        var aDeleteButton = $("<button />");
                         //aDeleteButton.addClass("btn").addClass("btn-sm").addClass("btn-warning").addClass("btnAction");
                         aDeleteButton.addClass("btn btn-sm btn-warning btnAction");
                         aDeleteButton.attr("data-toggle", "modal");
                         aDeleteButton.attr("data-id", r.Token);
-                        aDeleteButton.attr("href", url);
+                        aDeleteButton.attr("data-target", url);
                         aDeleteButton.html('@Html.LocalizationString("delete")');
                         aDeleteButton.click(fnBtnActionClick);
 

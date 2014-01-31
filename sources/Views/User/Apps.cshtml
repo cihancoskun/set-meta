@@ -98,10 +98,10 @@
                     success: function (r) {
                         if (r && r.IsOk) {
                             if (isActive) {
-                                $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
                             }
                             else {
-                                $("a[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
                             }
 
                             $("#DeactivateModal").modal('hide');

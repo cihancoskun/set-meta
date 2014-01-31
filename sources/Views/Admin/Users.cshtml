@@ -26,7 +26,7 @@
                     <td>
                         @if (User.Identity.GetId() != item.Id)
                         {
-                            <button class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</button>
+                            <button class="btn btn-sm @buttonCss btnAction" data-toggle="modal" data-target="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</button>
                         }
                     </td>
                     <td>@item.Name</td>
@@ -100,12 +100,12 @@
                     type: "POST",
                     data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
                     success: function (r) {
-                        if (r && r.Ok) {
+                        if (r && r.IsOk) {
                             if (isActive) {
-                                $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
                             }
                             else {
-                                $("a[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
+                                $("button[data-id='" + id + "']").removeClass("btn-success").addClass("btn-warning").data("isactive", true).html(textDeactivate);
                             }
 
                             $("#DeactivateModal").modal('hide');

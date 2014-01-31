@@ -96,7 +96,7 @@
                     type: "POST",
                     data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
                     success: function (r) {
-                        if (r && r.Ok) {
+                        if (r && r.IsOk) {
                             if (isActive) {
                                 $("a[data-id='" + id + "']").removeClass("btn-warning").addClass("btn-success").data("isactive", false).html(textActivate);
                             }
