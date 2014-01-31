@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
 
 namespace SetMeta.Tests.UserInterface
 {

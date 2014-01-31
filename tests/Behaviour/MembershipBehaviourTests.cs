@@ -8,10 +8,11 @@ using NUnit.Framework;
 
 using SetMeta.Tests._TestHelpers;
 using SetMeta.Tests._Builders;
+using SetMeta.Web.Data.Entities;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Models;
 using SetMeta.Web.Services;
-using SetMeta.Web.ViewModels; 
+
 
 namespace SetMeta.Tests.Behaviour
 {
@@ -26,7 +27,7 @@ namespace SetMeta.Tests.Behaviour
         public async void any_visitor_can_create_developer_account()
         {
             //arrange
-            var validModel = new UserViewModel
+            var validModel = new UserModel
             {
                 Name = "name",
                 Password = "pass",
@@ -56,15 +57,15 @@ namespace SetMeta.Tests.Behaviour
             userService.Verify(x => x.Create(validModel, ConstHelper.Developer), Times.Once);
             formAuthenticationService.Verify(x => x.SignIn(validModel.Id, validModel.Name, validModel.Email, ConstHelper.Developer, true), Times.Once);
 
-            sut.AssertPostAttribute(ActionNameNew, new[] { typeof(UserViewModel) });
-            sut.AssertAllowAnonymousAttribute(ActionNameNew, new[] { typeof(UserViewModel) }); 
+            sut.AssertPostAttribute(ActionNameNew, new[] { typeof(UserModel) });
+            sut.AssertAllowAnonymousAttribute(ActionNameNew, new[] { typeof(UserModel) }); 
         }
 
         [Test]
         public async void any_user_can_login()
         {
             //arrange
-            var validModel = new LoginViewModel
+            var validModel = new LoginModel
             { 
                 Password = "pass",
                 Email = "test@test.com" 
@@ -103,8 +104,8 @@ namespace SetMeta.Tests.Behaviour
             userService.Verify(x => x.GetByEmail(validModel.Email), Times.Once);
             formAuthenticationService.Verify(x => x.SignIn(user.PublicId, user.Name, user.Email, ConstHelper.Developer, true), Times.Once);
 
-            sut.AssertPostAttribute(ActionNameLogin, new[] { typeof(UserViewModel) });
-            sut.AssertAllowAnonymousAttribute(ActionNameLogin, new[] { typeof(UserViewModel) }); 
+            sut.AssertPostAttribute(ActionNameLogin, new[] { typeof(UserModel) });
+            sut.AssertAllowAnonymousAttribute(ActionNameLogin, new[] { typeof(UserModel) }); 
         }
 
         [Test]
