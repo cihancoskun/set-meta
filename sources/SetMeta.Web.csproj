@@ -151,6 +151,7 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\LangController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Services\Data\Entities\App.cs" />
     <Compile Include="Services\Data\Entities\BaseEntity.cs" />
     <Compile Include="Services\Data\Entities\MetaData.cs" />

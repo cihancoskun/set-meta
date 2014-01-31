@@ -36,7 +36,31 @@ namespace SetMeta.Web.Services
 
         public Task<bool> CreateContactMessage(string name, string email, string title, string info)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(info)) return Task.FromResult(false);
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                email = ConstHelper.Anonymous;
+            }
+
+            var feedback = new Feedback
+            {
+                Info = info,
+                Email = email,
+                Title = title,
+                Name = name
+            };
+
+            var user = _context.Set<User>().FirstOrDefault(x => x.Email == email);
+            if (user != null)
+            {
+                feedback.IsAnonymous = true;
+                feedback.CreatedBy = user.Id;
+            }
+
+            _context.Set<Feedback>().Add(feedback);
+
+            return Task.FromResult(_context.SaveChanges() > 0);
         }
 
         public Task<PagedList<Feedback>> GetFeedbacks(int pageNumber)
