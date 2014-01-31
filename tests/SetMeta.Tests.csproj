@@ -89,6 +89,7 @@
     <Compile Include="UserInterface\BaseUITests.cs" />
     <Compile Include="UserInterface\FeedbackUITests.cs" />
     <Compile Include="UserInterface\MembershipUITests.cs" />
+    <Compile Include="_Builders\AppControllerBuilder.cs" />
     <Compile Include="_Builders\UserControllerBuilder.cs" />
     <Compile Include="_TestHelpers\ControllerTestHelper.cs" />
   </ItemGroup>
