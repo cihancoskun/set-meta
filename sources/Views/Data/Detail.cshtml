@@ -1,0 +1,40 @@
+﻿@using System.Diagnostics.Contracts.Internal
+@model PageModel<MetaDataModel>
+
+@{
+    ViewBag.Title = Html.LocalizationString("user_apps_title");
+}
+
+<h3>@ViewBag.Title</h3>
+<hr />
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>@Html.LocalizationString("name")</th>
+                <th>@Html.LocalizationString("description")</th>
+                <th>@Html.LocalizationString("url")</th>
+                <th>@Html.LocalizationString("code")</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {            
+                <tr>
+                    <td><a href="/app/detail/@item.Id">@item.Name</a></td>
+                    <td>@item.Description</td> 
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+    @Html.AntiForgeryToken()
+</div>
+
+@if (User.Identity.GetRoleName() == ConstHelper.Admin)
+{
+  //popup
+}
