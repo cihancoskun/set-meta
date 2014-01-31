@@ -12,14 +12,14 @@ namespace SetMeta.Tests._Builders
     public class UserControllerBuilder
     {
         private IAppService _appService;
-        private IUserService _userService; 
+        private IUserService _userService;
         private IFormsAuthenticationService _formsAuthenticationService;
 
         public UserControllerBuilder()
         {
             _appService = null;
             _formsAuthenticationService = null;
-            _userService = null; 
+            _userService = null;
         }
 
         internal UserControllerBuilder WithFormsAuthenticationService(IFormsAuthenticationService formsAuthenticationService)
@@ -41,7 +41,7 @@ namespace SetMeta.Tests._Builders
 
         }
 
-        internal UserController BuildWithMockControllerContext()
+        internal UserController BuildWithMockControllerContext(string id, string name, string email, string role)
         {
             var sut = Build();
 
@@ -58,7 +58,7 @@ namespace SetMeta.Tests._Builders
             httpContext.Setup(x => x.User).Returns(user.Object);
             user.Setup(x => x.Identity).Returns(currentUser.Object);
             currentUser.Setup(x => x.IsAuthenticated).Returns(true);
-            currentUser.Setup(x => x.Name).Returns(string.Format("{0}|{1}|{2}|{3}", 1, "name", "test@test.com", 1));
+            currentUser.Setup(x => x.Name).Returns(string.Format("{0}|{1}|{2}|{3}", id, name, email, role));
 
             httpResponse.Setup(x => x.SetCookie(It.IsAny<HttpCookie>()));
 
@@ -68,7 +68,7 @@ namespace SetMeta.Tests._Builders
 
         internal UserController Build()
         {
-            return new UserController(_formsAuthenticationService,_userService, _appService);
+            return new UserController(_formsAuthenticationService, _userService, _appService);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SetMeta.Tests._Builders
             return this;
         }
 
-        internal AppController BuildWithMockControllerContext()
+        internal AppController BuildWithMockControllerContext(string id, string name, string email, string role)
         {
             var sut = Build();
 
@@ -39,7 +39,7 @@ namespace SetMeta.Tests._Builders
             httpContext.Setup(x => x.User).Returns(user.Object);
             user.Setup(x => x.Identity).Returns(currentUser.Object);
             currentUser.Setup(x => x.IsAuthenticated).Returns(true);
-            currentUser.Setup(x => x.Name).Returns(string.Format("{0}|{1}|{2}|{3}", 1, "name", "test@test.com", 1));
+            currentUser.Setup(x => x.Name).Returns(string.Format("{0}|{1}|{2}|{3}", id, name, email, role));
 
             httpResponse.Setup(x => x.SetCookie(It.IsAny<HttpCookie>()));
 

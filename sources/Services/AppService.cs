@@ -47,7 +47,7 @@ namespace SetMeta.Web.Services
             };
 
             _context.Set<App>().Add(app);
-            
+
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
@@ -123,7 +123,7 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy);
             if (user == null) return Task.FromResult(false);
 
-            if (user.RoleName == ConstHelper.User) Task.FromResult(false);
+            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
 
             var entity = new Token
             {
@@ -150,9 +150,9 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == deletedBy);
             if (user == null) return Task.FromResult(false);
 
-            if (user.RoleName == ConstHelper.User) Task.FromResult(false);
+            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
 
-            if (user.Id != item.CreatedBy 
+            if (user.Id != item.CreatedBy
                 && user.RoleName != ConstHelper.Admin) Task.FromResult(false);
 
             item.DeletedAt = DateTime.Now;
@@ -162,12 +162,10 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
-
         public Task<bool> IsTokenValid(string token)
         {
             return Task.FromResult(_context.Set<Token>().Any(x => x.Key == token && x.IsActive && x.IsAppActive));
         }
-
 
         public Task<bool> ChangeStatus(long appId, bool isActive)
         {
@@ -175,6 +173,11 @@ namespace SetMeta.Web.Services
 
             var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.Id == appId);
             if (app == null) return Task.FromResult(false);
+
+            var user = _context.Set<User>().FirstOrDefault(x => x.Id == appId);
+            if (user == null) return Task.FromResult(false);
+
+            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
 
             foreach (var token in app.Tokens)
             {
@@ -193,6 +196,11 @@ namespace SetMeta.Web.Services
 
             var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.PublicId == appPublicId);
             if (app == null) return Task.FromResult(false);
+
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == appPublicId);
+            if (user == null) return Task.FromResult(true);
+
+            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
 
             foreach (var token in app.Tokens)
             {

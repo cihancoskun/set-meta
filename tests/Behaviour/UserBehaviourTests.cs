@@ -1,10 +1,12 @@
-﻿using System.Security.Principal;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
+
 using Moq;
 using NUnit.Framework;
+
 using SetMeta.Tests._Builders;
 using SetMeta.Tests._TestHelpers;
+using SetMeta.Web.Helpers;
 using SetMeta.Web.Models;
 using SetMeta.Web.Services;
 
@@ -16,9 +18,10 @@ namespace SetMeta.Tests.Behaviour
         const string ActionNameNew = "New";
         const string ActionNameNewToken = "NewToken";
         const string ActionNameDeleteToken = "DeleteToken";
+        const string ActionNameChangeStatus = "ChangeStatus";
 
         [Test]
-        public async void any_user_in_developer_role_can_create_app()
+        public async void developer_or_admin_can_create_app()
         {
             //arrange
             var validModel = new AppModel
@@ -32,7 +35,7 @@ namespace SetMeta.Tests.Behaviour
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
-                                                .BuildWithMockControllerContext();
+                                                .BuildWithMockControllerContext("1","name","test@test.com",ConstHelper.Developer);
 
             var result = await sut.New(validModel);
 
@@ -46,27 +49,55 @@ namespace SetMeta.Tests.Behaviour
         }
 
         [Test]
-        public void any_user_in_developer_role_can_deactivate_app()
+        public async void developer_or_admin_can_deactivate_app()
         {
             //arrange 
+            var appService = new Mock<IAppService>();
+            appService.Setup(x => x.ChangeStatus("1",true)).Returns(Task.FromResult(true));
 
-            //act 
+            //act
+            var sut = new AppControllerBuilder().WithAppService(appService.Object)
+                                                .Build();
 
-            //assert 
+            var result = await sut.ChangeStatus("1",true);
+
+            //assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Data);
+            Assert.IsAssignableFrom<JsonResult>(result);
+            Assert.IsAssignableFrom<ResponseModel>(result.Data);
+
+            appService.Verify(x => x.ChangeStatus("1",  true), Times.Once);
+
+            sut.AssertPostAttribute(ActionNameChangeStatus, new[] { typeof(string), typeof(bool) });
         }
 
         [Test]
-        public void any_user_in_developer_role_can_activate_app()
+        public async void developer_or_admin_can_activate_app()
         {
             //arrange 
+            var appService = new Mock<IAppService>();
+            appService.Setup(x => x.ChangeStatus("1", false)).Returns(Task.FromResult(true));
 
-            //act 
+            //act
+            var sut = new AppControllerBuilder().WithAppService(appService.Object)
+                                                .BuildWithMockControllerContext("1","name","test@test.com",ConstHelper.User); 
 
-            //assert 
+            var result = await sut.ChangeStatus("1", false);
+
+            //assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Data);
+            Assert.IsAssignableFrom<JsonResult>(result);
+            Assert.IsAssignableFrom<ResponseModel>(result.Data);
+
+            appService.Verify(x => x.ChangeStatus("1", false), Times.Once);
+
+            sut.AssertPostAttribute(ActionNameChangeStatus, new[] { typeof(string), typeof(bool) });
         }
 
         [Test]
-        public async void any_user_in_developer_role_can_create_token()
+        public async void developer_or_admin_can_create_token()
         {
             //arrange   
             var appService = new Mock<IAppService>();
@@ -75,7 +106,7 @@ namespace SetMeta.Tests.Behaviour
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
-                                                .BuildWithMockControllerContext();
+                                                .BuildWithMockControllerContext("1", "name", "test@test.com", ConstHelper.Developer);
 
             var result = await sut.NewToken("1");
 
@@ -91,7 +122,7 @@ namespace SetMeta.Tests.Behaviour
         }
 
         [Test]
-        public async void any_user_in_developer_role_can_delete_token()
+        public async void developer_or_admin_can_delete_token()
         {
             //arrange   
             var appService = new Mock<IAppService>();
@@ -100,7 +131,7 @@ namespace SetMeta.Tests.Behaviour
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
-                                                .BuildWithMockControllerContext();
+                                                .BuildWithMockControllerContext("1", "name", "test@test.com", ConstHelper.Developer);
 
             var result = await sut.DeleteToken("1");
 
@@ -114,25 +145,13 @@ namespace SetMeta.Tests.Behaviour
 
             sut.AssertPostAttribute(ActionNameDeleteToken, new[] { typeof(string) });
         }
+          
+        public void developer_or_admin_in_developer_role_can_add_meta_data() { }
+        public void developer_or_admin_in_developer_role_can_edit_meta_data() { } 
+        public void developer_or_admin_in_admin_role_can_add_meta_data() { }
+        public void developer_or_admin_in_admin_role_can_edit_meta_data() { }
+        public void developer_or_admin_in_admin_role_can_delete_meta_data() { } 
+        public void developer_or_admin_in_developer_role_can_NOT_delete_meta_data() { }
 
-        public void any_user_in_admin_role_can_create_app() { }
-        public void any_user_in_admin_role_can_deactivate_app() { }
-        public void any_user_in_admin_role_can_activate_app() { }
-
-        public void any_user_in_admin_role_can_create_token() { }
-        public void any_user_in_admin_role_can_delete_token() { }
-
-        public void any_user_in_developer_role_can_add_meta_data() { }
-        public void any_user_in_developer_role_can_edit_meta_data() { }
-
-        public void any_user_in_admin_role_can_add_meta_data() { }
-        public void any_user_in_admin_role_can_edit_meta_data() { }
-        public void any_user_in_admin_role_can_delete_meta_data() { }
-
-        public void any_user_in_developer_role_can_NOT_delete_meta_data() { }
-        public void any_user_in_user_role_can_NOT_delete_meta_data() { }
-        public void any_user_in_user_role_can_NOT_add_meta_data() { }
-        public void any_user_in_user_role_can_NOT_create_app() { }
-        public void any_user_in_user_role_can_NOT_create_token() { }
     }
 }
