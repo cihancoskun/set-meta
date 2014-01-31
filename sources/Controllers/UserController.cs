@@ -60,10 +60,10 @@ namespace SetMeta.Web.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<JsonResult> ChangeStatus(int id, bool isActive)
+        public async Task<JsonResult> ChangeStatus(string id, bool isActive)
         {
             var model = new ResponseModel { IsOk = false };
-            if (id < 1)
+            if (string.IsNullOrEmpty(id))
             {
                 return Json(model, JsonRequestBehavior.DenyGet);
             }

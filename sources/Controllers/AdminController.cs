@@ -87,12 +87,9 @@ namespace SetMeta.Web.Controllers
             {
                 pageNumber = 1;
             }
+
             var apps = await _appService.GetApps(pageNumber);
-
             var list = apps.Items.Select(AppViewModel.Map).ToList();
-
-
-
             var model = new PageViewModel<AppViewModel>
             {
                 Items = list,
@@ -114,6 +111,7 @@ namespace SetMeta.Web.Controllers
             {
                 pageNumber = 1;
             }
+
             var feedbacks = await _feedbackService.GetFeedbacks(pageNumber);
             var list = feedbacks.Items.Select(FeedbackViewModel.Map).ToList();
 
