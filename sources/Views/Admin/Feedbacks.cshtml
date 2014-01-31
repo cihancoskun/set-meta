@@ -30,7 +30,7 @@
                 </tr>
             }
             @{
-                if (Model.HasNextPage || Model.HasPrevPage)
+                if (Model.PageCount > 1)
                 {
                     <tr>
                         <td colspan="6" align="center">
@@ -60,10 +60,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">@Html.LocalizationString("modal_title_apps")</h4>
+                <h4 class="modal-title">@Html.LocalizationString("modal_title_feedbacks")</h4>
             </div>
             <div class="modal-body">
-                @Html.LocalizationString("modal_body_apps")
+                @Html.LocalizationString("modal_body_feedbacks")
             </div>
             <div class="modal-footer">
                 <input type="button" class="btn btn-default" data-dismiss="modal" value="@Html.LocalizationString("btn_cancel")" />

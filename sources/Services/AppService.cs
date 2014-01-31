@@ -38,7 +38,8 @@ namespace SetMeta.Web.Services
                         Key = key,
                         PublicId = key,
                         UsageCount = 0,
-                        IsAppActive = true
+                        IsAppActive = true,
+                        IsActive = true
                     }
                 }
             };
@@ -115,7 +116,7 @@ namespace SetMeta.Web.Services
             if (!model.IsValid()) return Task.FromResult(false);
 
             var app = _context.Set<App>().FirstOrDefault(x => x.PublicId == model.AppId);
-            if (app != null) return Task.FromResult(false);
+            if (app == null) return Task.FromResult(false);
 
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy);
             if (user == null) return Task.FromResult(false);
@@ -127,7 +128,8 @@ namespace SetMeta.Web.Services
                 Key = model.Token,
                 PublicId = model.Token,
                 UsageCount = 0,
-                IsAppActive = true
+                IsAppActive = true,
+                IsActive = true
             };
             _context.Set<Token>().Add(entity);
 

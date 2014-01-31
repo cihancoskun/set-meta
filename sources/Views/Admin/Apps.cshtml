@@ -36,7 +36,7 @@
                 </tr>
             }
             @{
-                if (Model.HasNextPage || Model.HasPrevPage)
+                if (Model.PageCount > 1)
                 {
                     <tr>
                         <td colspan="6" align="center">
@@ -56,7 +56,7 @@
                         </td>
                     </tr>
                 }
-            }  
+            }
         </tbody>
     </table>
     @Html.AntiForgeryToken()
@@ -82,11 +82,11 @@
 @section script
 {
     <script>
-        $(function() {
+        $(function () {
             var textActivate = "@Html.LocalizationString("btn_activate")";
             var textDeactivate = "@Html.LocalizationString("btn_deactivate")";
 
-            $("input#btnModalAction").click(function() {
+            $("input#btnModalAction").click(function () {
                 var id = $(this).data(textId);
                 var isActive = $(this).data(textIsActive);
 
@@ -94,7 +94,7 @@
                     url: "/App/ChangeStatus",
                     type: "POST",
                     data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
-                    success: function(r) {
+                    success: function (r) {
                         if (r && r.Ok) {
                             if (isActive) {
                                 $("a[data-id='" + id + "']").removeClass("btn-warning")

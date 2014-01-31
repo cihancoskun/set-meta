@@ -51,35 +51,39 @@ namespace SetMeta.Web
 
         private static void SetLocalizationStringsDictionary(HttpClient client, IDictionary<string, string> dictionary, string languageKey)
         {
-            var page = 1;
-            while (page > 0)
+            try
             {
-                var response = client.GetStringAsync(string.Format("http://setlocale.azurewebsites.net/api/locales?lang={0}&page={1}", languageKey, page));
-                response.Wait();
-
-                var responseBody = response.Result;
-                var items = JsonSerializer.DeserializeFromString<List<NameValue>>(responseBody);
-
-                if (items == null || !items.Any())
+                var page = 1;
+                while (page > 0)
                 {
-                    page = 0;
-                    continue;
-                }
+                    var response = client.GetStringAsync(string.Format("http://setlocale.azurewebsites.net/api/locales?lang={0}&page={1}", languageKey, page));
+                    response.Wait();
 
-                foreach (var item in items)
-                {
-                    if (dictionary.ContainsKey(item.Name))
-                    {
-                        dictionary[item.Name] = item.Value;
-                    }
-                    else
-                    {
-                        dictionary.Add(item.Name, item.Value);
-                    }
-                }
+                    var responseBody = response.Result;
+                    var items = JsonSerializer.DeserializeFromString<List<NameValue>>(responseBody);
 
-                page++;
+                    if (items == null || !items.Any())
+                    {
+                        page = 0;
+                        continue;
+                    }
+
+                    foreach (var item in items)
+                    {
+                        if (dictionary.ContainsKey(item.Name))
+                        {
+                            dictionary[item.Name] = item.Value;
+                        }
+                        else
+                        {
+                            dictionary.Add(item.Name, item.Value);
+                        }
+                    }
+
+                    page++;
+                }
             }
+            catch { }
         }
 
         private static void PrepareIocContainer()

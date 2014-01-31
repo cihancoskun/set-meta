@@ -58,8 +58,8 @@ namespace SetMeta.Web
                 Component.For<IFormsAuthenticationService>().ImplementedBy<FormsAuthenticationService>().LifestylePerWebRequest(),
                 Component.For<IUserService>().ImplementedBy<UserService>().LifestylePerWebRequest(),
                 Component.For<IAppService>().ImplementedBy<AppService>().LifestylePerWebRequest(),
-                Component.For<IFeedbackService>().ImplementedBy<FeedbackService>().LifestylePerWebRequest()
-                );
+                Component.For<IMetaDataService>().ImplementedBy<MetaDataService>().LifestylePerWebRequest(),
+                Component.For<IFeedbackService>().ImplementedBy<FeedbackService>().LifestylePerWebRequest());
         }
     }
 }

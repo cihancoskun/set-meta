@@ -32,7 +32,58 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
-            
+            #region Months
+
+            var monthPublicId = AddMetaDataType(context, "Months");
+            AddMetaData(context, "Months", monthPublicId, "January", "1");
+            AddMetaData(context, "Months", monthPublicId, "February", "2");
+            AddMetaData(context, "Months", monthPublicId, "March", "3");
+            AddMetaData(context, "Months", monthPublicId, "April", "4");
+            AddMetaData(context, "Months", monthPublicId, "May", "5");
+            AddMetaData(context, "Months", monthPublicId, "June", "6");
+            AddMetaData(context, "Months", monthPublicId, "July", "7");
+            AddMetaData(context, "Months", monthPublicId, "August", "8");
+            AddMetaData(context, "Months", monthPublicId, "September", "9");
+            AddMetaData(context, "Months", monthPublicId, "October", "10");
+            AddMetaData(context, "Months", monthPublicId, "November", "11");
+            AddMetaData(context, "Months", monthPublicId, "December", "12"); 
+
+            #endregion
+
+            context.SaveChanges();
+        }
+
+        private void AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string value)
+        {
+            var metaData = new MetaData
+            {
+                PublicId = Guid.NewGuid().ToNoDashString(),
+                IsActive = true,
+                Name = name,
+                Code = name.ToUrlSlug(),
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+                Value = value
+            };
+
+            context.MetaDatas.Add(metaData);
+        }
+
+        private string AddMetaDataType(SetMetaDbContext context, string name)
+        {
+            var publicId = Guid.NewGuid().ToNoDashString();
+            var metaDataType = new MetaDataType
+            {
+                PublicId = publicId,
+                IsActive = true,
+                Name = name,
+                Code = name.ToUrlSlug()
+            };
+
+            context.MetaDataTypes.Add(metaDataType);
+
+            return publicId;
         }
 
         private static void AddAdmin(SetMetaDbContext context, string name, string email)

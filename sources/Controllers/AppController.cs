@@ -18,9 +18,9 @@ namespace SetMeta.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Detail(int id = 0)
+        public async Task<ActionResult> Detail(string id)
         {
-            if (id < 1)
+            if (string.IsNullOrEmpty(id))
             {
                 return RedirectToHome();
             }
