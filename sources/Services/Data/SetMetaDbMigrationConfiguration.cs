@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
-
+using ServiceStack;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Data.Entities;
 
@@ -242,19 +242,6 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
-            #region Continents
-
-            var continentsPublicId = AddMetaDataType(context, "Continents");
-            AddMetaData(context, "Continents", continentsPublicId, "Asia", "1");
-            AddMetaData(context, "Continents", continentsPublicId, "Africa", "2");
-            AddMetaData(context, "Continents", continentsPublicId, "Antarctica", "3");
-            AddMetaData(context, "Continents", continentsPublicId, "North America", "4");
-            AddMetaData(context, "Continents", continentsPublicId, "Europe", "5");
-            AddMetaData(context, "Continents", continentsPublicId, "Oceania", "6");
-            AddMetaData(context, "Continents", continentsPublicId, "South America", "7");
-
-            #endregion
-
             #region JobTitles
             var jobTitlesPublicId = AddMetaDataType(context, "JobTitles");
             AddMetaData(context, "JobTitles", jobTitlesPublicId, "General Manager", "general_manager");
@@ -295,14 +282,8 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
-            #region Countries
-
-            var countryPublicId = AddMetaDataType(context, "Countries");
-
-
-            #endregion
-
             #region Sectors
+
             var sectorPublicId = AddMetaDataType(context, "Sectors");
 
             AddMetaData(context, "Sectors", sectorPublicId, "Fuel Oil", "fuel_oil");
@@ -340,7 +321,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Departments
 
-            var departmentPublicId = AddMetaDataType(context, "Deparments"); 
+            var departmentPublicId = AddMetaDataType(context, "Deparments");
 
             AddMetaData(context, "Departments", departmentPublicId, "General", "general");
             AddMetaData(context, "Departments", departmentPublicId, "Management", "management");
@@ -541,7 +522,271 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region Continents
+
+            var continentsPublicId = AddMetaDataType(context, "Continents");
+            AddMetaData(context, "Continents", continentsPublicId, "Asia", "1");
+            AddMetaData(context, "Continents", continentsPublicId, "Africa", "2");
+            AddMetaData(context, "Continents", continentsPublicId, "Antarctica", "3");
+            AddMetaData(context, "Continents", continentsPublicId, "Europe", "4");
+            AddMetaData(context, "Continents", continentsPublicId, "Oceania", "5");
+            AddMetaData(context, "Continents", continentsPublicId, "North America", "6");
+            AddMetaData(context, "Continents", continentsPublicId, "South America", "7");
+            
             context.SaveChanges();
+
+            #endregion
+
+            #region Countries
+
+            var countryPublicId = AddMetaDataType(context, "Countries");
+            AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Albania", "AL", "+355", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Algeria", "DZ", "+213", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "American Samoa", "AS", "+1684", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Andorra", "AD", "+376", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Angola", "AO", "+244", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Anguilla", "AI", "+1264", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Antigua and Barbuda", "AG", "+1268", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Argentina", "AR", "+54", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Armenia", "AM", "+374", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Aruba", "AW", "+297", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Australia", "AU", "+61", "Australia");
+            AddMetaData(context, "Countries", countryPublicId, "Austria", "AT", "+43", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Azerbaijan", "AZ", "+994", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Bahamas", "BS", "+1242", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Bahrain", "BH", "+973", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Bangladesh", "BD", "+880", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Barbados", "BB", "+1246", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Belarus", "BY", "+375", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Belgium", "BE", "+32", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Belize", "BZ", "+501", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Benin", "BJ", "+229", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Bermuda", "BM", "+1 441", "North America");
+            AddMetaData(context, "Countries", countryPublicId, "Bhutan", "BT", " +975", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Bolivia", "BO", "+591", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Bosnia and Herzegovina", "BA", "+387", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Botswana", "BW", "+267", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Brazil", "BR", "+55", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Brunei", "BN", "+673", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Bulgaria", "BG", "+359", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Burkina Faso", "BF", "+226", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Burundi", "BI", "+257", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Cambodia", "KH", "+855", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Cameroon", "CM", "+237", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Canada", "CA", "+1", "North America");
+            AddMetaData(context, "Countries", countryPublicId, "Cape Verde", "CV", "+238", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Cayman Islands", "CJ", "+1345", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Central African Republic", "CF", "+236", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Chad", "TD", "+235", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Chile", "CL", "+56", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "China", "CN", "+86", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Colombia", "CO", "+57", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Comoros", "KM", "+269", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Democratic Republic of the Congo", "CD", "+243", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Republic of the Congo", "CG", "+242", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Costa Rica", "CR", "+506", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Ivory Coast", "CI", "+225", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Croatia", "HR", "+385", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Cuba", "CU", "+53", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Cyprus", "CY", "+357", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Czech Republic ", "CZ", "+420", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Denmark", "DK", "+45", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Djibouti", "DJ", "+253", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Dominica", "DM", "+1 767", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Dominican Republic", "DO", "+1 809, or 829, 849", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "East Timor", "TL", "+670", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Ecuador", "EC", "+593", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Egypt", "EG", "+20", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "El Salvador", "SV", "+503", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Equatorial Guinea", "GQ", "+240", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Eritrea", "ER", "+291", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Estonia", "EE", "+372", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Ethiopia", "ET", "+251", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Faroe Islands", "FO", "+298", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Fiji", "FJ", "+679", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Finland", "FI", "+358", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "France", "FR", "+33", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "French Guiana", "GF", "+594", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "French Polynesia", "PF", "+689", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Gabon", "GA", "+241", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Gambia", "GM", "+220", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Georgia", "GE", "+995", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Germany", "DE", "+49", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Ghana", "GH", "+233", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Great Britain", "GB", "+44", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Greece", "GR", "+30", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Greenland", "GL", "+299", "North America");
+            AddMetaData(context, "Countries", countryPublicId, "Grenada", "GD", "+1 473", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Guadeloupe", "GP", "+590", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Guam", "GU", "+1 671", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Guatemala", "GT", "+502", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Guinea", "GN", "+224", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Guinea-Bissau", "GW", "+245", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Guyana", "GY", "+592", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Haiti", "HT", "+509", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Vatican City State", "VA", "+379", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Honduras", "HN", " +504", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Hong Kong", "HK", "+852", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Hungary", "HU", "+36", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Iceland", "IS", "+354", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "India", "IN", "+91", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Indonesia", "ID", "+62", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Iran", "IR", "+98", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Iraq", "IQ", "+964", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Ireland", "IE", "+353", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Israel", "IL", "+972", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Italy", "IT", "+39", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Jamaica", "JM", "+1 876", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Japan", "JP", "+81", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Jordan", "JO", "+962", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Kazakhstan", "KZ", "+7", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Kenya", "KE", "+254", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Kiribati", "KI", "+686", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "North Korea", "KP", "+850", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "South Korea", "KR", "+82", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Kosovo", "KV", "+381", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Kuwait", "KW", "+965", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Kyrgyzstan", "KG", "+996", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Lao", "LS", "+856", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Latvia", "LV", "+371", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Lebanon", "LB", "+961", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Lesotho", "LS", "+266", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Liberia", "LR", "+231", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Libya", "LY", "+218", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Liechtenstein", "LI", "+423", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Lithuania", "LT", "+370", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Luxembourg", "LU", "+352", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Macau", "MO", "+853", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Republic of Macedonia", "MK", "+389", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Madagascar", "MG", "+261", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Malawi", "MW", "+265", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Malaysia", "MY", "+60", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Maldives", "MV", " +960", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Mali", "ML", "+223", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Malta", "MT", "+356", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Marshall Islands", "MH", "+692", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Martinique", "MQ", "+596", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Mauritania", "MR", "+222", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Mauritius", "MU", "+230", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Mexico", "MX", "+52", "North America");
+            AddMetaData(context, "Countries", countryPublicId, "Federated States of Micronesia", "FM", "+691", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Moldova", "MD", "+373", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Monaco", "MC", "+377", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Mongolia", "MN", "+976", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Montenegro", "ME", "+382", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Montserrat", "MS", " +1 664", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Morocco", "MA", "+212", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Mozambique", "MZ", "+258", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Myanmar - Burma", "MM", "+95", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Namibia", "NA", "+264", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Nauru", "NR", "+674", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Nepal", "NP", "+977", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Netherlands", "NL", "+31", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Netherlands Antilles", "AN", "+599", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "New Caledonia", "NC", "+687", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "New Zealand", "NZ", "+64", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Nicaragua", "NI", "+505", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Niger", "NE", "+227", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Nigeria", "NG", "+234", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Northern Mariana Islands", "MP", "+1 670", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Norway", "NO", "+47", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Oman", "OM", "+968", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Pakistan", "PK", "+92", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Palau", "PW", "+680", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Palestinian territories", "PS", "+970", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Panama", "PA", "+507", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Papua New Guinea", "PG", "+675", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Paraguay", "PY", "+595", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Peru", "PE", "+51", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Philippines", "PH", "+63", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Pitcairn Islands", "PN", "+870", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Poland", "PL", "+48", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Portugal", "PT", "+351", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Puerto Rico", "PR", "+1 787 or +1 939", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Qatar", "QA", "+974", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Reunion Island", "RE", "+262", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Romania", "RO", "+40", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Russian Federation", "RU", "+7", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Rwanda", "RW", "+250", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Saint Kitts and Nevis", "KN", "+1 869", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Saint Lucia", "LC", "+1 758", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Saint Vincent and the Grenadines", "VC", "+1 784", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Samoa", "WS", "+685", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "San Marino", "SM", " +378", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Sao Tome and Principe", "ST", "+239", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Saudi Arabia", "SA", "+966", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Senegal", "SN", "+221", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Serbia", "RS", "+381", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Seychelles", "SC", "+248", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Sierra Leone", "SL", "+232", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Singapore", "SG", "+65", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Slovakia", "SK", "+421", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Slovenia", "SI", "+386", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Solomon Islands", "SB", "+677", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Somalia", "SO", "+252", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "South Africa", "ZA", "+27", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "South Sudan", "SS", "+211", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Spain", "ES", "+34", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Sri Lanka", "LK", "+94", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Sudan", "SD", "+249", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Suriname", "SR", " +597", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Swaziland", "SZ", " +268", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Sweden", "SE", "+46", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Switzerland", "CH", "+41", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Taiwan", "TW", "+886", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Tajikistan", "TJ", "+922", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "United Republic of Tanzania", "TZ", "+255", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Thailand", "TH", " +66", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Tibet", "TI", "+0086", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Timor-Leste", "TL", "+670", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Togo", "TG", "+228", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Tokelau", "TK", "+690", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Tonga", "TO", "+676", " Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Trinidad and Tobago", "TT", "+1 868", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Tunisia", "TN", "+216", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Turkey", "TR", "+90", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "Turkmenistan", "TM", "+993", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Tuvalu", "TV", "+688", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Uganda", "UG", "+256", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Ukraine", "UA", "+380", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "United Arab Emirates", "AE", "+971", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "United Kingdom", "GB", "+44", "Europe");
+            AddMetaData(context, "Countries", countryPublicId, "United States", "US", "+1", "North America");
+            AddMetaData(context, "Countries", countryPublicId, "Uruguay", "UY", "+598", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Uzbekistan", "UZ", "+998", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Vanuatu", "VU", "+678", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Venezuela", "VE", "+58", "South America");
+            AddMetaData(context, "Countries", countryPublicId, "Vietnam", "VN", "+84", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "British Virgin Islands", "VG", "+1 284", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "US Virgin Islands", "VI", "+1 340", "Oceania");
+            AddMetaData(context, "Countries", countryPublicId, "Yemen", "YE", "+967", "Asia");
+            AddMetaData(context, "Countries", countryPublicId, "Zambia", "ZM", "+260", "Africa");
+            AddMetaData(context, "Countries", countryPublicId, "Zimbabwe", "ZW", "+263", "Africa");
+
+            #endregion
+
+            context.SaveChanges();
+        }
+        private void AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string code, string value, string parentName)
+        {
+            var metaData = new MetaData
+            {
+                PublicId = Guid.NewGuid().ToNoDashString(),
+                IsActive = true,
+                Name = name,
+                Code = code,
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+                Value = value,
+                ParentName = parentName,
+                ParentCode = parentName.ToUrlSlug(),
+                ParentPublicId = context.MetaDatas.First(x => x.Name == parentName).PublicId
+            };
+
+            context.MetaDatas.Add(metaData);
         }
 
         private void AddMetaData(SetMetaDbContext context, string type, string typePublicId, string name, string value)
