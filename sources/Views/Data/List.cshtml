@@ -1,4 +1,4 @@
-﻿@model PageModel<MetaDataModel>
+﻿@model List<MetaDataTypeModel>
 
 @{
     ViewBag.Title = Html.LocalizationString("user_apps_title");
@@ -11,54 +11,25 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th></th>
-                <th>@Html.LocalizationString("app_name")</th>
-                <th>@Html.LocalizationString("description")</th>
-                <th>@Html.LocalizationString("url")</th>
-                <th>@Html.LocalizationString("usage_count")</th>
+                <th></th> 
+                <th>@Html.LocalizationString("meta_data_name")</th>
+                <th>@Html.LocalizationString("description")</th> 
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Items)
+            @foreach (var item in Model)
             {
                 var val = item.IsActive ? Html.LocalizationString("btn_deactivate") : Html.LocalizationString("btn_activate");
                 var buttonCss = item.IsActive ? "btn-warning" : "btn-success";
                 <tr>
                     <td>
                         <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
-                    </td>
-                    <td><a href="/app/detail/@item.Id">@item.Name</a></td>
-                    <td>@item.Description</td>
-                    <td><a href="@item.Url">@item.Url</a></td>
-                    <td>@item.UsageCount</td>
+                    </td> 
+                    <td><a href="/data/detail/@item.Id">@item.Name</a></td>
+                    <td>@item.Description</td> 
                 </tr>
             }
-
-            @{
-                if (Model.ItemCount > 0)
-                {
-                    <tr>
-                        <td colspan="5" style="text-align: center;">
-                            <ul class="pagination">
-                                @if (Model.HasPrevPage)
-                                {
-                                    <li><a href="~/user/apps/@ViewBag.UserId?page=@(Model.PageNumber-1)">&laquo;</a></li>
-                                }
-
-                                <li><a href="~/user/apps/@ViewBag.UserId?page=@(Model.PageNumber)">@(Model.PageNumber)</a></li>
-
-                                @if (Model.HasNextPage)
-                                {
-                                    <li><a href="~/user/apps/@ViewBag.UserId?page=@(Model.PageNumber + 1)">&raquo;</a></li>
-                                }
-                            </ul>
-                            <br />
-                            <span class="label label-primary">@Html.LocalizationString("total_page_count") : @Model.PageCount</span>
-                        </td>
-                    </tr>
-                }
-            }
-
+             
         </tbody>
     </table>
     @Html.AntiForgeryToken()
