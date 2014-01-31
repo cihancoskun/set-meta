@@ -3,7 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 
 using SetMeta.Web.Helpers;
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
 namespace SetMeta.Web.Services.Data
 {

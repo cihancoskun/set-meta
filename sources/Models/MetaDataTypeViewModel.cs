@@ -1,6 +1,6 @@
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class MetaDataTypeViewModel : BaseViewModel
+    public class MetaDataTypeModel : BaseModel
     {
         public string ParentName { get; set; }
         public string Name { get; set; }

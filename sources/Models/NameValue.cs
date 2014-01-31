@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
     [Serializable]
     public class NameValue

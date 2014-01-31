@@ -1,6 +1,6 @@
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class ResponseModel : BaseViewModel
+    public class ResponseModel : BaseModel
     {
         public bool IsOk { get; set; }
         public object Result { get; set; }

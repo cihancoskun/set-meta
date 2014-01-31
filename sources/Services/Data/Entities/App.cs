@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SetMeta.Web.Models
+namespace SetMeta.Web.Data.Entities
 {
     public class App : BaseEntity
     {

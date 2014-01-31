@@ -1,4 +1,4 @@
-﻿namespace SetMeta.Web.Models
+﻿namespace SetMeta.Web.Data.Entities
 {
     public class RequestLog : BaseEntity
     {

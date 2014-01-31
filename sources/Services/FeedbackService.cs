@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using SetMeta.Web.Helpers;
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
 namespace SetMeta.Web.Services
 {

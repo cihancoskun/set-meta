@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SetMeta.Web.Models
+namespace SetMeta.Web.Data.Entities
 {
     public class PagedList<TEntity> where TEntity : BaseEntity
     {

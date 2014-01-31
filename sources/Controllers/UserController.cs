@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Services;
-using SetMeta.Web.ViewModels;
+using SetMeta.Web.Models;
 
 namespace SetMeta.Web.Controllers
 {
@@ -45,8 +45,8 @@ namespace SetMeta.Web.Controllers
             var apps = await _appService.GetByUserId(id, pageNumber);
             if (apps == null) return RedirectToHome();
             
-            var list = apps.Items.Select(AppViewModel.Map).ToList();
-            var model = new PageViewModel<AppViewModel>
+            var list = apps.Items.Select(AppModel.Map).ToList();
+            var model = new PageModel<AppModel>
             {
                 Items = list,
                 HasNextPage = apps.HasNextPage,
@@ -76,11 +76,11 @@ namespace SetMeta.Web.Controllers
         [HttpGet, AllowAnonymous]
         public ActionResult New()
         {
-            var model = new UserViewModel();
+            var model = new UserModel();
             return View(model);
         }
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
-        public async Task<ActionResult> New(UserViewModel model)
+        public async Task<ActionResult> New(UserModel model)
         {
             if (!model.IsValid())
             {
@@ -106,7 +106,7 @@ namespace SetMeta.Web.Controllers
         [HttpGet, AllowAnonymous]
         public ActionResult PasswordReset()
         {
-            var model = new PasswordResetViewModel();
+            var model = new PasswordResetModel();
             if (User.Identity.IsAuthenticated)
             {
                 model.Email = User.Identity.GetEmail();
@@ -118,12 +118,12 @@ namespace SetMeta.Web.Controllers
         [HttpGet, AllowAnonymous]
         public ActionResult Login()
         {
-            var model = new LoginViewModel();
+            var model = new LoginModel();
             return View(model);
         }
 
         [HttpPost, ValidateAntiForgeryToken, AllowAnonymous]
-        public async Task<ActionResult> Login(LoginViewModel model)
+        public async Task<ActionResult> Login(LoginModel model)
         {
             if (!model.IsValid())
             {

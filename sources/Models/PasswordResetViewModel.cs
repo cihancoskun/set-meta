@@ -1,8 +1,8 @@
 using SetMeta.Web.Helpers;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class PasswordResetViewModel : BaseViewModel
+    public class PasswordResetModel : BaseModel
     {
         public string Email { get; set; }
 

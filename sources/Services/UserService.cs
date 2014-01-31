@@ -5,14 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using SetMeta.Web.Helpers;
+using SetMeta.Web.Data.Entities;
 using SetMeta.Web.Models;
-using SetMeta.Web.ViewModels;
 
 namespace SetMeta.Web.Services
 {
     public class UserService : BaseService, IUserService
     {
-        public Task<bool> Create(UserViewModel model, string roleName)
+        public Task<bool> Create(UserModel model, string roleName)
         {
             if (!model.IsValid()) return Task.FromResult(false);
 
@@ -193,7 +193,7 @@ namespace SetMeta.Web.Services
 
     public interface IUserService
     {
-        Task<bool> Create(UserViewModel model, string roleName);
+        Task<bool> Create(UserModel model, string roleName);
 
         Task<PagedList<User>> GetUsers(int pageNumber);
         Task<PagedList<User>> GetUsersByRoleId(int roleId, int pageNumber);

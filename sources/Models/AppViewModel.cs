@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class AppViewModel : BaseViewModel
+    public class AppModel : BaseModel
     {
         public string Id { get; set; }
         public string Email { get; set; }
@@ -13,7 +13,7 @@ namespace SetMeta.Web.ViewModels
         public string Description { get; set; }
         public string Url { get; set; }
         public bool IsActive { get; set; }
-        public List<TokenViewModel> Tokens { get; set; }
+        public List<TokenModel> Tokens { get; set; }
         public string CreatedBy { get; set; }
 
         public long UsageCount
@@ -21,9 +21,9 @@ namespace SetMeta.Web.ViewModels
             get { return Tokens.Sum(x => x.UsageCount); }
         }
 
-        public AppViewModel()
+        public AppModel()
         {
-            Tokens = new List<TokenViewModel>();
+            Tokens = new List<TokenModel>();
         }
 
         public override bool IsValid()
@@ -32,9 +32,9 @@ namespace SetMeta.Web.ViewModels
                    && !string.IsNullOrEmpty(Url);
         }
 
-        public static AppViewModel Map(App entity)
+        public static AppModel Map(App entity)
         {
-            var model = new AppViewModel
+            var model = new AppModel
             {
                 Id = entity.PublicId,
                 Email = entity.UserEmail,
@@ -48,7 +48,7 @@ namespace SetMeta.Web.ViewModels
             var tokens = entity.Tokens.Where(x => !x.IsDeleted);
             foreach (var token in tokens)
             {
-                model.Tokens.Add(new TokenViewModel
+                model.Tokens.Add(new TokenModel
                 {
                     CreationDate = token.CreatedAt,
                     UsageCount = token.UsageCount,

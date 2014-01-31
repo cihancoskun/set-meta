@@ -1,9 +1,9 @@
 ﻿using SetMeta.Web.Helpers;
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class UserViewModel : BaseViewModel
+    public class UserModel : BaseModel
     {
         public string Id { get; set; }
         public string Email { get; set; }
@@ -27,9 +27,9 @@ namespace SetMeta.Web.ViewModels
                    && Email.IsEmail();
         }
 
-        public static UserViewModel Map(User user)
+        public static UserModel Map(User user)
         {
-            var model = new UserViewModel
+            var model = new UserModel
             {
                 Email = user.Email,
                 Id = user.PublicId,

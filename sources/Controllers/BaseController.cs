@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 
 using SetMeta.Web.Helpers;
-using SetMeta.Web.ViewModels;
+using SetMeta.Web.Models;
 
 namespace SetMeta.Web.Controllers
 {
@@ -47,7 +47,7 @@ namespace SetMeta.Web.Controllers
             return Redirect("/");
         }
 
-        public void SetPleaseTryAgain(BaseViewModel model)
+        public void SetPleaseTryAgain(BaseModel model)
         {
             model.Msg = _htmlHelper.LocalizationString("please_check_the_fields_and_try_again");
         }

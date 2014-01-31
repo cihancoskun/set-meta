@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class PageViewModel<T> where T : BaseViewModel
+    public class PageModel<T> where T : BaseModel
     {
         public int PageNumber { get; set; }
         public int PageCount { get; set; }

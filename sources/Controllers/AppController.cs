@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Services;
-using SetMeta.Web.ViewModels;
+using SetMeta.Web.Models;
 
 namespace SetMeta.Web.Controllers
 {
@@ -33,19 +33,19 @@ namespace SetMeta.Web.Controllers
 
             ViewBag.IsActive = entity.IsActive;
 
-            var model = AppViewModel.Map(entity);
+            var model = AppModel.Map(entity);
             return View(model);
         }
 
         [HttpGet]
         public ActionResult New()
         {
-            var model = new AppViewModel();
+            var model = new AppModel();
             return View(model);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<ActionResult> New(AppViewModel model)
+        public async Task<ActionResult> New(AppModel model)
         {
             if (!model.IsValid())
             {
@@ -72,7 +72,7 @@ namespace SetMeta.Web.Controllers
         {
             var result = new ResponseModel { IsOk = false };
 
-            var token = new TokenViewModel
+            var token = new TokenModel
             {
                 CreationDate = DateTime.Now,
                 UsageCount = 0,

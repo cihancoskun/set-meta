@@ -1,8 +1,8 @@
 using System;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class TokenViewModel : BaseViewModel
+    public class TokenModel : BaseModel
     {
         public string Token { get; set; }
         public DateTime CreationDate { get; set; }

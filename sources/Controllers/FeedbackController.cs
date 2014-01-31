@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Services;
-using SetMeta.Web.ViewModels;
+using SetMeta.Web.Models;
 
 namespace SetMeta.Web.Controllers
 {

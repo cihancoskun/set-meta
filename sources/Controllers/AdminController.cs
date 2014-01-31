@@ -1,12 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 using SetMeta.Web.Helpers;
+using SetMeta.Web.Data.Entities;
 using SetMeta.Web.Models;
-using SetMeta.Web.ViewModels;
 using SetMeta.Web.Services;
 
 namespace SetMeta.Web.Controllers
@@ -64,9 +62,9 @@ namespace SetMeta.Web.Controllers
                 users = await _userService.GetUsers(pageNumber);
             }
 
-            var list = users.Items.Select(UserViewModel.Map).ToList();
+            var list = users.Items.Select(UserModel.Map).ToList();
 
-            var model = new PageViewModel<UserViewModel>
+            var model = new PageModel<UserModel>
             {
                 Items = list,
                 HasNextPage = users.HasNextPage,
@@ -89,8 +87,8 @@ namespace SetMeta.Web.Controllers
             }
 
             var apps = await _appService.GetApps(pageNumber);
-            var list = apps.Items.Select(AppViewModel.Map).ToList();
-            var model = new PageViewModel<AppViewModel>
+            var list = apps.Items.Select(AppModel.Map).ToList();
+            var model = new PageModel<AppModel>
             {
                 Items = list,
                 HasNextPage = apps.HasNextPage,
@@ -113,9 +111,9 @@ namespace SetMeta.Web.Controllers
             }
 
             var feedbacks = await _feedbackService.GetFeedbacks(pageNumber);
-            var list = feedbacks.Items.Select(FeedbackViewModel.Map).ToList();
+            var list = feedbacks.Items.Select(FeedbackModel.Map).ToList();
 
-            var model = new PageViewModel<FeedbackViewModel>
+            var model = new PageModel<FeedbackModel>
             {
                 Items = list,
                 HasNextPage = feedbacks.HasNextPage,

@@ -1,6 +1,6 @@
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public abstract class BaseViewModel
+    public abstract class BaseModel
     {
         public string Msg { get; set; }
 

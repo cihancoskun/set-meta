@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
-namespace SetMeta.Web.ViewModels
+namespace SetMeta.Web.Models
 {
-    public class FeedbackViewModel : BaseViewModel
+    public class FeedbackModel : BaseModel
     {
         public string Id { get; set; }
         public string Email { get; set; }
         public string Info { get; set; }
         public bool IsActive { get; set; }
 
-        public FeedbackViewModel()
+        public FeedbackModel()
         {
             
         }
@@ -23,9 +23,9 @@ namespace SetMeta.Web.ViewModels
                    && !string.IsNullOrEmpty(Info);
         }
 
-        public static FeedbackViewModel Map(Feedback entity)
+        public static FeedbackModel Map(Feedback entity)
         {
-            var model = new FeedbackViewModel
+            var model = new FeedbackModel
             {
                 Id = entity.PublicId,
                 Email = entity.Email,

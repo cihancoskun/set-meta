@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-using SetMeta.Web.Models;
+using SetMeta.Web.Data.Entities;
 
 namespace SetMeta.Web.Services.Data
 {

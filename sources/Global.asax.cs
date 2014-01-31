@@ -13,7 +13,7 @@ using Castle.Windsor.Installer;
 using ServiceStack.Text;
 
 using SetMeta.Web.Helpers;
-using SetMeta.Web.ViewModels;
+using SetMeta.Web.Models;
 
 namespace SetMeta.Web
 {

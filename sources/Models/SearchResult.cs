@@ -1,4 +1,4 @@
-﻿namespace SetMeta.Web.ViewModels
+﻿namespace SetMeta.Web.Models
 {
     public class SearchResult
     {

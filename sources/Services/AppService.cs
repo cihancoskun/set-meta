@@ -5,14 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using SetMeta.Web.Helpers;
+using SetMeta.Web.Data.Entities;
 using SetMeta.Web.Models;
-using SetMeta.Web.ViewModels;
 
 namespace SetMeta.Web.Services
 {
     public class AppService : BaseService, IAppService
     {
-        public Task<bool> CreateApp(AppViewModel model)
+        public Task<bool> CreateApp(AppModel model)
         {
             if (!model.IsValid()) return Task.FromResult(false);
 
@@ -110,7 +110,7 @@ namespace SetMeta.Web.Services
             return Task.FromResult(app);
         }
 
-        public Task<bool> CreateToken(TokenViewModel model)
+        public Task<bool> CreateToken(TokenModel model)
         {
             if (!model.IsValid()) return Task.FromResult(false);
 
@@ -218,7 +218,7 @@ namespace SetMeta.Web.Services
 
     public interface IAppService
     {
-        Task<bool> CreateApp(AppViewModel model);
+        Task<bool> CreateApp(AppModel model);
 
         Task<PagedList<App>> GetApps(int pageNumber);
         Task<PagedList<App>> GetByUserId(long userId, int pageNumber);
@@ -227,7 +227,7 @@ namespace SetMeta.Web.Services
         Task<App> Get(long appId);
         Task<App> Get(string appPublicId);
 
-        Task<bool> CreateToken(TokenViewModel token);
+        Task<bool> CreateToken(TokenModel token);
         Task<bool> DeleteToken(string token, string deletedBy);
 
         Task<bool> IsTokenValid(string token);
