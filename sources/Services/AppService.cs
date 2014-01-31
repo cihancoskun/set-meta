@@ -19,6 +19,8 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy && x.IsActive);
             if (user == null) Task.FromResult(false);
 
+            if (user.RoleName == ConstHelper.User) Task.FromResult(false);
+
             var key = Guid.NewGuid().ToNoDashString();
             var app = new App
             {
@@ -115,11 +117,13 @@ namespace SetMeta.Web.Services
         {
             if (!model.IsValid()) return Task.FromResult(false);
 
-            var app = _context.Set<App>().FirstOrDefault(x => x.PublicId == model.AppId);
+            var app = _context.Set<App>().FirstOrDefault(x => x.PublicId == model.AppId && x.UserPublicId == model.CreatedBy);
             if (app == null) return Task.FromResult(false);
 
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == model.CreatedBy);
             if (user == null) return Task.FromResult(false);
+
+            if (user.RoleName == ConstHelper.User) Task.FromResult(false);
 
             var entity = new Token
             {
@@ -145,6 +149,11 @@ namespace SetMeta.Web.Services
 
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == deletedBy);
             if (user == null) return Task.FromResult(false);
+
+            if (user.RoleName == ConstHelper.User) Task.FromResult(false);
+
+            if (user.Id != item.CreatedBy 
+                && user.RoleName != ConstHelper.Admin) Task.FromResult(false);
 
             item.DeletedAt = DateTime.Now;
             item.DeletedBy = user.Id;
