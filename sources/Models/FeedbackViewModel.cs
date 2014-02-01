@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using SetMeta.Web.Data.Entities;
+﻿using SetMeta.Web.Data.Entities;
 
 namespace SetMeta.Web.Models
 {
@@ -11,11 +8,6 @@ namespace SetMeta.Web.Models
         public string Email { get; set; }
         public string Info { get; set; }
         public bool IsActive { get; set; }
-
-        public FeedbackModel()
-        {
-            
-        }
 
         public override bool IsValid()
         {
@@ -30,7 +22,7 @@ namespace SetMeta.Web.Models
                 Id = entity.PublicId,
                 Email = entity.Email,
                 IsActive = entity.IsActive,
-                Info = entity.Name        
+                Info = entity.Info        
             };
             return model;
         }
