@@ -21,6 +21,9 @@ namespace SetMeta.Web.Helpers
         private static CultureInfo _cultureEN;
         public static CultureInfo CultureEN { get { return _cultureEN ?? (_cultureEN = new CultureInfo(CultureNameEN)); } }
 
+        public const string Default = "Default";
+        public const string LocalhostIP = "127.0.0.1";
+
         public const string Admin = "Admin";
         public const string Developer = "Developer";
         public const string User = "User";
@@ -31,6 +34,6 @@ namespace SetMeta.Web.Helpers
             {User, 3}
         };
 
-        public const int PageSize = 25;
+        public const int PageSize = 100;
     }
 }

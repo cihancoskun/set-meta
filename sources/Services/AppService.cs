@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 using SetMeta.Web.Helpers;
@@ -164,22 +165,25 @@ namespace SetMeta.Web.Services
 
         public Task<bool> IsTokenValid(string token)
         {
-            return Task.FromResult(_context.Set<Token>().Any(x => x.Key == token && x.IsActive && x.IsAppActive));
+            return Task.FromResult(_context.Set<Token>().Any(x => x.Key == token
+                                                                  && x.IsActive
+                                                                  && x.IsAppActive
+                                                                  && !x.IsDeleted));
         }
 
-        public Task<bool> ChangeStatus(long appId, bool isActive)
+        public Task<bool> ChangeStatus(long appId, string updatedBy, bool isActive)
         {
             if (appId < 1) return Task.FromResult(false);
 
-            var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.Id == appId);
+            var app = _context.Set<App>().FirstOrDefault(x => x.Id == appId);
             if (app == null) return Task.FromResult(false);
 
-            var user = _context.Set<User>().FirstOrDefault(x => x.Id == appId);
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == updatedBy);
             if (user == null) return Task.FromResult(false);
+            if (app.UserPublicId != updatedBy && user.RoleName != ConstHelper.Admin) return Task.FromResult(false);
 
-            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
-
-            foreach (var token in app.Tokens)
+            var tokens = _context.Set<Token>().Where(x => x.AppId == app.Id);
+            foreach (var token in tokens)
             {
                 token.IsAppActive = !isActive;
                 token.IsActive = !isActive;
@@ -190,19 +194,19 @@ namespace SetMeta.Web.Services
             return Task.FromResult(_context.SaveChanges() > 0);
         }
 
-        public Task<bool> ChangeStatus(string appPublicId, bool isActive)
+        public Task<bool> ChangeStatus(string appPublicId, string updatedBy, bool isActive)
         {
             if (string.IsNullOrEmpty(appPublicId)) return Task.FromResult(false);
 
-            var app = _context.Set<App>().Include(x => x.Tokens).FirstOrDefault(x => x.PublicId == appPublicId);
+            var app = _context.Set<App>().FirstOrDefault(x => x.PublicId == appPublicId);
             if (app == null) return Task.FromResult(false);
 
-            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == appPublicId);
-            if (user == null) return Task.FromResult(true);
+            var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == updatedBy);
+            if (user == null) return Task.FromResult(false);
+            if (app.UserPublicId != updatedBy && user.RoleName != ConstHelper.Admin) return Task.FromResult(false);
 
-            if (user.RoleName == ConstHelper.User) return Task.FromResult(false);
-
-            foreach (var token in app.Tokens)
+            var tokens = _context.Set<Token>().Where(x => x.AppId == app.Id);
+            foreach (var token in tokens)
             {
                 token.IsAppActive = !isActive;
                 token.IsActive = !isActive;
@@ -251,8 +255,8 @@ namespace SetMeta.Web.Services
 
         Task<bool> IsTokenValid(string token);
 
-        Task<bool> ChangeStatus(long appId, bool isActive);
-        Task<bool> ChangeStatus(string appPublicId, bool isActive);
+        Task<bool> ChangeStatus(long appId, string updatedBy, bool isActive);
+        Task<bool> ChangeStatus(string appPublicId, string updatedBy, bool isActive);
 
         /// <summary>
         /// logs the api requests
