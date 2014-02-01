@@ -26,7 +26,7 @@
                         <button class="btn btn-sm @buttonCss btnAction" data-toggle="modal" data-target="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</button>    
                     </td>
                     <td>@item.Email</td>
-                    <td><a href="/app/detail/@item.Id">@item.Info</a></td>
+                    <td>@item.Info</td>
                 </tr>
             }
             @{
@@ -37,12 +37,12 @@
                             <ul class="pagination">
                                 @if (Model.HasPrevPage)
                                 {
-                                    <li><a href="~/admin/apps/@(Model.PageNumber - 1)">&laquo;</a></li>
+                                    <li><a href="~/admin/feedbacks/@(Model.PageNumber - 1)">&laquo;</a></li>
                                 }
-                                <li><a href="~/admin/apps/@(Model.PageNumber)">@(Model.PageNumber)</a></li>
+                                <li><a href="~/admin/feedbacks/@(Model.PageNumber)">@(Model.PageNumber)</a></li>
                                 @if (Model.HasNextPage)
                                 {
-                                    <li><a href="~/admin/apps/@(Model.PageNumber + 1)">&raquo;</a></li>
+                                    <li><a href="~/admin/feedbacks/@(Model.PageNumber + 1)">&raquo;</a></li>
                                 }
                             </ul>
                             <br />
@@ -85,7 +85,7 @@
                 var isActive = $(this).data(textIsActive);
 
                 $.ajax({
-                    url: "/App/ChangeStatus",
+                    url: "/Feedback/ChangeStatus",
                     type: "POST",
                     data: "id=" + id + "&isActive=" + isActive + "&__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val(),
                     success: function(r) {

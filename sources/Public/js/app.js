@@ -14,18 +14,14 @@ $(function () {
         $(textBtn).data(textId, id).data(textIsActive, isActive);
     });
 
-    $("button#btnSaveFeedback").click(function () {
-        console.log('asd');
-        var info = $("textarea#Feedback").val();
+    $("#btnSaveFeedback").click(function () {
+        var info = $("#Feedback").val();
         console.log(info);
-        if (info.length < 1) { $("textarea#Feedback").parent().append('<label class="error">*</label>'); return; }
+        if (info.length < 1) { $("#Feedback").parent().append('<label class="error">*</label>'); return; }
 
-        var email = $("input#FeedBackEmail").val();
+        var email = $("#FeedbackEmail").val();
         $("div#wrnFeedback").html('');
-
         
-        console.log(email);
-
         $.ajax({
             url: "/Feedback/New",
             type: "GET",
@@ -42,5 +38,5 @@ $(function () {
         });
     });
 
-    $('#modalFeedback').on('hidden.bs.modal', function () { $("div#wrnFeedback").html(''); $("textarea#Feedback").val(''); $("label.error").remove(); });
+    $('#modalFeedback').on('hidden.bs.modal', function () { $("div#wrnFeedback").html(''); $("#Feedback").val(''); $("label.error").remove(); });
 });
