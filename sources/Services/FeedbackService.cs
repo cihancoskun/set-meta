@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Data.Entities;
@@ -18,6 +19,7 @@ namespace SetMeta.Web.Services
 
             var feedback = new Feedback
             {
+                PublicId = Guid.NewGuid().ToNoDashString(),
                 Info = info,
                 Email = email
             };
@@ -77,6 +79,18 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(new PagedList<Feedback>(pageNumber, ConstHelper.PageSize, count, items));
         }
+
+        public Task<bool> ChangeStatus(string feedBackPublicId, bool isActive)
+        {
+            if (string.IsNullOrEmpty(feedBackPublicId)) return Task.FromResult(false);
+
+            var feedback = _context.Set<Feedback>().FirstOrDefault(x => x.PublicId == feedBackPublicId);
+            if (feedback == null) return Task.FromResult(false);
+
+            feedback.IsActive = !isActive; 
+
+            return Task.FromResult(_context.SaveChanges() > 0);
+        }
     }
 
     public interface IFeedbackService
@@ -84,5 +98,6 @@ namespace SetMeta.Web.Services
         Task<bool> CreateFeedback(string info, string email);
         Task<bool> CreateContactMessage(string name, string email, string title, string info);
         Task<PagedList<Feedback>> GetFeedbacks(int pageNumber);
+        Task<bool> ChangeStatus(string feedBackPublicId, bool isActive);
     }
 }
