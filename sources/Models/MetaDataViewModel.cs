@@ -27,12 +27,12 @@ namespace SetMeta.Web.Models
                 Code = entity.Code,
                 Url = entity.Url,
                 Name = entity.Name,
+                Value = entity.Value,
+                ImageUrl = entity.ImageUrl,
                 Description = entity.Description
             };
 
             return model;
         }
-
-        
     }
 }

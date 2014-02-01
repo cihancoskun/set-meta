@@ -24,7 +24,8 @@ namespace SetMeta.Web.Models
                 Id = entity.PublicId, 
                 IsActive = entity.IsActive,
                 Name = entity.Name,
-                Description = entity.Description
+                Description = entity.Description,
+                Code = entity.Code
             };
               
             return model;

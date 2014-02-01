@@ -25,7 +25,7 @@
                     <td>
                         <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
                     </td> 
-                    <td><a href="/data/detail/@item.Id">@item.Name</a></td>
+                    <td><a href="/data/detail?type=@item.Code">@item.Name</a></td>
                     <td>@item.Description</td> 
                 </tr>
             }
@@ -34,7 +34,7 @@
     </table>
     @Html.AntiForgeryToken()
 </div>
-<div class="modal fade" id="DeactivateModal" name="DeactivateModal" tabindex="-1" role="dialog" aria-labelledby="lblDeactivateModal" aria-hidden="true">
+<div class="modal fade" id="DeactivateModal" tabindex="-1" role="dialog" aria-labelledby="lblDeactivateModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

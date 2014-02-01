@@ -33,6 +33,7 @@ namespace SetMeta.Web.Controllers
              
             return View(list);
         }
+
         [HttpGet]
         public async Task<ActionResult> Detail(string type, int page = 1)
         {
@@ -57,6 +58,5 @@ namespace SetMeta.Web.Controllers
 
             return View(model);
         }
-
     }
 }

@@ -34,6 +34,6 @@ namespace SetMeta.Web.Helpers
             {User, 3}
         };
 
-        public const int PageSize = 100;
+        public const int PageSize = 10;
     }
 }
