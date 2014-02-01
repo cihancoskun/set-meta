@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 
 namespace SetMeta.Tests.UserInterface
 {
@@ -6,17 +7,36 @@ namespace SetMeta.Tests.UserInterface
     public class FeedbackUITests : BaseUITest
     {
         [Test]
-        private void open_feed_back_pop_up()
+        public void open_feed_back_pop_up_and_click_cancel()
         {
-            LogOut();
-            _browser.Navigate().GoToUrl(string.Format("{0}/user/login", BASE_URL));
-
-            _browser.FindElementById("email").SendKeys("mehmet.sabancioglu@gmail.com");
-            _browser.FindElementById("password").SendKeys("password");
-            _browser.FindElementById("frm").Submit();
-
+            LogOut(); 
+             
             _browser.FindElementById("btn_open_feed_back").Click();
+
+            _browser.SwitchTo().Window(_browser.CurrentWindowHandle);
+
+            Thread.Sleep(2000);
+
+            _browser.FindElementById("btn_feedback_cancel").Click();
+              
         }
 
+        [Test]
+        public void open_feed_back_pop_up_and_click_save()
+        {
+            LogOut();
+
+            _browser.FindElementById("btn_open_feed_back").Click();
+
+            _browser.SwitchTo().Window(_browser.CurrentWindowHandle);
+
+            Thread.Sleep(2000);
+
+            _browser.FindElementById("feedbackEmail").SendKeys("email@email.com"); ;
+            _browser.FindElementById("txtFeedback").SendKeys("test"); ;
+             
+            _browser.FindElementById("btn_feedback_save").Click();
+
+        }
     }
 }
