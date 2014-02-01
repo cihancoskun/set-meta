@@ -10,17 +10,17 @@
 
     <form id="frm" name="frm" action="/app/new" method="post">
         <div class="col-lg-12">
-            <strong>@Html.LocalizationString("app_name")</strong>
+            <span>@Html.LocalizationString("app_name")</span>
             <input type="text" class="form-control input-lg" name="name" id="name" value="@Model.Name" />
         </div>
 
         <div class="col-lg-12">
-            <strong>@Html.LocalizationString("url")</strong>
+            <span>@Html.LocalizationString("url")</span>
             <input type="text" class="form-control input-lg" name="url" id="url" value="@Model.Url" />
         </div>
 
         <div class="col-lg-12">
-            <strong>@Html.LocalizationString("description")</strong>
+            <span>@Html.LocalizationString("description")</span>
             <input type="text" class="form-control input-lg" name="description" id="description" value="@Model.Description" />
         </div>
 
