@@ -46,6 +46,8 @@ namespace SetMeta.Web.Controllers
             var items = await _metaDataService.GetMetaDatas(type, pageNumber);
             var list = items.Items.Select(MetaDataModel.Map).ToList();
 
+            ViewBag.Type = type;
+
             var model = new PageModel<MetaDataModel>
             {
                 Items = list,

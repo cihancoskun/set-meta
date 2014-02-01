@@ -43,14 +43,14 @@
                             <ul class="pagination">
                                 @if (Model.HasPrevPage)
                                 {
-                                    <li><a href="~/data/detail/@Model.Items.?page=@(Model.PageNumber - 1)">&laquo;</a></li>
+                                    <li><a href="~/data/detail?type=@ViewBag.Type&page=@(Model.PageNumber - 1)">&laquo;</a></li>
                                 }
 
-                                <li><a href="~/data/detail/@Model.Items?page=@(Model.PageNumber)">@(Model.PageNumber)</a></li>
+                                <li><a href="~/data/detail?type=@ViewBag.Type&page=@(Model.PageNumber)">@(Model.PageNumber)</a></li>
 
                                 @if (Model.HasNextPage)
                                 {
-                                    <li><a href="~/data/detail/@Model.Items?page=@(Model.PageNumber + 1)">&raquo;</a></li>
+                                    <li><a href="~/data/detail?type=@ViewBag.Type&page=@(Model.PageNumber + 1)">&raquo;</a></li>
                                 }
                             </ul>
                             <br />
