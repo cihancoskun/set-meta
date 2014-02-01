@@ -40,7 +40,7 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
 
             _browser.FindElementById("email").SendKeys("user@test.com");
             _browser.FindElementById("password").SendKeys("password");
@@ -52,7 +52,7 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
 
             _browser.FindElementById("email").SendKeys("dev@test.com");
             _browser.FindElementById("password").SendKeys("password");
@@ -63,7 +63,7 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            _browser.Navigate().GoToUrl(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_LOGIN));
 
             _browser.FindElementById("email").SendKeys("admin@test.com");
             _browser.FindElementById("password").SendKeys("password");
@@ -72,7 +72,7 @@ namespace SetMeta.Tests.UserInterface
 
         public void LogOut()
         {
-            _browser.Navigate().GoToUrl(string.Format("{0}/user/logout", BASE_URL));
+            GoTo(string.Format("{0}/user/logout", BASE_URL));
         }
 
         public void CloseBrowser()
@@ -84,5 +84,11 @@ namespace SetMeta.Tests.UserInterface
         { 
             _browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(second));
         }
+
+        public void GoTo(string url)
+        {
+            _browser.Navigate().GoToUrl(url); 
+        }
+
     }
 }

@@ -30,13 +30,13 @@ namespace SetMeta.Tests.UserInterface
         private void CreateApp()
         {
             LogOut();
-            _browser.Navigate().GoToUrl(string.Format("{0}/user/login", BASE_URL));
+            GoTo(string.Format("{0}/user/login", BASE_URL));
 
             _browser.FindElementById("email").SendKeys("mehmet.sabancioglu@gmail.com");
             _browser.FindElementById("password").SendKeys("password");
             _browser.FindElementById("frm").Submit();
 
-            _browser.Navigate().GoToUrl(string.Format("{0}/app/new", BASE_URL));
+            GoTo(string.Format("{0}/app/new", BASE_URL));
 
             _browser.FindElementById("name").SendKeys(Guid.NewGuid().ToNoDashString());
             _browser.FindElementById("url").SendKeys(Guid.NewGuid().ToNoDashString());

@@ -11,10 +11,13 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th></th>  
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <th></th>
+                }
                 <th>@Html.LocalizationString("meta_data_name")</th>
                 <th>@Html.LocalizationString("description")</th>
-                <th>@Html.LocalizationString("meta_data_code")</th> 
+                <th>@Html.LocalizationString("meta_data_code")</th>
             </tr>
         </thead>
         <tbody>
@@ -23,15 +26,17 @@
                 var val = item.IsActive ? Html.LocalizationString("btn_deactivate") : Html.LocalizationString("btn_activate");
                 var buttonCss = item.IsActive ? "btn-warning" : "btn-success";
                 <tr>
-                    <td>
-                        <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
-                    </td>  
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <td>
+                            <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
+                        </td>
+                    }
                     <td><a href="/data/detail?type=@item.Code">@item.Name</a></td>
-                    <td>@item.Description</td> 
-                    <td>/api/data?type=@item.Code</td>
+                    <td>@item.Description</td>
+                    <td>/api/data?type=@item.Code&page=1</td>
                 </tr>
-            }
-             
+            } 
         </tbody>
     </table>
     @Html.AntiForgeryToken()

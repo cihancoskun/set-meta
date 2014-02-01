@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace SetMeta.Tests.UserInterface
 {
     [TestFixture]
-    public class FeedbackUITests : BaseUITest
+    public class VisitorUITests : BaseUITest
     {
         [Test]
         public void open_feed_back_pop_up_and_click_cancel()
@@ -47,6 +47,44 @@ namespace SetMeta.Tests.UserInterface
             _browser.FindElementById("btnSaveFeedback").Click(); 
 
             _browser.Close(); 
+        }
+
+        [Test]
+        public void should_login()
+        {
+            LoginAsUser();
+
+            _browser.Close();
+        }
+
+        [Test]
+        public void should_signup()
+        {
+            LogOut();
+
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_NEW));
+
+            _browser.FindElementById("name").SendKeys("test");
+            _browser.FindElementById("email").SendKeys("test@test.com");
+            _browser.FindElementById("password").SendKeys("password");
+            _browser.FindElementById("frm").Submit();
+
+            _browser.Close();
+        }
+
+        [Test]
+        public void open_contact_and_click_send()
+        {
+            LogOut();
+
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_CONTACT));
+
+            _browser.FindElementById("email").SendKeys("email@email.com");
+            _browser.FindElementById("info").SendKeys("test"); 
+
+            _browser.FindElementById("btnSend").Click();
+
+            _browser.Close();
         }
     }
 }
