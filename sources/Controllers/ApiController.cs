@@ -80,8 +80,7 @@ namespace SetMeta.Web.Controllers
         private static void ReturnNotAuthenticated(ActionExecutingContext filterContext)
         {
             filterContext.RequestContext.HttpContext.Response.Clear();
-            filterContext.RequestContext.HttpContext.Response.Write(@"your request is not authenticated with valid token!<br/>
-                                                                      please look at the <a href='/home/api'>api</a> documentation for authenticating this request ...");
+            filterContext.RequestContext.HttpContext.Response.Write("your request is not authenticated with valid token!<br/>please look at the <a href='/home/api'>api</a> documentation for authenticating this request ...");
             filterContext.RequestContext.HttpContext.Response.End();
         }
     }

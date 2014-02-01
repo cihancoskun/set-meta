@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using ServiceStack;
+
 using SetMeta.Web.Helpers;
 using SetMeta.Web.Data.Entities;
 
@@ -1243,7 +1243,8 @@ namespace SetMeta.Web.Services.Data
                 ImageUrl = GravatarHelper.GetGravatarURL(email),
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword("password"),
                 LastLoginAt = DateTime.Now,
-                IsActive = true
+                IsActive = true,
+                Language = ConstHelper.CultureNameEN
             };
             context.Users.Add(user);
         }

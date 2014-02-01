@@ -53,7 +53,7 @@ namespace SetMeta.Tests.Behaviour
         {
             //arrange 
             var appService = new Mock<IAppService>();
-            appService.Setup(x => x.ChangeStatus("1",true)).Returns(Task.FromResult(true));
+            appService.Setup(x => x.ChangeStatus("1","1",true)).Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -67,7 +67,7 @@ namespace SetMeta.Tests.Behaviour
             Assert.IsAssignableFrom<JsonResult>(result);
             Assert.IsAssignableFrom<ResponseModel>(result.Data);
 
-            appService.Verify(x => x.ChangeStatus("1",  true), Times.Once);
+            appService.Verify(x => x.ChangeStatus("1", "1", true), Times.Once);
 
             sut.AssertPostAttribute(ActionNameChangeStatus, new[] { typeof(string), typeof(bool) });
         }
@@ -77,7 +77,7 @@ namespace SetMeta.Tests.Behaviour
         {
             //arrange 
             var appService = new Mock<IAppService>();
-            appService.Setup(x => x.ChangeStatus("1", false)).Returns(Task.FromResult(true));
+            appService.Setup(x => x.ChangeStatus("1", "1", false)).Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -91,7 +91,7 @@ namespace SetMeta.Tests.Behaviour
             Assert.IsAssignableFrom<JsonResult>(result);
             Assert.IsAssignableFrom<ResponseModel>(result.Data);
 
-            appService.Verify(x => x.ChangeStatus("1", false), Times.Once);
+            appService.Verify(x => x.ChangeStatus("1", "1", false), Times.Once);
 
             sut.AssertPostAttribute(ActionNameChangeStatus, new[] { typeof(string), typeof(bool) });
         }

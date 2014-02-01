@@ -99,7 +99,7 @@ namespace SetMeta.Web.Controllers
                 return Json(model, JsonRequestBehavior.DenyGet);
             }
 
-            model.IsOk = await _appService.ChangeStatus(id, isActive);
+            model.IsOk = await _appService.ChangeStatus(id, User.Identity.GetId(), isActive);
 
             return Json(model, JsonRequestBehavior.DenyGet);
         }

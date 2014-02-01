@@ -36,9 +36,11 @@ namespace SetMeta.Web.Services
                 var key = Guid.NewGuid().ToNoDashString();
                 var app = new App
                 {
+                    PublicId = Guid.NewGuid().ToNoDashString(),
                     UserEmail = model.Email,
-                    Name = model.Name,
-                    Url = "example.com",
+                    UserPublicId = model.Id,
+                    Name = ConstHelper.Default,
+                    Url = ConstHelper.LocalhostIP,
                     IsActive = true,
                     Tokens = new List<Token>
                     {
@@ -206,8 +208,5 @@ namespace SetMeta.Web.Services
 
         Task<bool> ChangeStatus(long userId, bool isActive);
         Task<bool> ChangeStatus(string userPublicId, bool isActive);
-
-       
-
     }
 }
