@@ -15,11 +15,16 @@ $(function () {
     });
 
     $("button#btnSaveFeedback").click(function () {
+        console.log('asd');
         var info = $("textarea#Feedback").val();
+        console.log(info);
         if (info.length < 1) { $("textarea#Feedback").parent().append('<label class="error">*</label>'); return; }
 
         var email = $("input#FeedBackEmail").val();
         $("div#wrnFeedback").html('');
+
+        
+        console.log(email);
 
         $.ajax({
             url: "/Feedback/New",
