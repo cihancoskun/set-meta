@@ -88,7 +88,7 @@
         <footer style="padding: 3px;"><hr /><p>&copy; @DateTime.Now.Year - Argeset Yazılım</p></footer>
     </div>
 
-    <div id="feedback"><button class="btn btn-success" id="btn_open_feed_back" data-toggle="modal" data-target="#modalFeedback">@Html.LocalizationString("btn_open_feedback_popup")</button></div>
+    <div id="feedback"><button class="btn btn-success" id="btnOpenFeedBack" data-toggle="modal" data-target="#modalFeedback">@Html.LocalizationString("btn_open_feedback_popup")</button></div>
     <div class="modal fade" id="modalFeedback">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -102,19 +102,19 @@
                         @if (!User.Identity.IsAuthenticated)
                         {
                             <div class="form-group">
-                                <label for="feedbackEmail">@Html.LocalizationString("email")</label>
-                                <input type="email" class="form-control" id="feedbackEmail" name="feedbackEmail" />
+                                <label for="feedBackEmail">@Html.LocalizationString("email")</label>
+                                <input id="feedBackEmail" name="FeedBackEmail" type="email" class="form-control" />
                             </div>
                         }
                         <div class="form-group">
-                            <label for="txtFeedback">@Html.LocalizationString("feedback")</label>
-                            <textarea id="txtFeedback" name="txtFeedback" class="form-control"></textarea>
+                            <label for="FeedBack">@Html.LocalizationString("feedback")</label>
+                            <textarea id="FeedBack" name="FeedBack" class="form-control"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="btn_feedback_cancel" class="btn btn-danger" data-dismiss="modal">@Html.LocalizationString("btn_cancel")</button>
-                    <button id="btn_feedback_save" class="btn btn-success" id="btnSaveFeedback" name="btnSaveFeedback">@Html.LocalizationString("btn_save")</button>
+                    <button id="btnFeedBackCancel" name="btnFeedBackCancel" class="btn btn-danger" data-dismiss="modal">@Html.LocalizationString("btn_cancel")</button>
+                    <button id="btnSaveFeedBack" name="btnSaveFeedback" class="btn btn-success">@Html.LocalizationString("btn_save")</button>
                 </div>
             </div>
         </div>
