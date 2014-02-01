@@ -11,9 +11,10 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th></th> 
+                <th></th>  
                 <th>@Html.LocalizationString("meta_data_name")</th>
-                <th>@Html.LocalizationString("description")</th> 
+                <th>@Html.LocalizationString("description")</th>
+                <th>@Html.LocalizationString("meta_data_code")</th> 
             </tr>
         </thead>
         <tbody>
@@ -24,9 +25,10 @@
                 <tr>
                     <td>
                         <a class="btn btn-sm @buttonCss btnAction" data-toggle="modal" href="#DeactivateModal" data-id="@item.Id" data-isactive="@item.IsActive">@val</a>
-                    </td> 
+                    </td>  
                     <td><a href="/data/detail?type=@item.Code">@item.Name</a></td>
                     <td>@item.Description</td> 
+                    <td>/api/data?type=@item.Code</td>
                 </tr>
             }
              

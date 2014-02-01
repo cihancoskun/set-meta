@@ -37,5 +37,18 @@ namespace SetMeta.Web.Controllers
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<JsonResult> ChangeStatus(string id, bool isActive)
+        {
+            var model = new ResponseModel { IsOk = false };
+            if (string.IsNullOrEmpty(id))
+            {
+                return Json(model, JsonRequestBehavior.DenyGet);
+            }
+
+            model.IsOk = await _feedbackService.ChangeStatus(id, isActive);
+            return Json(model, JsonRequestBehavior.DenyGet);
+        }
     }
 }

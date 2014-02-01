@@ -175,7 +175,7 @@ namespace SetMeta.Web.Services
             var user = _context.Set<User>().FirstOrDefault(x => x.PublicId == userPublicId);
             if (user == null) return Task.FromResult(false);
 
-            user.IsActive = false;
+            user.IsActive = !isActive;
 
             var apps = _context.Set<App>().Include(x => x.Tokens).Where(x => x.UserPublicId == user.PublicId);
             foreach (var app in apps)
