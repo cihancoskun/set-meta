@@ -31,7 +31,8 @@ namespace SetMeta.Tests.Behaviour
             };
 
             var appService = new Mock<IAppService>();
-            appService.Setup(x => x.CreateApp(validModel)).Returns(Task.FromResult(true));
+            appService.Setup(x => x.CreateApp(validModel))
+                      .Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -53,7 +54,8 @@ namespace SetMeta.Tests.Behaviour
         {
             //arrange 
             var appService = new Mock<IAppService>();
-            appService.Setup(x => x.ChangeStatus("1","1",true)).Returns(Task.FromResult(true));
+            appService.Setup(x => x.ChangeStatus("1","1",true))
+                      .Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -77,7 +79,8 @@ namespace SetMeta.Tests.Behaviour
         {
             //arrange 
             var appService = new Mock<IAppService>();
-            appService.Setup(x => x.ChangeStatus("1", "1", false)).Returns(Task.FromResult(true));
+            appService.Setup(x => x.ChangeStatus("1", "1", false))
+                      .Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -102,7 +105,8 @@ namespace SetMeta.Tests.Behaviour
             //arrange   
             var appService = new Mock<IAppService>();
 
-            appService.Setup(x => x.CreateToken(It.IsAny<TokenModel>())).Returns(Task.FromResult(true));
+            appService.Setup(x => x.CreateToken(It.IsAny<TokenModel>()))
+                      .Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
@@ -127,7 +131,8 @@ namespace SetMeta.Tests.Behaviour
             //arrange   
             var appService = new Mock<IAppService>();
 
-            appService.Setup(x => x.DeleteToken(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(true));
+            appService.Setup(x => x.DeleteToken(It.IsAny<string>(), It.IsAny<string>()))
+                      .Returns(Task.FromResult(true));
 
             //act
             var sut = new AppControllerBuilder().WithAppService(appService.Object)
