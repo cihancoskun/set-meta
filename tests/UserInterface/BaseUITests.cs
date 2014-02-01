@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 
 namespace SetMeta.Tests.UserInterface
@@ -77,6 +78,11 @@ namespace SetMeta.Tests.UserInterface
         public void CloseBrowser()
         {
             _browser.Close();
+        }
+
+        public void Wait(int second)
+        { 
+            _browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(second));
         }
     }
 }

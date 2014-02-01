@@ -1,5 +1,9 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
+using Moq;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace SetMeta.Tests.UserInterface
 {
@@ -9,16 +13,17 @@ namespace SetMeta.Tests.UserInterface
         [Test]
         public void open_feed_back_pop_up_and_click_cancel()
         {
-            LogOut(); 
-             
-            _browser.FindElementById("btn_open_feed_back").Click();
+            LogOut();
+
+            _browser.FindElementById("btnOpenFeedBack").Click();
 
             _browser.SwitchTo().Window(_browser.CurrentWindowHandle);
 
-            Thread.Sleep(2000);
+            Wait(1);
 
-            _browser.FindElementById("btn_feedback_cancel").Click();
-              
+            _browser.FindElementById("btnCancelFeedback").Click();
+
+            _browser.Close(); 
         }
 
         [Test]
@@ -26,17 +31,22 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            _browser.FindElementById("btn_open_feed_back").Click();
+            Wait(1);
+
+            _browser.FindElementById("btnOpenFeedBack").Click();
+
+            Wait(1);
 
             _browser.SwitchTo().Window(_browser.CurrentWindowHandle);
 
-            Thread.Sleep(2000);
+            Wait(1);
 
-            _browser.FindElementById("feedbackEmail").SendKeys("email@email.com"); ;
-            _browser.FindElementById("txtFeedback").SendKeys("test"); ;
-             
-            _browser.FindElementById("btn_feedback_save").Click();
+            _browser.FindElementById("FeedbackEmail").SendKeys("email@email.com");  
+            _browser.FindElementById("Feedback").SendKeys("test"); 
 
+            _browser.FindElementById("btnSaveFeedback").Click(); 
+
+            _browser.Close(); 
         }
     }
 }
