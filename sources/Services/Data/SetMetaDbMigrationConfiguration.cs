@@ -149,72 +149,72 @@ namespace SetMeta.Web.Services.Data
             #region Car Brands
 
             var carBrandsPublicId = AddMetaDataType(context, "Car Brands");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Acura", "www.acura.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Alfa Romeo", "www.alfaromeo.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Aston Martin", "www.astonmartin.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Audi", "www.audi.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Bentley", "www.bentleymotors.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "BMW", "www.bmw.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Bugatti", "www.bugatti.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Buick", "www.buick.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Cadillac", "www.cadillac.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Chery", "www.chery.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Chevrolet", "www.chevrolet.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Chrysler", "www.chrysler.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Citroën", "www.citroen.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Dacia", "www.dacia.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Daewoo", "www.daewoous.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Daihatsu", "www.daihatsu.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Dodge", "www.dodge.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Eagle", "www.eagleautonz.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Ferrari", "www.ferrari.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Fiat", "www.fiat.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Ford", "www.ford.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "GAZ", "eng.gazgroup.ru");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Geely", "www.geely.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Gumpert", "www.gumpert.de");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Hennessey", "www.hennesseyperformance.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Honda", "honda.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Hyundai", "www.hyundai.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Ikco", "www.ikco.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Infiniti", "www.infiniti.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Isuzu", "www.isuzu.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Jaguar", "www.jaguar.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Kia", "www.kia.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lada", "www.lada.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lamborghini", "www.lamborghini.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lancia", "www.lancia.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lexus", "www.lexus.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lincoln", "www.lincoln.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Lotus", "www.lotuscars.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Maserati", "www.maserati.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Mazda", "www.mazda.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "McLaren", "www.mclaren.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Mercedes - Benz", "www.mercedes-benz.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Mercury", "www.mercuryvehicles.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "MG", "mg.co.uk");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Mini", "www.mini.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Mitsubishi", "www.mitsubishi-motors.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Nissan", "www.nissan-global.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Oldsmobile", "www.oldsmobile.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Opel", "www.opel.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Peugeot", "www.peugeot.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Pontiac", "www.pontiac.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Porsche", "www.porsche.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Proton", "www.proton.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Renault", "www.renault.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Rolls-Royce", "www.rolls-roycemotorcars.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Saab", "www.saab.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Seat", "www.seat.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Skoda", "www.skoda-auto.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Smart", "www.smart.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Subaru", "www.subaru-global.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Suzuki", "www.suzuki.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Şamil", "www.samil.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Tata", "www.tatamotors.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Toyota", "www.toyota.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Volkswagen", "www.vw.com");
-            AddMetaData(context, "Car Brands", carBrandsPublicId, "Volvo", "www.volvo.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Acura", "www.acura.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Alfa Romeo", "www.alfaromeo.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Aston Martin", "www.astonmartin.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Audi", "www.audi.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Bentley", "www.bentleymotors.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "BMW", "www.bmw.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Bugatti", "www.bugatti.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Buick", "www.buick.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Cadillac", "www.cadillac.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Chery", "www.chery.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Chevrolet", "www.chevrolet.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Chrysler", "www.chrysler.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Citroën", "www.citroen.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Dacia", "www.dacia.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Daewoo", "www.daewoous.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Daihatsu", "www.daihatsu.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Dodge", "www.dodge.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Eagle", "www.eagleautonz.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Ferrari", "www.ferrari.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Fiat", "www.fiat.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Ford", "www.ford.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "GAZ", "eng.gazgroup.ru");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Geely", "www.geely.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Gumpert", "www.gumpert.de");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Hennessey", "www.hennesseyperformance.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Honda", "honda.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Hyundai", "www.hyundai.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Ikco", "www.ikco.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Infiniti", "www.infiniti.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Isuzu", "www.isuzu.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Jaguar", "www.jaguar.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Kia", "www.kia.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lada", "www.lada.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lamborghini", "www.lamborghini.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lancia", "www.lancia.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lexus", "www.lexus.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lincoln", "www.lincoln.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Lotus", "www.lotuscars.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Maserati", "www.maserati.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Mazda", "www.mazda.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "McLaren", "www.mclaren.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Mercedes - Benz", "www.mercedes-benz.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Mercury", "www.mercuryvehicles.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "MG", "mg.co.uk");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Mini", "www.mini.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Mitsubishi", "www.mitsubishi-motors.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Nissan", "www.nissan-global.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Oldsmobile", "www.oldsmobile.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Opel", "www.opel.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Peugeot", "www.peugeot.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Pontiac", "www.pontiac.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Porsche", "www.porsche.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Proton", "www.proton.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Renault", "www.renault.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Rolls-Royce", "www.rolls-roycemotorcars.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Saab", "www.saab.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Seat", "www.seat.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Skoda", "www.skoda-auto.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Smart", "www.smart.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Subaru", "www.subaru-global.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Suzuki", "www.suzuki.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Şamil", "www.samil.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Tata", "www.tatamotors.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Toyota", "www.toyota.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Volkswagen", "www.vw.com");
+            AddMetaDataUrl(context, "Car Brands", carBrandsPublicId, "Volvo", "www.volvo.com");
 
             #endregion
 
@@ -1587,6 +1587,25 @@ namespace SetMeta.Web.Services.Data
                 TypeCode = type.ToUrlSlug(),
                 TypePublicId = typePublicId,
                 Value = value
+            };
+
+            context.MetaDatas.Add(metaData);
+
+            return publicId;
+        }
+        private string AddMetaDataUrl(SetMetaDbContext context, string type, string typePublicId, string name, string url)
+        {
+            var publicId = Guid.NewGuid().ToNoDashString();
+            var metaData = new MetaData
+            {
+                PublicId = publicId,
+                IsActive = true,
+                Name = name,
+                Code = name.ToUrlSlug(),
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+                Url = url
             };
 
             context.MetaDatas.Add(metaData);
