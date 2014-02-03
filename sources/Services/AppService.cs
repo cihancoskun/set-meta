@@ -51,8 +51,7 @@ namespace SetMeta.Web.Services
 
             return Task.FromResult(_context.SaveChanges() > 0);
         }
-
-
+         
         public Task<PagedList<App>> GetApps(int pageNumber)
         {
             if (pageNumber < 1)
