@@ -521,7 +521,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Stress and Pressure
 
-            var stressAndPressurePublicId = AddMetaDataType(context, "Stress and Pressure");
+            var stressAndPressurePublicId = AddMetaDataType(context, "Stress and Pressure Measurement Units");
 
             AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Hectopascal", "hPa");
             AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Kilonewton per square meter", "kN/m²");
@@ -541,7 +541,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Acceleration
 
-            var accelerationPublicId = AddMetaDataType(context, "Acceleration");
+            var accelerationPublicId = AddMetaDataType(context, "Acceleration Measurement Units");
 
             AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Foot per second squared", "ft/s²");
             AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Galileo", "Gal");
@@ -555,7 +555,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Area
 
-            var areaPublicId = AddMetaDataType(context, "Area");
+            var areaPublicId = AddMetaDataType(context, "Area Measurement Units");
 
             AddMetaData(context, "Area Measurement Units", areaPublicId, "Are", "a");
             AddMetaData(context, "Area Measurement Units", areaPublicId, "Barn", "b");
@@ -572,7 +572,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Capacity and volume
 
-            var capacityAndVolumePublicId = AddMetaDataType(context, "Capacity and volume");
+            var capacityAndVolumePublicId = AddMetaDataType(context, "Capacity and volume Measurement Units");
 
             AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Barrel", "bbl");
             AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Bushel", "bu");
@@ -600,7 +600,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Circular measure
 
-            var circularMeasurePublicId = AddMetaDataType(context, "Circular measure");
+            var circularMeasurePublicId = AddMetaDataType(context, "Circular measure Measurement Units");
 
             AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "circumference", "circle");
             AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "Degree", "deg");
@@ -611,7 +611,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Computer Storage
 
-            var computerStoragePublicId = AddMetaDataType(context, "Computer Storage");
+            var computerStoragePublicId = AddMetaDataType(context, "Computer Storage Measurement Units");
 
             AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Exbibyte [exabyte]", "Eb [EiB]");
             AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Exabit [exbibit]", "Ebit [Eibit]");
@@ -629,7 +629,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Data transfer rate
 
-            var dataTransferRatePublicId = AddMetaDataType(context, "Data transfer rate");
+            var dataTransferRatePublicId = AddMetaDataType(context, "Data transfer rate Measurement Units");
 
             AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "byte per second", "B/s ");
             AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Gigabyte per second", "GB/s");
@@ -646,7 +646,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Density
 
-            var densityPublicId = AddMetaDataType(context, "Density");
+            var densityPublicId = AddMetaDataType(context, "Density Measurement Units");
 
             AddMetaData(context, "Density Measurement Units", densityPublicId, "Planck density", "L¯³M ");
             AddMetaData(context, "Density Measurement Units", densityPublicId, "Pound per cubic foot", "lb/ft³");
@@ -667,7 +667,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Distance and Length
 
-            var distanceAndLenghtPublicId = AddMetaDataType(context, "Distance and Length");
+            var distanceAndLenghtPublicId = AddMetaDataType(context, "Distance and Length Measurement Units");
 
             AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "astronomical unit", "au");
             AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Cable length", "cbl");
@@ -699,7 +699,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Energy and Work
 
-            var energyAndWorkPublicId = AddMetaDataType(context, "Energy and Work");
+            var energyAndWorkPublicId = AddMetaDataType(context, "Energy and Work Measurement Units");
 
             AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "billion barrel of oil equivalent", "BBOE");
             AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "barrel of oil equivalent", "BOE");
@@ -726,7 +726,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Flow rate by mass
 
-            var flowRateByMassPublicId = AddMetaDataType(context, "Flow rate by mass");
+            var flowRateByMassPublicId = AddMetaDataType(context, "Flow rate by mass Measurement Units");
 
             AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per day", "g/day");
             AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per hour", "g/hour");
@@ -747,7 +747,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Flow rate by volume
 
-            var flowRateByVolumePublicId = AddMetaDataType(context, "Flow rate by volume");
+            var flowRateByVolumePublicId = AddMetaDataType(context, "Flow rate by volume Measurement Units");
 
             AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per second", "ft³/s");
             AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per minute", "ft³/min");
@@ -779,7 +779,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Force
 
-            var forcePublicId = AddMetaDataType(context, "Force");
+            var forcePublicId = AddMetaDataType(context, "Force Measurement Units");
 
             AddMetaData(context, "Force Measurement Units", forcePublicId, "Dyne", "dyn");
             AddMetaData(context, "Force Measurement Units", forcePublicId, "Grave-force", "Gf");
@@ -798,7 +798,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Franctions and Percent
 
-            var franctionsAndPercentPublicId = AddMetaDataType(context, "Franctions and Percent");
+            var franctionsAndPercentPublicId = AddMetaDataType(context, "Franctions and Percent Measurement Units");
 
             AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Atto", "a");
             AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Centil", "c");
@@ -827,7 +827,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Mass and weight
 
-            var massAndWeightPublicId = AddMetaDataType(context, "Mass and weight");
+            var massAndWeightPublicId = AddMetaDataType(context, "Mass and weight Measurement Units");
 
             AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Carat", "ct");
             AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Dram", "dr");
@@ -846,7 +846,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Power
 
-            var powerPublicId = AddMetaDataType(context, "Power");
+            var powerPublicId = AddMetaDataType(context, "Power Measurement Units");
 
             AddMetaData(context, "Power Measurement Units", powerPublicId, "Foot pound-force per second", "ft*lbf/s");
             AddMetaData(context, "Power Measurement Units", powerPublicId, "Horsepower, electric", "hp(E)");
@@ -863,7 +863,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Radiation
 
-            var radiationPublicId = AddMetaDataType(context, "Radiation");
+            var radiationPublicId = AddMetaDataType(context, "Radiation Measurement Units");
 
             AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Centigrey", "cGy");
             AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Gray", "Gy");
@@ -878,7 +878,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Radioactivity
 
-            var radioActivityPublicId = AddMetaDataType(context, "Radioactivity");
+            var radioActivityPublicId = AddMetaDataType(context, "Radioactivity Measurement Units");
 
             AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Becquerel ", "Bq");
             AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Curie", "Ci");
@@ -893,7 +893,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Speed
 
-            var speedPublicId = AddMetaDataType(context, "Speed");
+            var speedPublicId = AddMetaDataType(context, "Speed Measurement Units");
 
             AddMetaData(context, "Speed Measurement Units", speedPublicId, "Kilometer per second", "km/s");
             AddMetaData(context, "Speed Measurement Units", speedPublicId, "meter per second", "m/s");
@@ -904,7 +904,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Temperature
 
-            var temperaturePublicId = AddMetaDataType(context, "Temperature");
+            var temperaturePublicId = AddMetaDataType(context, "Temperature Measurement Units");
 
             AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Celsius ", "°C ");
             AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Delisle ", "°D ");
@@ -919,7 +919,7 @@ namespace SetMeta.Web.Services.Data
 
             #region Time
 
-            var timePublicId = AddMetaDataType(context, "Time");
+            var timePublicId = AddMetaDataType(context, "Time Measurement Units");
 
             AddMetaData(context, "Time Measurement Units", timePublicId, "Minute", "min");
             AddMetaData(context, "Time Measurement Units", timePublicId, "Second", "s");
