@@ -1551,6 +1551,62 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region Banks
+
+            var banksPublicId = AddMetaDataType(context, "Banks");
+          
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Cumhuriyeti Ziraat Bankası A.Ş. ", "0010 ", "TCZBTR2A", "http://www.ziraatbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Halk Bankası A.Ş. ", "0012 ", "TRHBTR2A", "http://www.halkbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Vakıflar Bankası T.A.O. ", "0015 ", "TVBATR2A", "http://www.vakifbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Adabank A.Ş. ", "0100 ", "ADABTRIS", "http://www.adabank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Akbank T.A.Ş. ", "0046 ", "AKBKTRIS", "http://www.akbank.com ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Anadolubank A.Ş. ", "0135 ", "ANDLTRIS", "http://www.anadolubank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Fibabanka A.Ş. ", "0103 ", "FBHLTRIS", "http://www.fibabanka.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Şekerbank T.A.Ş. ", "0059 ", "SEKETR2A", "http://www.sekerbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Tekstil Bankası A.Ş. ", "0109 ", "TEKBTRIS", "http://www.tekstilbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Turkish Bank A.Ş. ", "0096 ", "TUBATRIS", "http://www.turkishbank.com. ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türk Ekonomi Bankası A.Ş. ", "0032 ", "TEBUTRIS", "http://www.teb.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Garanti Bankası A.Ş. ", "0062 ", "TGBATRIS", "http://www.garanti.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye İş Bankası A.Ş. ", "0064 ", "ISBKTRIS", "http://www.isbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Yapı ve Kredi Bankası A.Ş. ", "0067 ", "YAPITRISFEX", "http://www.yapikredi.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Birleşik Fon Bankası A.Ş. ", "0029 ", "BAYDTRIS", "http://www.fonbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Alternatifbank A.Ş. ", "0124 ", "ALFBTRIS", "http://www.abank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Arap Türk Bankası A.Ş. ", "0091 ", "ATUBTRIS", "http://www.atbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Bank of Tokyo-Mitsubishi UFJ Turkey A.Ş. ", "0147 ", "BOTKTRIS", "http://www.tu.bk.mufg.jp ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Burgan Bank A.Ş. ", "0125 ", "TEKFTRIS", "http://www.burgan.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Citibank A.Ş. ", "0092 ", "CITITRIX", "http://www.citibank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Denizbank A.Ş. ", "0134 ", "DENITRIS", "http://www.denizbank.com ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Deutsche Bank A.Ş. ", "0115 ", "BKTRTRIS", "http://www.deutschebank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Finans Bank A.Ş. ", "0111 ", "FNNBTRIS", "http://www.finansbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "HSBC Bank A.Ş. ", "0123 ", "HSBCTRIX", "http://www.hsbc.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "ING Bank A.Ş. ", "0099 ", "INGBTRIS", "http://www.ingbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Odea Bank A.Ş. ", "0146 ", "ODEATRIS", "http://www.odeabank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Turkland Bank A.Ş. ", "0108 ", "TBNKTRIS", "http://www.tbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Bank Mellat ", "0094 ", "BKMTTRIS", "http://www.mellatbank.com ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Habib Bank Limited ", "0097 ", "HABBTRIS", "http://www.habibbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "JPMorgan Chase Bank N.A. ", "0098 ", "CHASTRIS", "http://www.jpmorgan.com/pages/international/turkey ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Société Générale (SA) ", "0122 ", "SOGETRIS", "http://www.sgcib.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "The Royal Bank of Scotland Plc. ", "0088 ", "ABNATRIS", "http://www.rbsbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "İller Bankası A.Ş. ", "0004 ", "-", "http://www.ilbank.gov.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türk Eximbank ", "0016 ", "TIKBTR2A", "http://www.eximbank.gov.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Kalkınma Bankası A.Ş. ", "0017 ", "TKBNTR2A", "http://www.kalkinma.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Aktif Yatırım Bankası A.Ş. ", "0143 ", "CAYTTRIS", "http://www.aktifbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Diler Yatırım Bankası A.Ş. ", "0138 ", "DYAKTRIS", "http://www.dilerbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "GSD Yatırım Bankası A.Ş. ", "0139 ", "GSDBTRIS", "http://www.gsdbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "İstanbul Takas ve Saklama Bankası A.Ş. ", "0132 ", "TVSBTRIS", "http://www.takasbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Nurol Yatırım Bankası A.Ş. ", "0141 ", "NUROTRIS", "http://www.nurolbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Taib Yatırım Bank A.Ş. ", "0116 ", "TAIBTRIS", "http://www.yatirimbank.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Sınai Kalkınma Bankası A.Ş. ", "0014 ", "TSKBTRIS", "http://www.tskb.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "BankPozitif Kredi ve Kalkınma Bankası A.Ş. ", "0142 ", "BPTRTRIS", "http://www.bankpozitif.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Merrill Lynch Yatırım Bank A.Ş. ", "0129 ", "MLMBIE2XIST", "http://www.ml.com.tr ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Standard Chartered Yatırım Bankası Türk A.Ş. ", "0121 ", "BSUITRIS", "http://www.standardchartered.com ");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Albarakatürk Katılım Bankası A.Ş.", "0203 ", "BTFHTRIS", "http://www.albarakaturk.com.tr");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Asya Katılım Bankası A.Ş.", "0208 ", "asyatrsxxx", "http://www.bankasya.com.tr");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "KuveytTürk Katılım Bankası A.Ş.", "0205 ", "KTEFTRISXXX", "http://www.kuveytturk.com.tr");
+            AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Finans Katılım Bankası A.Ş.", "0206 ", "AFKBTRIS", "http://www.turkiyefinans.com.tr");
+
+            #endregion
+
             context.SaveChanges();
         }
 
@@ -1613,6 +1669,26 @@ namespace SetMeta.Web.Services.Data
             return publicId;
         }
 
+        private string AddMetaDataBanks(SetMetaDbContext context, string type, string typePublicId, string name, string code, string value, string url)
+        {
+            var publicId = Guid.NewGuid().ToNoDashString();
+            var metaData = new MetaData
+            {
+                PublicId = publicId,
+                IsActive = true,
+                Name = name,
+                Code = code,
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+                Value = value,
+                Url = url
+            };
+
+            context.MetaDatas.Add(metaData);
+
+            return publicId;
+        }
         private string AddMetaDataType(SetMetaDbContext context, string name)
         {
             var publicId = Guid.NewGuid().ToNoDashString();
