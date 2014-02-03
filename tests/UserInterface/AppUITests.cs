@@ -26,7 +26,7 @@ namespace SetMeta.Tests.UserInterface
 
             CloseBrowser();
         }
-
+         
         private void CreateApp()
         {
             LogOut();

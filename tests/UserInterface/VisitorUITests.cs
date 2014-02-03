@@ -52,6 +52,8 @@ namespace SetMeta.Tests.UserInterface
         [Test]
         public void should_login()
         {
+            LogOut();
+
             LoginAsUser();
 
             _browser.Close();
@@ -62,7 +64,7 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_NEW));
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_NEW));
 
             _browser.FindElementById("name").SendKeys("test");
             _browser.FindElementById("email").SendKeys("test@test.com");
@@ -77,7 +79,7 @@ namespace SetMeta.Tests.UserInterface
         {
             LogOut();
 
-            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_ACCOUNT_CONTACT));
+            GoTo(string.Format("{0}{1}", BASE_URL, ACTION_CONTACT));
 
             _browser.FindElementById("email").SendKeys("email@email.com");
             _browser.FindElementById("info").SendKeys("test"); 
