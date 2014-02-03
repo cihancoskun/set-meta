@@ -523,19 +523,19 @@ namespace SetMeta.Web.Services.Data
 
             var stressAndPressurePublicId = AddMetaDataType(context, "Stress and Pressure");
 
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Hectopascal", "hPa");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilonewton per square meter", "kN/m²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilopascal", "kPa");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilogram per square centimeter", "kgf/cm²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Kilogram per square meter", "kgf/m²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "physical atmosphere", "atm");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Planck pressure", "L¯¹MT¯²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Meganewton per square meter", "MN/m²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Megapascal", "Mpa");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square centimeter", "N/cm²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square meter", "N/m²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Newton per square millimeter", "N/mm²");
-            AddMetaData(context, "Stress and Pressure", stressAndPressurePublicId, "Pascal", "Pa");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Hectopascal", "hPa");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Kilonewton per square meter", "kN/m²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Kilopascal", "kPa");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Kilogram per square centimeter", "kgf/cm²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Kilogram per square meter", "kgf/m²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "physical atmosphere", "atm");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Planck pressure", "L¯¹MT¯²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Meganewton per square meter", "MN/m²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Megapascal", "Mpa");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Newton per square centimeter", "N/cm²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Newton per square meter", "N/m²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Newton per square millimeter", "N/mm²");
+            AddMetaData(context, "Stress and Pressure Measurement Units", stressAndPressurePublicId, "Pascal", "Pa");
 
             #endregion
 
@@ -543,13 +543,13 @@ namespace SetMeta.Web.Services.Data
 
             var accelerationPublicId = AddMetaDataType(context, "Acceleration");
 
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Foot per second squared", "ft/s²");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Galileo", "Gal");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "meter per second squared", "m/s²");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Millimeter per second squared", "mm/s²");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Kilometer per second squared", "km/s²");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Standard acceleration of free fall on Earth", "gn index");
-            AddMetaData(context, "Acceleration", accelerationPublicId, "Inch per second squared", "in/s²");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Foot per second squared", "ft/s²");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Galileo", "Gal");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "meter per second squared", "m/s²");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Millimeter per second squared", "mm/s²");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Kilometer per second squared", "km/s²");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Standard acceleration of free fall on Earth", "gn index");
+            AddMetaData(context, "Acceleration Measurement Units", accelerationPublicId, "Inch per second squared", "in/s²");
 
             #endregion
 
@@ -557,16 +557,16 @@ namespace SetMeta.Web.Services.Data
 
             var areaPublicId = AddMetaDataType(context, "Area");
 
-            AddMetaData(context, "Area", areaPublicId, "Are", "a");
-            AddMetaData(context, "Area", areaPublicId, "Barn", "b");
-            AddMetaData(context, "Area", areaPublicId, "Square centimeter", "cm²");
-            AddMetaData(context, "Area", areaPublicId, "Square decimeter", "dm²");
-            AddMetaData(context, "Area", areaPublicId, "Square foot", "ft²");
-            AddMetaData(context, "Area", areaPublicId, "Square inch", "in²");
-            AddMetaData(context, "Area", areaPublicId, "Square kilometer", "km²");
-            AddMetaData(context, "Area", areaPublicId, "Planck area", "L²");
-            AddMetaData(context, "Area", areaPublicId, "Square meter", "m²");
-            AddMetaData(context, "Area", areaPublicId, "Square millimeter", "mm²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Are", "a");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Barn", "b");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square centimeter", "cm²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square decimeter", "dm²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square foot", "ft²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square inch", "in²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square kilometer", "km²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Planck area", "L²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square meter", "m²");
+            AddMetaData(context, "Area Measurement Units", areaPublicId, "Square millimeter", "mm²");
 
             #endregion
 
@@ -574,27 +574,27 @@ namespace SetMeta.Web.Services.Data
 
             var capacityAndVolumePublicId = AddMetaDataType(context, "Capacity and volume");
 
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Barrel", "bbl");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Bushel", "bu");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic centimeter", "cc");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "centiliter", "cl");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic decimeter", "dm³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic foot", "ft³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic inch ", "in³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic kilometer", "km³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic meter ", "m³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic millimeter", "mm³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Cubic yard", "yd³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Deciliter", "dl");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Fluid ounce", "oz");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Gallon", "gal");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Hectoliter", "hl");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Planck volume", "L³");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Liter", "l");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Microliter ", "µl");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Milliliter", "ml");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Peck", "pk");
-            AddMetaData(context, "Capacity and volume", capacityAndVolumePublicId, "Quart", "qt");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Barrel", "bbl");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Bushel", "bu");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic centimeter", "cc");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "centiliter", "cl");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic decimeter", "dm³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic foot", "ft³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic inch ", "in³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic kilometer", "km³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic meter ", "m³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic millimeter", "mm³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Cubic yard", "yd³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Deciliter", "dl");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Fluid ounce", "oz");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Gallon", "gal");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Hectoliter", "hl");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Planck volume", "L³");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Liter", "l");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Microliter ", "µl");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Milliliter", "ml");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Peck", "pk");
+            AddMetaData(context, "Capacity and volume Measurement Units", capacityAndVolumePublicId, "Quart", "qt");
 
             #endregion
 
@@ -602,10 +602,10 @@ namespace SetMeta.Web.Services.Data
 
             var circularMeasurePublicId = AddMetaDataType(context, "Circular measure");
 
-            AddMetaData(context, "Circular measure", circularMeasurePublicId, "circumference", "circle");
-            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Degree", "deg");
-            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Grade", "grad");
-            AddMetaData(context, "Circular measure", circularMeasurePublicId, "Radian", "rad");
+            AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "circumference", "circle");
+            AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "Degree", "deg");
+            AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "Grade", "grad");
+            AddMetaData(context, "Circular measure Measurement Units", circularMeasurePublicId, "Radian", "rad");
 
             #endregion
 
@@ -613,17 +613,17 @@ namespace SetMeta.Web.Services.Data
 
             var computerStoragePublicId = AddMetaDataType(context, "Computer Storage");
 
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Exbibyte [exabyte]", "Eb [EiB]");
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Exabit [exbibit]", "Ebit [Eibit]");
-            AddMetaData(context, "Computer storage", computerStoragePublicId, "Gigabyte [gibibyte]", "Gb [GiB]");
-            AddMetaData(context, "Computer storage", computerStoragePublicId, " Gigabit [gibibit]", "Gbit [Gibit]");
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "megabyte [mebibyte]", "Mb [MiB] ");
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "megabit [mebibit]", "Mbit [Mibit]");
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Storage length in meters", "m");
-            AddMetaData(context, "computer Storage", computerStoragePublicId, "Terabit [tebibit] ", "Tbit [Tibit]");
-            AddMetaData(context, "Computer Storage", computerStoragePublicId, "Terabyte [tebibyte] ", "Tb [TiB]");
-            AddMetaData(context, "Computer storage", computerStoragePublicId, "Kilobyte [kibybyte]", "Kb [KiB]");
-            AddMetaData(context, "Computer storage", computerStoragePublicId, "Kilobit [kibibit]", "Kbit [Kibit]");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Exbibyte [exabyte]", "Eb [EiB]");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Exabit [exbibit]", "Ebit [Eibit]");
+            AddMetaData(context, "Computer storage Measurement Units", computerStoragePublicId, "Gigabyte [gibibyte]", "Gb [GiB]");
+            AddMetaData(context, "Computer storage Measurement Units", computerStoragePublicId, " Gigabit [gibibit]", "Gbit [Gibit]");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "megabyte [mebibyte]", "Mb [MiB] ");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "megabit [mebibit]", "Mbit [Mibit]");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Storage length in meters", "m");
+            AddMetaData(context, "computer Storage Measurement Units", computerStoragePublicId, "Terabit [tebibit] ", "Tbit [Tibit]");
+            AddMetaData(context, "Computer Storage Measurement Units", computerStoragePublicId, "Terabyte [tebibyte] ", "Tb [TiB]");
+            AddMetaData(context, "Computer storage Measurement Units", computerStoragePublicId, "Kilobyte [kibybyte]", "Kb [KiB]");
+            AddMetaData(context, "Computer storage Measurement Units", computerStoragePublicId, "Kilobit [kibibit]", "Kbit [Kibit]");
 
             #endregion
 
@@ -631,16 +631,16 @@ namespace SetMeta.Web.Services.Data
 
             var dataTransferRatePublicId = AddMetaDataType(context, "Data transfer rate");
 
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "byte per second", "B/s ");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Gigabyte per second", "GB/s");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Gigabit per second", "Gbps");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Kilobyte per second", "KB/s");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Megabyte per second", "MB/s");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "megabit per second", "Mbps");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Terabyte per second", "TB/s");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Terabit per second (Tbps)", "Tbps");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "bit per second", "bps");
-            AddMetaData(context, "Data transfer rate", dataTransferRatePublicId, "Kilobit per second", "kbps");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "byte per second", "B/s ");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Gigabyte per second", "GB/s");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Gigabit per second", "Gbps");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Kilobyte per second", "KB/s");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Megabyte per second", "MB/s");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "megabit per second", "Mbps");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Terabyte per second", "TB/s");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Terabit per second (Tbps)", "Tbps");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "bit per second", "bps");
+            AddMetaData(context, "Data Transfer Rate Measurement Units", dataTransferRatePublicId, "Kilobit per second", "kbps");
 
             #endregion
 
@@ -648,20 +648,20 @@ namespace SetMeta.Web.Services.Data
 
             var densityPublicId = AddMetaDataType(context, "Density");
 
-            AddMetaData(context, "Density", densityPublicId, "Planck density", "L¯³M ");
-            AddMetaData(context, "Density", densityPublicId, "Pound per cubic foot", "lb/ft³");
-            AddMetaData(context, "Density", densityPublicId, "Pound per U.S. gallon", "lb/gal");
-            AddMetaData(context, "Density", densityPublicId, "Pound per cubic inch", "lb/in³");
-            AddMetaData(context, "Density", densityPublicId, "Pound per cubic yard", "lb/yd³");
-            AddMetaData(context, "Density", densityPublicId, "Milligram per cubic meter", "mg/m³");
-            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic foot ", "oz/ft³");
-            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic inch ", "oz/in³");
-            AddMetaData(context, "Density", densityPublicId, "Ounce per cubic yard ", "oz/yd³");
-            AddMetaData(context, "Density", densityPublicId, "Gram per litre", "g/L");
-            AddMetaData(context, "Density", densityPublicId, " Gram per cubic meter", "g/m³");
-            AddMetaData(context, "Density", densityPublicId, "Kilogram per litre", "kg/L");
-            AddMetaData(context, "Density", densityPublicId, "Kilogram per cubic meter", "kg/m³");
-            AddMetaData(context, "Density", densityPublicId, " Gram per millilitre", "g/mL");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Planck density", "L¯³M ");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Pound per cubic foot", "lb/ft³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Pound per U.S. gallon", "lb/gal");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Pound per cubic inch", "lb/in³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Pound per cubic yard", "lb/yd³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Milligram per cubic meter", "mg/m³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Ounce per cubic foot ", "oz/ft³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Ounce per cubic inch ", "oz/in³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Ounce per cubic yard ", "oz/yd³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Gram per litre", "g/L");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, " Gram per cubic meter", "g/m³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Kilogram per litre", "kg/L");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, "Kilogram per cubic meter", "kg/m³");
+            AddMetaData(context, "Density Measurement Units", densityPublicId, " Gram per millilitre", "g/mL");
 
             #endregion
 
@@ -669,31 +669,31 @@ namespace SetMeta.Web.Services.Data
 
             var distanceAndLenghtPublicId = AddMetaDataType(context, "Distance and Length");
 
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "astronomical unit", "au");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Cable length", "cbl");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Gunter's (surveyors') chain", "ch");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Ramsden's (engineers') chain", "ch");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Centimeter", "cm");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Cubit", "cu");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Decimeter", "dm");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Fathom", "fath");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Foot", "ft");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Hand", "hd");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Inch", "in");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Kilometer", "km");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Planck length", "L");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "meter", "m");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Mile", "mi");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Millimeter", "mm");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Nanometer", "nm");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Palm", "plm");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Parsec", "pc");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Point", "pt");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Pixel", "px");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Rod", "rd");
-            AddMetaData(context, "Distance and Length", distanceAndLenghtPublicId, "Yard", "yd");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "astronomical unit", "au");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Cable length", "cbl");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Gunter's (surveyors') chain", "ch");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Ramsden's (engineers') chain", "ch");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Centimeter", "cm");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Cubit", "cu");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Decimeter", "dm");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Fathom", "fath");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Foot", "ft");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Hand", "hd");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Horizontal pitch", "HP");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Inch", "in");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Kilometer", "km");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Planck length", "L");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "meter", "m");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Mile", "mi");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Millimeter", "mm");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Nanometer", "nm");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Palm", "plm");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Parsec", "pc");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Point", "pt");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Pixel", "px");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Rod", "rd");
+            AddMetaData(context, "Distance and Length Measurement Units", distanceAndLenghtPublicId, "Yard", "yd");
 
             #endregion
 
@@ -701,26 +701,26 @@ namespace SetMeta.Web.Services.Data
 
             var energyAndWorkPublicId = AddMetaDataType(context, "Energy and Work");
 
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "billion barrel of oil equivalent", "BBOE");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "barrel of oil equivalent", "BOE");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "British Thermal Unit", "BTU");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Calorie", "cal");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Electronvolt", "eV");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Foot-Pound", "ft*lbs");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Gigatonne of oil equivalent", "Gtoe");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Joule", "J");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilobarrel of oil equivalent", "kBOE");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilojoule", "kJ");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilowatt hour", "kW*h");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Kilocalorie", "kcal");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Planck energy", "L²MT¯²");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Megajoule", "MJ");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Million BTU", "MMBTU");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "megacalorie", "Mcal");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "megatonne of oil equivalent", "Mtoe");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Metre-kilogram", "mkg");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Watt hour", "W*h");
-            AddMetaData(context, "Energy and Work", energyAndWorkPublicId, "Watt second", "W*s");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "billion barrel of oil equivalent", "BBOE");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "barrel of oil equivalent", "BOE");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "British Thermal Unit", "BTU");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Calorie", "cal");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Electronvolt", "eV");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Foot-Pound", "ft*lbs");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Gigatonne of oil equivalent", "Gtoe");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Joule", "J");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Kilobarrel of oil equivalent", "kBOE");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Kilojoule", "kJ");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Kilowatt hour", "kW*h");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Kilocalorie", "kcal");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Planck energy", "L²MT¯²");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Megajoule", "MJ");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Million BTU", "MMBTU");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "megacalorie", "Mcal");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "megatonne of oil equivalent", "Mtoe");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Metre-kilogram", "mkg");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Watt hour", "W*h");
+            AddMetaData(context, "Energy and Work Measurement Units", energyAndWorkPublicId, "Watt second", "W*s");
 
             #endregion
 
@@ -728,20 +728,20 @@ namespace SetMeta.Web.Services.Data
 
             var flowRateByMassPublicId = AddMetaDataType(context, "Flow rate by mass");
 
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per day", "g/day");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per hour", "g/hour");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per day", "kg/day");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per hour", "kg/hour");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per minute", "kg/min");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per second", "kg/s");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Kilogram per year", "kg/year");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per day", "lb/day");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per second", "lb/s");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per minute", "lb/min");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Pound per hour", "lb/hour");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, " Gram per minute", "g/min");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per second", "g/s");
-            AddMetaData(context, "Flow rate by mass", flowRateByMassPublicId, "Gram per year", "g/year");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per day", "g/day");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per hour", "g/hour");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Kilogram per day", "kg/day");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Kilogram per hour", "kg/hour");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Kilogram per minute", "kg/min");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Kilogram per second", "kg/s");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Kilogram per year", "kg/year");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Pound per day", "lb/day");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Pound per second", "lb/s");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Pound per minute", "lb/min");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Pound per hour", "lb/hour");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, " Gram per minute", "g/min");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per second", "g/s");
+            AddMetaData(context, "Flow rate by mass Measurement Units", flowRateByMassPublicId, "Gram per year", "g/year");
 
             #endregion
 
@@ -749,31 +749,31 @@ namespace SetMeta.Web.Services.Data
 
             var flowRateByVolumePublicId = AddMetaDataType(context, "Flow rate by volume");
 
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per second", "ft³/s");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per minute", "ft³/min");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per hour", "ft³/hour");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per day", "ft³/day");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic foot per year", "ft³/year");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per second", "in³/s");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per minute", "in³/min");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per hour", "in³/hour");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per day", "in³/day");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic inch per year", "in³/year");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per second", "m³/s");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per minute", "m³/min");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per hour", "m³/hour");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per day", "m³/day");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Cubic meter per year", "m³/year");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per day", "gal/day");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per year", "gal/year");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per hour", "gph");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per minute", "gpm");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "U.S. gallon per second", "gps");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per day", "l/day");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per hour", "l/hour");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per minute", "l/min");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per second", "l/s");
-            AddMetaData(context, "Flow rate by volume", flowRateByVolumePublicId, "Liter per year", "l/year");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per second", "ft³/s");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per minute", "ft³/min");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per hour", "ft³/hour");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per day", "ft³/day");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic foot per year", "ft³/year");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic inch per second", "in³/s");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic inch per minute", "in³/min");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic inch per hour", "in³/hour");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic inch per day", "in³/day");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic inch per year", "in³/year");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic meter per second", "m³/s");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic meter per minute", "m³/min");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic meter per hour", "m³/hour");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic meter per day", "m³/day");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Cubic meter per year", "m³/year");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "U.S. gallon per day", "gal/day");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "U.S. gallon per year", "gal/year");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "U.S. gallon per hour", "gph");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "U.S. gallon per minute", "gpm");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "U.S. gallon per second", "gps");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Liter per day", "l/day");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Liter per hour", "l/hour");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Liter per minute", "l/min");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Liter per second", "l/s");
+            AddMetaData(context, "Flow rate by volume Measurement Units", flowRateByVolumePublicId, "Liter per year", "l/year");
 
             #endregion
 
@@ -781,18 +781,18 @@ namespace SetMeta.Web.Services.Data
 
             var forcePublicId = AddMetaDataType(context, "Force");
 
-            AddMetaData(context, "Force", forcePublicId, "Dyne", "dyn");
-            AddMetaData(context, "Force", forcePublicId, "Grave-force", "Gf");
-            AddMetaData(context, "Force", forcePublicId, "Kilonewton", "kN");
-            AddMetaData(context, "Force", forcePublicId, "Kilogram-force", "kgf");
-            AddMetaData(context, "Force", forcePublicId, "Kilopond", "kp");
-            AddMetaData(context, "Force", forcePublicId, "Planck force", "LMT²");
-            AddMetaData(context, "Force", forcePublicId, "Pound-force", "lbf");
-            AddMetaData(context, "Force", forcePublicId, "Meganewton", "MN");
-            AddMetaData(context, "Force", forcePublicId, "Milligrave-force", "mGf");
-            AddMetaData(context, "Force", forcePublicId, "Millinewton", "mN");
-            AddMetaData(context, "Force", forcePublicId, "Micronewton ", "µN");
-            AddMetaData(context, "Force", forcePublicId, "Newton", "N");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Dyne", "dyn");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Grave-force", "Gf");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Kilonewton", "kN");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Kilogram-force", "kgf");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Kilopond", "kp");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Planck force", "LMT²");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Pound-force", "lbf");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Meganewton", "MN");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Milligrave-force", "mGf");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Millinewton", "mN");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Micronewton ", "µN");
+            AddMetaData(context, "Force Measurement Units", forcePublicId, "Newton", "N");
 
             #endregion
 
@@ -800,28 +800,28 @@ namespace SetMeta.Web.Services.Data
 
             var franctionsAndPercentPublicId = AddMetaDataType(context, "Franctions and Percent");
 
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Atto", "a");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Centil", "c");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Deci", "d");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Deka", "da");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Exa", "E");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Femto", "f");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Hecto", "h");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Half", "½");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Kilo", "k");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Mega", "M");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "milli", "m");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Micro", "µ; mc");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Micromole ", "µmol");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Millimole", "mmol");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Mole", "mol");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Nano", "n");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Tera", "T");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Permille", "‰");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Yotta", "Y");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Zetta", "Z");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Percent", "%");
-            AddMetaData(context, "Franctions and Percent", franctionsAndPercentPublicId, "Giga", "g");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Atto", "a");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Centil", "c");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Deci", "d");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Deka", "da");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Exa", "E");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Femto", "f");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Hecto", "h");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Half", "½");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Kilo", "k");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Mega", "M");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "milli", "m");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Micro", "µ; mc");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Micromole ", "µmol");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Millimole", "mmol");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Mole", "mol");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Nano", "n");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Tera", "T");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Permille", "‰");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Yotta", "Y");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Zetta", "Z");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Percent", "%");
+            AddMetaData(context, "Franctions and Percent Measurement Units", franctionsAndPercentPublicId, "Giga", "g");
 
             #endregion
 
@@ -829,18 +829,18 @@ namespace SetMeta.Web.Services.Data
 
             var massAndWeightPublicId = AddMetaDataType(context, "Mass and weight");
 
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Carat", "ct");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Dram", "dr");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Pennyweight", "dwt");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Gram", "g");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Grain", "gr");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Kilogram", "kg");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Pound", "lb");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Planck mass", "M");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Microgram", "mcg");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Milligram", "mg");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "Ounce ", "oz");
-            AddMetaData(context, "Mass and weight", massAndWeightPublicId, "atomic mass unit", "amu");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Carat", "ct");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Dram", "dr");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Pennyweight", "dwt");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Gram", "g");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Grain", "gr");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Kilogram", "kg");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Pound", "lb");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Planck mass", "M");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Microgram", "mcg");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Milligram", "mg");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "Ounce ", "oz");
+            AddMetaData(context, "Mass and weight Measurement Units", massAndWeightPublicId, "atomic mass unit", "amu");
 
             #endregion
 
@@ -848,16 +848,16 @@ namespace SetMeta.Web.Services.Data
 
             var powerPublicId = AddMetaDataType(context, "Power");
 
-            AddMetaData(context, "Power", powerPublicId, "Foot pound-force per second", "ft*lbf/s");
-            AddMetaData(context, "Power", powerPublicId, "Horsepower, electric", "hp(E)");
-            AddMetaData(context, "Power", powerPublicId, "Horsepower, mechanical (imperial)", "hp(I) ");
-            AddMetaData(context, "Power", powerPublicId, "Horsepower, metric", "hp(M)");
-            AddMetaData(context, "Power", powerPublicId, "Horsepower, boiler", "hp(S)");
-            AddMetaData(context, "Power", powerPublicId, "Kilowatt", "kW");
-            AddMetaData(context, "Power", powerPublicId, "Planck power", "L²MT¯³");
-            AddMetaData(context, "Power", powerPublicId, "Megawatt", "MW");
-            AddMetaData(context, "Power", powerPublicId, "Volt-ampere", "VA");
-            AddMetaData(context, "Power", powerPublicId, "Watt", "W");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Foot pound-force per second", "ft*lbf/s");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Horsepower, electric", "hp(E)");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Horsepower, mechanical (imperial)", "hp(I) ");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Horsepower, metric", "hp(M)");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Horsepower, boiler", "hp(S)");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Kilowatt", "kW");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Planck power", "L²MT¯³");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Megawatt", "MW");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Volt-ampere", "VA");
+            AddMetaData(context, "Power Measurement Units", powerPublicId, "Watt", "W");
 
             #endregion
 
@@ -865,14 +865,14 @@ namespace SetMeta.Web.Services.Data
 
             var radiationPublicId = AddMetaDataType(context, "Radiation");
 
-            AddMetaData(context, "Radiation", radiationPublicId, "Centigrey", "cGy");
-            AddMetaData(context, "Radiation", radiationPublicId, "Gray", "Gy");
-            AddMetaData(context, "Radiation", radiationPublicId, "Milligray", "mGy");
-            AddMetaData(context, "Radiation", radiationPublicId, "Milliroentgen", "mR");
-            AddMetaData(context, "Radiation", radiationPublicId, "Millisievert", "mSv");
-            AddMetaData(context, "Radiation", radiationPublicId, "Microgray ", "µGy");
-            AddMetaData(context, "Radiation", radiationPublicId, "Microroentgen ", "µR");
-            AddMetaData(context, "Radiation", radiationPublicId, "Microsievert ", "µSv");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Centigrey", "cGy");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Gray", "Gy");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Milligray", "mGy");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Milliroentgen", "mR");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Millisievert", "mSv");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Microgray ", "µGy");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Microroentgen ", "µR");
+            AddMetaData(context, "Radiation Measurement Units", radiationPublicId, "Microsievert ", "µSv");
 
             #endregion
 
@@ -880,14 +880,14 @@ namespace SetMeta.Web.Services.Data
 
             var radioActivityPublicId = AddMetaDataType(context, "Radioactivity");
 
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Becquerel ", "Bq");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Curie", "Ci");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Disintegrations per minute", "dpm");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Gigabecquerel", "GBq");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Kilobecquerel", "kBq");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Megabecquerel", "MBq");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Millicurie", "mCi");
-            AddMetaData(context, "Radioactivity", radioActivityPublicId, "Microcurie", "µCi");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Becquerel ", "Bq");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Curie", "Ci");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Disintegrations per minute", "dpm");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Gigabecquerel", "GBq");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Kilobecquerel", "kBq");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Megabecquerel", "MBq");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Millicurie", "mCi");
+            AddMetaData(context, "Radioactivity Measurement Units", radioActivityPublicId, "Microcurie", "µCi");
 
             #endregion
 
@@ -895,10 +895,10 @@ namespace SetMeta.Web.Services.Data
 
             var speedPublicId = AddMetaDataType(context, "Speed");
 
-            AddMetaData(context, "Speed", speedPublicId, "Kilometer per second", "km/s");
-            AddMetaData(context, "Speed", speedPublicId, "meter per second", "m/s");
-            AddMetaData(context, "Speed", speedPublicId, "Mile per hour ", "mph");
-            AddMetaData(context, "Speed", speedPublicId, "Mile per hour ", "mph");
+            AddMetaData(context, "Speed Measurement Units", speedPublicId, "Kilometer per second", "km/s");
+            AddMetaData(context, "Speed Measurement Units", speedPublicId, "meter per second", "m/s");
+            AddMetaData(context, "Speed Measurement Units", speedPublicId, "Mile per hour ", "mph");
+            AddMetaData(context, "Speed Measurement Units", speedPublicId, "Mile per hour ", "mph");
 
             #endregion
 
@@ -906,14 +906,14 @@ namespace SetMeta.Web.Services.Data
 
             var temperaturePublicId = AddMetaDataType(context, "Temperature");
 
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Celsius ", "°C ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Delisle ", "°D ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Fahrenheit ", "°F ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Newton ", "°N ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Rømer ", "°R ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Rankine ", "°RØ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "degrees Reaumur", "°Re ");
-            AddMetaData(context, "Temperature", temperaturePublicId, "Kelvin", "K");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Celsius ", "°C ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Delisle ", "°D ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Fahrenheit ", "°F ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Newton ", "°N ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Rømer ", "°R ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Rankine ", "°RØ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "degrees Reaumur", "°Re ");
+            AddMetaData(context, "Temperature Measurement Units", temperaturePublicId, "Kelvin", "K");
 
             #endregion
 
@@ -921,9 +921,9 @@ namespace SetMeta.Web.Services.Data
 
             var timePublicId = AddMetaDataType(context, "Time");
 
-            AddMetaData(context, "Time", timePublicId, "Minute", "min");
-            AddMetaData(context, "Time", timePublicId, "Second", "s");
-            AddMetaData(context, "Time", timePublicId, "Planck time", "T");
+            AddMetaData(context, "Time Measurement Units", timePublicId, "Minute", "min");
+            AddMetaData(context, "Time Measurement Units", timePublicId, "Second", "s");
+            AddMetaData(context, "Time Measurement Units", timePublicId, "Planck time", "T");
 
             #endregion
 
