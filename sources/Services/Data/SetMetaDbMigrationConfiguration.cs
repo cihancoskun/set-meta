@@ -932,6 +932,7 @@ namespace SetMeta.Web.Services.Data
             #region Continents
 
             var continentsPublicId = AddMetaDataType(context, "Continents");
+
             var asiaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Asia", "1");
             var africaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Africa", "2");
             var antarcticaPublicId = AddMetaData(context, "Continents", continentsPublicId, "Antarctica", "3");
@@ -945,6 +946,7 @@ namespace SetMeta.Web.Services.Data
             #region Countries
 
             var countryPublicId = AddMetaDataType(context, "Countries");
+
             AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia", asiaPublicId);
             AddMetaData(context, "Countries", countryPublicId, "Afghanistan", "AF", "+93", "Asia", asiaPublicId);
             AddMetaData(context, "Countries", countryPublicId, "Albania", "AL", "+355", "Europe", europePublicId);
@@ -1607,6 +1609,21 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region Blood Groups
+
+            var bloodGroupsPublicId = AddMetaDataType(context, "Blood Groups");
+
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "0 Rh (+)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "0 Rh (-)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "A Rh (+)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "A Rh (-)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "B Rh (+)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "B Rh (-)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "AB Rh (+)");
+            AddMetaDataBloodGroups(context, "Blood Groups", bloodGroupsPublicId, "AB Rh (-)");
+
+            #endregion
+
             context.SaveChanges();
         }
 
@@ -1643,6 +1660,25 @@ namespace SetMeta.Web.Services.Data
                 TypeCode = type.ToUrlSlug(),
                 TypePublicId = typePublicId,
                 Value = value
+            };
+
+            context.MetaDatas.Add(metaData);
+
+            return publicId;
+        }
+          private string AddMetaDataBloodGroups(SetMetaDbContext context, string type, string typePublicId, string name)
+        {
+            var publicId = Guid.NewGuid().ToNoDashString();
+            var metaData = new MetaData
+            {
+                PublicId = publicId,
+                IsActive = true,
+                Name = name,
+                Code = name,
+                TypeName = type,
+                TypeCode = type.ToUrlSlug(),
+                TypePublicId = typePublicId,
+               
             };
 
             context.MetaDatas.Add(metaData);
