@@ -285,6 +285,22 @@ namespace SetMeta.Web.Services.Data
                       
             #endregion
 
+            #region Customer Sources
+
+            var sourcesPublicId = AddMetaDataType(context, "Customer Sources");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "With Familiar", "familiar");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "İnternet Advertised", "internet");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "With Phone", "phone");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Billboard Advertised", "bilboards");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Social Media", "social media");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Google Group Mails", "google group mails");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Signboard", "signboard");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "With Search Motor", "search motor");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "With Reference", "reference");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Company Directory", "company directory");
+            AddMetaData(context, "Customer Sources", sourcesPublicId, "Advice", "advice");
+
+            #endregion
 
             #region Months
 
