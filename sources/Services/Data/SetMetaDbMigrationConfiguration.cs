@@ -1556,7 +1556,7 @@ namespace SetMeta.Web.Services.Data
             #region Banks
 
             var banksPublicId = AddMetaDataType(context, "Banks");
-          
+
             AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Cumhuriyeti Ziraat Bankası A.Ş. ", "0010 ", "TCZBTR2A", "http://www.ziraatbank.com.tr ");
             AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Halk Bankası A.Ş. ", "0012 ", "TRHBTR2A", "http://www.halkbank.com.tr ");
             AddMetaDataBanks(context, "Banks", banksPublicId, "Türkiye Vakıflar Bankası T.A.O. ", "0015 ", "TVBATR2A", "http://www.vakifbank.com.tr ");
@@ -1624,6 +1624,32 @@ namespace SetMeta.Web.Services.Data
 
             #endregion
 
+            #region Delivery Types
+
+            var deliveryTypeId = AddMetaDataType(context, "Delivery Types");
+
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Cargo", "cargo");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Hand Delivery", "hand_delivery");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Dispatched", "dispatched");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Stock Entered", "stock_entered");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Returned", "returned");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Refund Received", "refund_received");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "Shipping Address", "shipping address");
+            AddMetaData(context, "Delivery Types", deliveryTypeId, "On-Site Service", "on_site_service");
+
+            #endregion
+
+            #region Transportation Types
+
+            var transportationTypeId = AddMetaDataType(context, "Transportation Types");
+
+            AddMetaData(context, "Transportation Types", transportationTypeId, "Aircraft", "aircraft");
+            AddMetaData(context, "Transportation Types", transportationTypeId, "Truck", "truck");
+            AddMetaData(context, "Transportation Types", transportationTypeId, "Van", "van");
+            AddMetaData(context, "Transportation Types", transportationTypeId, "Vehicle", "vehicle");
+
+            #endregion
+
             context.SaveChanges();
         }
 
@@ -1666,7 +1692,8 @@ namespace SetMeta.Web.Services.Data
 
             return publicId;
         }
-          private string AddMetaDataBloodGroups(SetMetaDbContext context, string type, string typePublicId, string name)
+
+        private string AddMetaDataBloodGroups(SetMetaDbContext context, string type, string typePublicId, string name)
         {
             var publicId = Guid.NewGuid().ToNoDashString();
             var metaData = new MetaData
@@ -1678,13 +1705,14 @@ namespace SetMeta.Web.Services.Data
                 TypeName = type,
                 TypeCode = type.ToUrlSlug(),
                 TypePublicId = typePublicId,
-               
+
             };
 
             context.MetaDatas.Add(metaData);
 
             return publicId;
         }
+
         private string AddMetaDataUrl(SetMetaDbContext context, string type, string typePublicId, string name, string url)
         {
             var publicId = Guid.NewGuid().ToNoDashString();
@@ -1725,6 +1753,7 @@ namespace SetMeta.Web.Services.Data
 
             return publicId;
         }
+
         private string AddMetaDataType(SetMetaDbContext context, string name)
         {
             var publicId = Guid.NewGuid().ToNoDashString();
